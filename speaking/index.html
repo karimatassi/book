@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Book Karim Atassi</title>
+<meta name="description" content="Karim Atassi, MD is a lifestyle doctor who helps people improve their health by changing their environment. Book him to speak at your company, wellness space or workshop.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap">
+<style>
+/* Layout concept: a dark field map (his Instagram look), with one cream band for the assessment. */
+:root {
+  color-scheme: dark;
+  --obsidian:#0A0B0D; --graphite:#15181C; --line:#2A2F35; --line-2:#3A4047;
+  --ivory:#F1F0EA; --silver:#C5CED8; --titanium:#9AA0A7;
+  --ox:#7A3E3A; --gold:#C8A55A; --gold-2:#E2C27A;
+  --cream:#F4EDE2; --ink:#14161A; --ink-2:#55585C; --cream-line:#DDD3C3;
+  --err-bg:#3A1F1E; --err-fg:#F2C9C5;
+  --f:"Geist",ui-sans-serif,system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --m:"Geist Mono",ui-monospace,"SF Mono",Menlo,monospace;
+  --sect:clamp(64px,9vw,112px);
+}
+*,*::before,*::after { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:76px; -webkit-text-size-adjust:100%; overflow-x:clip; }
+html:has(dialog[open]) { overflow:hidden; }
+body { margin:0; background:var(--obsidian); color:var(--ivory); font:400 17px/1.6 var(--f); -webkit-font-smoothing:antialiased; overflow-x:clip; }
+img,video,svg { display:block; max-width:100%; }
+a { color:inherit; }
+h1,h2,h3,p,ul,figure { margin:0; padding:0; }
+ul { list-style:none; }
+h1,h2 { font-weight:500; letter-spacing:-.035em; line-height:1.03; text-wrap:balance; }
+h2 { font-size:clamp(2.1rem,5vw,3.5rem); }
+h3 { font-weight:500; letter-spacing:-.02em; line-height:1.15; }
+.wrap { max-width:1180px; margin:0 auto; padding-left:max(20px,env(safe-area-inset-left,0px)); padding-right:max(20px,env(safe-area-inset-right,0px)); }
+.k { font:500 .72rem/1.3 var(--m); letter-spacing:.16em; text-transform:uppercase; color:var(--gold-2); }
+section { padding-block:var(--sect); }
+.lede { color:var(--silver); font-size:clamp(1.05rem,1.6vw,1.2rem); max-width:58ch; }
+.btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:52px; padding:0 26px; border-radius:999px; border:1px solid transparent; font:500 1rem/1 var(--f); text-decoration:none; cursor:pointer; transition:transform .15s ease,background .15s ease,border-color .15s ease; }
+.btn:active { transform:scale(.98); }
+.btn-a { background:var(--ivory); color:var(--ink); }
+.btn-a:hover { background:#fff; }
+.btn-b { background:transparent; color:var(--ivory); border-color:var(--line-2); }
+.btn-b:hover { border-color:var(--silver); }
+.btn-ox { background:var(--ox); color:#F7EFE6; }
+.btn-ox:hover { background:#8A4843; }
+.btn-ink { background:transparent; color:var(--ink); border-color:#B9AE9C; }
+.btn-ink:hover { border-color:var(--ink); }
+.row { display:flex; flex-wrap:wrap; gap:12px; }
+:focus-visible { outline:2px solid var(--gold-2); outline-offset:3px; }
+
+/* Nav */
+.nav { position:sticky; top:env(safe-area-inset-top,0px); z-index:30; background:rgba(10,11,13,.86); backdrop-filter:blur(12px); border-bottom:1px solid var(--line); }
+.nav .wrap { display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:64px; }
+.brand { font-weight:600; letter-spacing:-.02em; text-decoration:none; font-size:1.05rem; white-space:nowrap; }
+.nav-l { display:flex; align-items:center; gap:26px; font-size:.92rem; color:var(--silver); }
+.nav-l a { text-decoration:none; } .nav-l a:hover { color:var(--ivory); }
+.nav .btn { min-height:40px; padding:0 18px; font-size:.9rem; }
+@media (max-width:760px) { .nav-l { display:none; } }
+
+/* Hero */
+.hero { position:relative; overflow:hidden; padding-block:clamp(40px,7vw,96px) clamp(40px,6vw,72px); background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px); background-size:64px 64px; background-position:center top; }
+.hero::before { content:""; position:absolute; inset:0; background:radial-gradient(70% 90% at 30% 40%,rgba(10,11,13,.82),var(--obsidian) 78%); }
+.hero .wrap { position:relative; display:grid; grid-template-columns:minmax(0,1.08fr) minmax(0,.92fr); gap:clamp(28px,5vw,64px); align-items:center; }
+.hero h1 { font-size:clamp(3.2rem,6.6vw,5.4rem); margin:18px 0 22px; line-height:.98; }
+.hero .lede { color:var(--ivory); font-size:clamp(1.1rem,1.8vw,1.3rem); }
+.hero .row { margin-top:28px; }
+.hero-v { position:relative; border:1px solid var(--line-2); background:#000; aspect-ratio:16/10; overflow:hidden; }
+.hero-v video { width:100%; height:100%; object-fit:cover; }
+.hero-v figcaption { position:absolute; left:14px; bottom:12px; font:500 .7rem/1 var(--m); letter-spacing:.14em; text-transform:uppercase; color:var(--ivory); text-shadow:0 1px 8px #000; }
+@media (max-width:860px) { .hero .wrap { grid-template-columns:minmax(0,1fr); } }
+@media (max-width:760px) {
+  .hero { padding-block:16px 36px; }
+  .hero .wrap { gap:22px; }
+  .hero-v { order:-1; aspect-ratio:16/9; }
+  .hero h1 { font-size:clamp(2.5rem,11.4vw,3.2rem); margin:12px 0 14px; }
+  .hero .lede { font-size:1.04rem; }
+  .hero .row { margin-top:20px; }
+  .hero .btn { padding-block:12px; }
+}
+/* a still that hasn't started shows a play mark, so it reads as a video */
+.is-idle::after { content:""; position:absolute; left:50%; top:50%; width:52px; height:52px; margin:-26px 0 0 -26px; border-radius:50%; pointer-events:none; background:rgba(10,11,13,.62) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23F4F3EE' d='M9 6.5v11l9-5.5z'/%3E%3C/svg%3E") center/30px no-repeat; border:1px solid rgba(244,243,238,.45); }
+
+/* Press */
+.press { padding-block:26px; border-block:1px solid var(--line); }
+.press .wrap { display:flex; align-items:center; gap:clamp(20px,4vw,44px); }
+.press ul { flex:1; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:18px 30px; }
+.press img { width:auto; object-fit:contain; filter:brightness(0) invert(1); opacity:.72; }
+.press .k { color:var(--titanium); white-space:nowrap; }
+@media (max-width:760px) {
+  .press .wrap { flex-direction:column; align-items:stretch; }
+  .press .k { text-align:center; }
+  .press ul { display:grid; grid-template-columns:repeat(3,auto); justify-content:space-between; justify-items:center; }
+  .press img { transform:scale(.88); }
+}
+
+/* The idea */
+.idea .wrap { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); gap:clamp(28px,5vw,72px); align-items:center; }
+.idea h2 { margin:14px 0 18px; }
+.dir { margin-top:28px; display:grid; gap:0; border-top:1px solid var(--line); }
+.dir li { display:grid; grid-template-columns:minmax(0,9.5rem) minmax(0,1fr); gap:16px; padding-block:16px; border-bottom:1px solid var(--line); }
+.dir b { font-weight:500; } .dir span { color:var(--silver); font-size:.98rem; }
+.dir .on b { color:var(--gold-2); }
+.field { width:100%; height:auto; overflow:visible; }
+.fm-ring { fill:none; stroke:var(--line-2); stroke-width:1; } .fm-ring.soft { stroke-dasharray:3 6; }
+.fm-spoke { stroke:var(--line-2); stroke-width:1; }
+.fm-node { fill:var(--obsidian); stroke:var(--gold-2); stroke-width:1.6; }
+.fm-pulse { fill:var(--gold-2); animation:inward 4.34s cubic-bezier(.4,0,.6,1) infinite; }
+.fm-core { fill:var(--ivory); }
+.fm-core-t { font:600 20px var(--f); fill:var(--ink); letter-spacing:-.01em; }
+.fm-lab { font:500 20px var(--f); fill:var(--ivory); letter-spacing:-.005em; }
+.fm-mid { font:500 13px var(--m); fill:var(--titanium); letter-spacing:.04em; }
+@keyframes inward { 0% { transform:translate(0,0); opacity:0; } 12% { opacity:1; } 70% { opacity:1; } 86%,100% { transform:translate(var(--dx),var(--dy)); opacity:0; } }
+@media (max-width:860px) { .idea .wrap { grid-template-columns:minmax(0,1fr); } .field { order:-1; } .fm-mid { font-size:15px; } }
+@media (max-width:420px) { .dir li { grid-template-columns:minmax(0,1fr); gap:4px; } }
+
+/* Talks */
+.talks { background:var(--graphite); border-block:1px solid var(--line); }
+.talks h2 { margin:14px 0 14px; }
+.sig { margin-top:36px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.sig li { padding:clamp(22px,3vw,34px); border:1px solid var(--line-2); background:var(--obsidian); display:grid; gap:12px; align-content:start; }
+.sig .k { color:var(--titanium); }
+.sig h3 { font-size:clamp(1.5rem,2.8vw,2.1rem); }
+.sig p { color:var(--silver); }
+.more-k { margin-top:44px; }
+.more { margin-top:12px; border-top:1px solid var(--line-2); }
+.more li { padding-block:15px; border-bottom:1px solid var(--line); font-size:clamp(1rem,1.5vw,1.14rem); }
+.fit { margin-top:44px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(20px,3vw,36px); }
+.fit h3 { font-size:1.2rem; margin-bottom:6px; }
+.fit p { color:var(--silver); font-size:.98rem; }
+.fmt { margin-top:30px; font:500 .78rem/1.5 var(--m); letter-spacing:.08em; text-transform:uppercase; color:var(--titanium); }
+.see { margin-top:52px; display:grid; grid-template-columns:minmax(0,2fr) minmax(0,1fr) minmax(0,1fr); gap:12px; }
+.see-w { display:grid; gap:12px; min-width:0; }
+.v { position:relative; background:#000; overflow:hidden; border:1px solid var(--line); min-width:0; }
+.v video { width:100%; height:100%; object-fit:cover; }
+.v.wide { aspect-ratio:16/9; } .v.tall { aspect-ratio:9/16; }
+.v figcaption { position:absolute; inset:auto 0 0 0; padding:34px 14px 12px; background:linear-gradient(transparent,rgba(0,0,0,.78)); display:grid; gap:1px; pointer-events:none; }
+.v b { font-weight:600; font-size:.98rem; } .v span { font-size:.82rem; color:var(--silver); }
+.see-more { margin-top:14px; font-size:.95rem; color:var(--silver); }
+@media (max-width:860px) {
+  .sig,.fit { grid-template-columns:minmax(0,1fr); }
+  .see { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .see-w { grid-column:1 / -1; }
+}
+
+/* Assessment (cream band) */
+.assess { background:var(--cream); color:var(--ink); }
+.assess .k { color:var(--ox); }
+.assess .lede { color:var(--ink-2); }
+.as-top { display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); gap:clamp(28px,5vw,64px); align-items:start; }
+.assess h2 { margin:14px 0 18px; }
+.get { margin-top:22px; display:grid; gap:8px; }
+.get li { padding-left:24px; position:relative; }
+.get li::before { content:""; position:absolute; left:2px; top:.6em; width:10px; height:2px; background:var(--ox); }
+.price { margin-top:26px; display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 12px; }
+.price b { font-weight:500; font-size:2.3rem; letter-spacing:-.03em; }
+.price span { color:var(--ink-2); }
+.assess .row { margin-top:18px; }
+.g { margin-top:16px; font-size:.86rem; color:var(--ink-2); max-width:58ch; }
+.rep { background:#fff; border:1px solid var(--cream-line); padding:22px; }
+.rep-h { display:flex; justify-content:space-between; gap:12px; font:500 .68rem/1 var(--m); letter-spacing:.12em; text-transform:uppercase; color:var(--ink-2); padding-bottom:14px; border-bottom:1px solid var(--cream-line); margin-bottom:14px; }
+.rep ul { display:grid; gap:11px; }
+.rep li { display:grid; grid-template-columns:6.2rem minmax(0,1fr) 1.2rem; gap:10px; align-items:center; font-size:.92rem; }
+.rep i { display:block; height:6px; background:#ECE5D8; position:relative; }
+.rep i::after { content:""; position:absolute; inset:0 auto 0 0; width:var(--v); background:#3B3F45; }
+.rep li b { font:500 .84rem var(--m); text-align:right; }
+.rep .flag { color:var(--ox); font-weight:600; } .rep .flag i::after { background:var(--ox); }
+.rep-f { margin-top:16px; padding-top:14px; border-top:1px solid var(--cream-line); font-size:.92rem; }
+.rep-f b { color:var(--ox); font-weight:600; }
+.dims { margin-top:clamp(36px,5vw,56px); display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:clamp(24px,4vw,56px); border-top:1px solid var(--cream-line); }
+.dims li { display:grid; grid-template-columns:7rem minmax(0,1fr); gap:12px; padding-block:14px; border-bottom:1px solid var(--cream-line); }
+.dims b { font-weight:600; } .dims span { color:var(--ink-2); font-size:.98rem; }
+@media (max-width:860px) { .as-top,.dims { grid-template-columns:minmax(0,1fr); } }
+
+/* About */
+.about .wrap { display:grid; grid-template-columns:minmax(0,300px) minmax(0,1fr); gap:clamp(28px,5vw,64px); align-items:start; }
+.about img { width:100%; max-width:300px; aspect-ratio:1; object-fit:cover; border-radius:50%; border:1px solid var(--gold); padding:6px; }
+.about h2 { margin:14px 0 20px; }
+.about p + p { margin-top:14px; }
+.about p { color:var(--silver); max-width:62ch; }
+.hon { margin-top:28px; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 28px; border-top:1px solid var(--line); }
+.hon li { padding-block:12px; border-bottom:1px solid var(--line); display:grid; gap:1px; }
+.hon b { font-weight:500; font-size:.98rem; } .hon span { font-size:.86rem; color:var(--titanium); }
+@media (max-width:760px) { .about .wrap { grid-template-columns:minmax(0,1fr); } .about img { max-width:180px; } .hon { grid-template-columns:minmax(0,1fr); } }
+
+/* Book */
+.book { border-top:1px solid var(--line); text-align:center; }
+.book h2 { margin:14px auto 16px; }
+.book .lede { margin-inline:auto; }
+.book .row { justify-content:center; margin-top:26px; }
+.mail { margin-top:20px; color:var(--silver); font-size:.98rem; display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:6px 10px; }
+.mail code { font:500 .95rem var(--f); color:var(--ivory); user-select:all; }
+.linkbtn { background:none; border:0; padding:6px 2px; color:var(--gold-2); font:500 .92rem var(--f); text-decoration:underline; text-underline-offset:3px; cursor:pointer; }
+
+footer { border-top:1px solid var(--line); padding-block:30px calc(30px + env(safe-area-inset-bottom,0px)); font-size:.84rem; color:var(--titanium); }
+footer .wrap { display:grid; gap:12px; }
+footer p { max-width:84ch; }
+footer a { color:var(--silver); }
+
+/* Phone */
+@media (max-width:600px) {
+  body { font-size:16.5px; }
+  .row .btn { flex:1 1 100%; }
+}
+
+/* Booking dialog */
+dialog.bk { border:1px solid var(--line-2); border-radius:6px; background:var(--graphite); color:var(--ivory); padding:26px 22px 22px; width:min(560px,calc(100vw - 24px)); max-height:calc(100dvh - 24px); overflow:auto; overscroll-behavior:contain; }
+dialog.bk::backdrop { background:rgba(0,0,0,.65); }
+.bk [hidden] { display:none !important; }
+.bk-close { position:absolute; top:8px; right:10px; background:none; border:0; color:var(--titanium); font:400 1.7rem/1 var(--f); cursor:pointer; padding:8px 10px; }
+.bk-close:hover { color:var(--ivory); }
+.bk h2 { font-size:1.7rem; margin:10px 0 8px; }
+.bk-lede { color:var(--silver); font-size:.96rem; margin-bottom:12px; }
+.bk-k { margin:14px 0 8px; font:500 .68rem/1 var(--m); letter-spacing:.14em; text-transform:uppercase; color:var(--gold-2); display:flex; justify-content:space-between; }
+.bk-k span { color:var(--titanium); letter-spacing:.08em; }
+.bk-days { display:flex; gap:8px; overflow-x:auto; padding-bottom:6px; scrollbar-width:none; overscroll-behavior-x:contain; }
+.bk-days::-webkit-scrollbar { display:none; }
+.bk-days button { flex:none; display:grid; gap:2px; min-width:68px; padding:9px 10px; border-radius:4px; border:1px solid var(--line-2); background:transparent; color:var(--titanium); font:500 .7rem/1.1 var(--m); letter-spacing:.06em; text-transform:uppercase; cursor:pointer; }
+.bk-days button b { font:600 .95rem/1.1 var(--f); letter-spacing:-.01em; text-transform:none; color:var(--ivory); }
+.bk-days button[aria-selected="true"] { background:var(--ivory); border-color:var(--ivory); color:#55585C; }
+.bk-days button[aria-selected="true"] b { color:var(--ink); }
+.bk-slots { display:grid; grid-template-columns:repeat(auto-fill,minmax(92px,1fr)); gap:8px; max-height:250px; overflow-y:auto; }
+.bk-slots button { min-height:42px; padding:8px 6px; border-radius:4px; border:1px solid var(--line-2); background:transparent; color:var(--ivory); font:500 .88rem var(--f); cursor:pointer; }
+.bk-slots button:hover,.bk-slots button:focus-visible { border-color:var(--gold-2); }
+.bk-status { margin-top:12px; font-size:.9rem; color:var(--titanium); }
+.bk-form { display:grid; gap:12px; margin-top:6px; }
+.bk-when { padding:10px 12px; border-radius:4px; border:1px solid var(--gold); font-weight:600; font-size:.92rem; display:flex; justify-content:space-between; gap:10px; align-items:center; }
+.bk-form label { display:grid; gap:6px; font-size:.86rem; color:var(--silver); }
+.bk-form input,.bk-form textarea { width:100%; padding:11px 12px; border-radius:4px; border:1px solid var(--line-2); background:var(--obsidian); color:var(--ivory); font:400 16px/1.4 var(--f); }
+.bk-form textarea { resize:vertical; min-height:110px; }
+.bk-form input:focus,.bk-form textarea:focus { outline:none; border-color:var(--gold-2); }
+.bk-hp { position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden; }
+.bk-fine { font-size:.8rem; color:var(--titanium); line-height:1.5; }
+.bk-err { padding:10px 12px; border-radius:4px; background:var(--err-bg); color:var(--err-fg); font-size:.88rem; }
+.bk-note { padding:10px 12px; border:1px solid var(--line-2); border-radius:4px; font-size:.88rem; color:var(--silver); margin-bottom:6px; }
+.bk-done { text-align:center; padding:18px 0 6px; display:grid; gap:8px; justify-items:center; }
+.bk-tick { width:52px; height:52px; border-radius:50%; display:grid; place-items:center; background:var(--gold-2); color:var(--ink); font-size:1.5rem; font-weight:700; }
+.bk-done .mono { font-family:var(--m); color:var(--gold-2); }
+.btn-block { width:100%; }
+@media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .fm-pulse { animation:none; opacity:0; } .btn { transition:none; } }
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#top">Karim Atassi, MD</a>
+  <nav class="nav-l" aria-label="Sections"><a href="#idea">The idea</a><a href="#talks">Talks</a><a href="#assessment">Assessment</a><a href="#about">About</a></nav>
+  <button type="button" class="btn btn-a" data-book="talk">Book a talk</button>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+  <div>
+    <p class="k">The lifestyle doctor</p>
+    <h1>Environment triumphs will.</h1>
+    <p class="lede">Karim Atassi, MD helps people improve their health by changing their environment. Book him to speak at your company, wellness space or workshop.</p>
+    <div class="row"><button type="button" class="btn btn-ox" data-book="talk">Book a talk</button><a class="btn btn-b" href="#assessment">Get your assessment</a></div>
+  </div>
+  <figure class="hero-v"><video muted loop playsinline preload="none" poster="assets/tedx.jpg" data-src="assets/tedx.mp4" aria-label="Karim Atassi, MD, speaking at TEDxMcGill"></video><figcaption>TEDxMcGill</figcaption></figure>
+</div></section>
+
+<div class="press"><div class="wrap"><p class="k">As seen on</p><ul><li><img src="assets/press/cbc.svg" alt="CBC" style="height:30px"></li><li><img src="assets/press/tedx-mcgill.svg" alt="TEDxMcGill" style="height:20px"></li><li><img src="assets/press/valuetainment.png" alt="Valuetainment" style="height:36px"></li><li><img src="assets/press/radio-canada.svg" alt="Radio-Canada" style="height:26px"></li><li><img src="assets/press/calgary-sun.svg" alt="Calgary Sun" style="height:13px"></li><li><img src="assets/press/mcgill-reporter.png" alt="McGill Reporter" style="height:12px"></li></ul></div></div>
+
+<section class="idea" id="idea"><div class="wrap">
+  <div>
+    <p class="k">The idea</p>
+    <h2>Outside-to-inside care.</h2>
+    <p class="lede">Your health is shaped all day by the people and places around you. Willpower gets you through a moment. Your environment decides the rest of the week.</p>
+    <ul class="dir">
+      <li><b>Inside to outside</b><span>Symptoms, labs, prescriptions. Essential, and the way medicine is built.</span></li>
+      <li class="on"><b>Outside to inside</b><span>Who you eat with, where you work, where you drink your coffee, what you read before bed. Karim starts here.</span></li>
+    </ul>
+  </div>
+  <svg class="field" viewBox="0 0 560 400" role="img" aria-label="Seven parts of your environment (physical, mental, social, vocational, financial, intellectual and spiritual) feed into your habits, and your habits feed into your health.">
+<circle cx="280" cy="205" r="150" class="fm-ring"/><circle cx="280" cy="205" r="100" class="fm-ring soft"/><line x1="280.0" y1="55.0" x2="280" y2="205" class="fm-spoke"/><line x1="397.3" y1="111.5" x2="280" y2="205" class="fm-spoke"/><line x1="426.2" y1="238.4" x2="280" y2="205" class="fm-spoke"/><line x1="345.1" y1="340.1" x2="280" y2="205" class="fm-spoke"/><line x1="214.9" y1="340.1" x2="280" y2="205" class="fm-spoke"/><line x1="133.8" y1="238.4" x2="280" y2="205" class="fm-spoke"/><line x1="162.7" y1="111.5" x2="280" y2="205" class="fm-spoke"/>
+<circle cx="280" cy="205" r="56" class="fm-core"/>
+<text x="280" y="201" text-anchor="middle" class="fm-core-t">Your</text><text x="280" y="224" text-anchor="middle" class="fm-core-t">health</text>
+<text x="280" y="287" text-anchor="middle" class="fm-mid">Your habits</text>
+<circle cx="280.0" cy="55.0" r="6" class="fm-node"/><text x="280.0" y="39.0" text-anchor="middle" class="fm-lab">Physical</text><circle cx="280.0" cy="55.0" r="3.5" class="fm-pulse" style="--dx:0.0px;--dy:108.0px;animation-delay:0.00s"/><circle cx="397.3" cy="111.5" r="6" class="fm-node"/><text x="408.2" y="108.7" text-anchor="start" class="fm-lab">Mental</text><circle cx="397.3" cy="111.5" r="3.5" class="fm-pulse" style="--dx:-84.4px;--dy:67.3px;animation-delay:0.62s"/><circle cx="426.2" cy="238.4" r="6" class="fm-node"/><text x="439.9" y="247.5" text-anchor="start" class="fm-lab">Social</text><circle cx="426.2" cy="238.4" r="3.5" class="fm-pulse" style="--dx:-105.3px;--dy:-24.0px;animation-delay:1.24s"/><circle cx="345.1" cy="340.1" r="6" class="fm-node"/><text x="355.1" y="364.1" text-anchor="start" class="fm-lab">Vocational</text><circle cx="345.1" cy="340.1" r="3.5" class="fm-pulse" style="--dx:-46.9px;--dy:-97.3px;animation-delay:1.86s"/><circle cx="214.9" cy="340.1" r="6" class="fm-node"/><text x="204.9" y="364.1" text-anchor="end" class="fm-lab">Financial</text><circle cx="214.9" cy="340.1" r="3.5" class="fm-pulse" style="--dx:46.9px;--dy:-97.3px;animation-delay:2.48s"/><circle cx="133.8" cy="238.4" r="6" class="fm-node"/><text x="120.1" y="247.5" text-anchor="end" class="fm-lab">Intellectual</text><circle cx="133.8" cy="238.4" r="3.5" class="fm-pulse" style="--dx:105.3px;--dy:-24.0px;animation-delay:3.10s"/><circle cx="162.7" cy="111.5" r="6" class="fm-node"/><text x="151.8" y="108.7" text-anchor="end" class="fm-lab">Spiritual</text><circle cx="162.7" cy="111.5" r="3.5" class="fm-pulse" style="--dx:84.4px;--dy:67.3px;animation-delay:3.72s"/></svg>
+</div></section>
+
+<section class="talks" id="talks"><div class="wrap">
+  <p class="k">Talks</p>
+  <h2>What Karim speaks about.</h2>
+  <p class="lede">In person or virtual, built around your audience.</p>
+  <ul class="sig">
+    <li><p class="k">Main talk</p><h3>Environment triumphs will</h3><p>Why high performers should change their environment instead of pushing harder. Your audience leaves knowing which parts of their day are making their decisions for them, and one thing to change this week.</p></li>
+    <li><p class="k">Main talk</p><h3>Outside-to-inside care</h3><p>Healthcare looks from the inside out. This talk adds the other direction: the seven parts of a person's environment that shape their health, and how to read your own.</p></li>
+  </ul>
+  <p class="k more-k">Also available</p>
+  <ul class="more"><li>Why high performers never feel like they have enough, and the spiritual framework that changes it</li><li>Why successful executives can't find a partner who meets their expectations</li><li>Why high performers feel anxious and empty when everything is going right</li><li>Successful on paper, unhappy in life: the blind spot of high achievers</li><li>Why executives can't stick to a diet: change who you eat with</li><li>What your feed is doing to a leader's mind</li></ul>
+  <div class="fit">
+    <div><h3>Your company</h3><p>For teams who are doing well on paper and running on willpower.</p></div>
+    <div><h3>Your wellness space</h3><p>For members who already invest in their health and want to look at what surrounds it.</p></div>
+    <div><h3>Your workshop</h3><p>A working session where each person looks at their own seven areas and chooses what to change.</p></div>
+  </div>
+  <p class="fmt">Keynote · Workshop · Fireside chat · Panel · Podcast</p>
+  <div class="see">
+    <div class="see-w"><figure class="v wide"><video muted loop playsinline preload="none" poster="assets/tedx.jpg" data-src="assets/tedx.mp4" aria-label="TEDxMcGill: Speaker"></video><figcaption><b>TEDxMcGill</b><span>Speaker</span></figcaption></figure><figure class="v wide"><video muted loop playsinline preload="none" poster="assets/valuetainment.jpg" data-src="assets/valuetainment.mp4" aria-label="Valuetainment: SOSCast with Adam Sosnick"></video><figcaption><b>Valuetainment</b><span>SOSCast with Adam Sosnick</span></figcaption></figure></div>
+    <figure class="v tall"><video muted loop playsinline preload="none" poster="assets/ws-pods.jpg" data-src="assets/ws-pods.mp4" aria-label="Workshop: Leading a session"></video><figcaption><b>Workshop</b><span>Leading a session</span></figcaption></figure><figure class="v tall"><video muted loop playsinline preload="none" poster="assets/ws-table.jpg" data-src="assets/ws-table.mp4" aria-label="Workshop: Working session"></video><figcaption><b>Workshop</b><span>Working session</span></figcaption></figure>
+  </div>
+  <p class="see-more"><a href="https://www.youtube.com/watch?v=cXT3Ti8lx78" target="_blank" rel="noopener">Watch the full TEDxMcGill talk →</a></p>
+  <div class="row" style="margin-top:28px"><button type="button" class="btn btn-a" data-book="talk">Book a talk</button></div>
+</div></section>
+
+<section class="assess" id="assessment"><div class="wrap">
+  <div class="as-top">
+    <div>
+      <p class="k">The 7-dimension assessment</p>
+      <h2>Find out what in your environment is holding your health back.</h2>
+      <p class="lede">A one-on-one look at all seven parts of your environment with Karim. You find out what to change, and in what order.</p>
+      <ul class="get"><li>A 90-minute session with Karim</li><li>A written report scoring all seven areas</li><li>A 90-day plan for what to change</li><li>A 30-minute review of your first steps</li></ul>
+      <p class="price"><b>$799</b><span>CAD · Results or 100% money back*</span></p>
+      <div class="row"><button type="button" class="btn btn-ox" data-book="assess">Book a free 15-min call</button><a class="btn btn-ink" href="../#offer" target="_blank" rel="noopener">See everything included</a></div>
+      <p class="g">*Attend both sessions and work through your plan. If you still don't feel it helped you make a transformational change within 90 days, get a full refund, no questions asked.</p>
+    </div>
+    <aside class="rep" aria-label="Sample report, for illustration">
+      <p class="rep-h"><span>Sample report</span><span>Goal: find a partner</span></p>
+      <ul><li><span>Physical</span><i style="--v:60%"></i><b>6</b></li><li><span>Mental</span><i style="--v:70%"></i><b>7</b></li><li class=flag><span>Social</span><i style="--v:30%"></i><b>3</b></li><li><span>Vocational</span><i style="--v:40%"></i><b>4</b></li><li><span>Financial</span><i style="--v:70%"></i><b>7</b></li><li><span>Intellectual</span><i style="--v:80%"></i><b>8</b></li><li><span>Spiritual</span><i style="--v:60%"></i><b>6</b></li></ul>
+      <p class="rep-f"><b>Social</b> is what's holding this goal back.</p>
+    </aside>
+  </div>
+  <ul class="dims"><li><b>Physical</b><span>Your kitchen, your bedroom, how you move through a day</span></li><li><b>Mental</b><span>What drains you and what restores you</span></li><li><b>Social</b><span>Who you eat with and who you spend your evenings with</span></li><li><b>Vocational</b><span>Where you work and what it asks of you</span></li><li><b>Financial</b><span>Where you drink your coffee, and what those rooms do for your money</span></li><li><b>Intellectual</b><span>Your feed and what you read</span></li><li><b>Spiritual</b><span>What you value, and whether your days reflect it</span></li></ul>
+</div></section>
+
+<section class="about" id="about"><div class="wrap">
+  <img src="assets/karim-portrait.jpg" alt="Portrait of Karim Atassi, MD">
+  <div>
+    <p class="k">About</p>
+    <h2>Karim Atassi, MD</h2>
+    <p>Karim Atassi is a lifestyle doctor who helps high performers and executives reach their life goals by changing their environment instead of relying on willpower.</p>
+    <p>His focus is social health, which he calls the under-recognized pillar of longevity. He has helped hundreds of people find partners, find exits in their careers, reconnect with their purpose, change their habits and improve their finances.</p>
+    <p>It started in medical school. Karim kept seeing that most of his patients' problems came from their social health, yet the traditional model never asked about their careers, money, relationships, spiritual understanding or the information they feed their minds.</p>
+    <ul class="hon"><li><b>MD</b><span>McGill University</span></li><li><b>Family Medicine</b><span>McMaster University</span></li><li><b>Global Shaper</b><span>World Economic Forum</span></li><li><b>30 Under 30</b><span>Canadian Arab Institute, 2026</span></li><li><b>Top 500 Young Arab Leaders</b><span>Government of the UAE</span></li><li><b>G20 Young Entrepreneurs' Alliance</b><span>Delegate, 2022</span></li><li><b>Dave Williams Leadership Award</b><span>From astronaut Dave Williams</span></li><li><b>Co-founder, SE7EN</b><span>Concierge clinic for high performers and executives</span></li></ul>
+  </div>
+</div></section>
+
+<section class="book" id="book"><div class="wrap">
+  <p class="k">Book Karim</p>
+  <h2>Bring this to your people.</h2>
+  <p class="lede">Pick a time for a 15-minute call and tell Karim about your event.</p>
+  <div class="row"><button type="button" class="btn btn-a" data-book="talk">Book a talk</button></div>
+  <p class="mail"><span>Or email</span> <code id="mailAddr">karim.atassi@medportal.ca</code> <button type="button" class="linkbtn" id="mailCopy">Copy</button></p>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <p><strong>The assessment is coaching, not healthcare.</strong> Karim holds a medical degree, but he is not your doctor in this service: no diagnosis, treatment or prescriptions, and no doctor–patient relationship is created. Keep your own healthcare providers. Not covered by OHIP. In crisis, call or text 9-8-8, or call 911.</p>
+  <p><a href="https://www.instagram.com/karimatassimd/" target="_blank" rel="noopener">Instagram</a> · © 2026 Karim Atassi, MD</p>
+</div></footer>
+
+<dialog id="dlg-infocall" class="bk" aria-labelledby="bkTitle">
+  <button type="button" class="bk-close" id="bkClose" aria-label="Close">×</button>
+  <p class="k" id="bkKicker">Free · 15 minutes · video</p>
+  <h2 id="bkTitle">Book a talk</h2>
+  <p class="bk-lede" id="bkLede"></p>
+  <p class="bk-note" id="bkNote" hidden>Online booking isn't active on this preview link. Email karim.atassi@medportal.ca to book.</p>
+  <div id="bkPick">
+    <p class="bk-k">Pick a day</p>
+    <div class="bk-days" id="bkDays" role="tablist" aria-label="Day"></div>
+    <p class="bk-k">Pick a time <span>Toronto time</span></p>
+    <div class="bk-slots" id="bkSlots"></div>
+    <p class="bk-status" id="bkStatus" hidden></p>
+  </div>
+  <form id="bkForm" class="bk-form" hidden>
+    <p class="bk-when"><span id="bkWhen"></span> <button type="button" class="linkbtn" id="bkChange">Change</button></p>
+    <label>Name<input id="bkName" name="name" autocomplete="name" required maxlength="100"></label>
+    <label>Email<input id="bkEmail" name="email" type="email" autocomplete="email" required maxlength="160"></label>
+    <label>Phone<input id="bkPhone" name="phone" type="tel" autocomplete="tel" required minlength="7" maxlength="25"></label>
+    <label><span id="bkAsk">Tell Karim about your event</span><textarea id="bkPain" name="pain" rows="4" required maxlength="1000"></textarea></label>
+    <label class="bk-hp" aria-hidden="true">Leave empty<input id="bkCompany" name="company" tabindex="-1" autocomplete="off"></label>
+    <p class="bk-fine">You'll get a calendar invite with a Google Meet link. What you write here is only seen by Karim.</p>
+    <button type="submit" class="btn btn-a btn-block" id="bkSubmit">Confirm</button>
+    <p class="bk-err" id="bkErr" role="alert" hidden></p>
+  </form>
+  <div id="bkDone" class="bk-done" hidden>
+    <p class="bk-tick" aria-hidden="true">✓</p>
+    <h3>You're booked.</h3>
+    <p id="bkDoneWhen" class="mono"></p>
+    <p class="bk-lede">Check your email for the calendar invite and Google Meet link.</p>
+  </div>
+</dialog>
+
+<script>
+  window.SE7EN_CONFIG = { booking: {
+    endpoint: "https://script.google.com/macros/s/AKfycbyIas9uzJcXmro8E8pMTbyov8wJHQS9FOkZAOlL0vJb8TZoZSvEYhzHcIEhXOL4iil6/exec",
+    tz: "America/Toronto", days: 21, noticeHours: 12,
+    types: { intro: { label: "Free 15-min call", minutes: 15, step: 15, public: true } },
+    hours: { 1: [["12:00","15:00"],["18:00","21:00"]], 2: [["12:00","15:00"],["18:00","21:00"]], 3: [["12:00","15:00"],["18:00","21:00"]], 4: [["12:00","15:00"],["18:00","21:00"]], 5: [["12:00","15:00"],["18:00","21:00"]], 6: [["10:00","12:00"]] }
+  } };
+</script>
+<script src="booking.js"></script>
+<script>
+(() => {
+  const dlg = document.getElementById("dlg-infocall");
+  document.querySelectorAll("[data-book]").forEach((b) => b.addEventListener("click", () => {
+    dlg.showModal(); window.SE7EN_BOOK.open("intro", b.dataset.book);
+  }));
+  document.getElementById("bkClose").addEventListener("click", () => dlg.close());
+  dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); });
+
+  const copy = document.getElementById("mailCopy");
+  copy.addEventListener("click", async () => {
+    const addr = document.getElementById("mailAddr");
+    try { await navigator.clipboard.writeText(addr.textContent); copy.textContent = "Copied"; }
+    catch (e) { const r = document.createRange(); r.selectNodeContents(addr); const s = getSelection(); s.removeAllRanges(); s.addRange(r); }
+  });
+
+  // Videos start after the page has loaded, one at a time. Phones play each one while it's on screen.
+  // Data-saver, reduced motion or a blocked autoplay keep the still with a play mark; a tap plays it.
+  const vids = [...document.querySelectorAll("video[data-src]")];
+  const load = (v) => { if (!v.src) v.src = v.dataset.src; return v.play().catch(() => {}); };
+  const light = (navigator.connection && navigator.connection.saveData) || matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const phone = innerWidth < 761;
+  vids.forEach((v) => {
+    const box = v.parentElement;
+    if (light || phone) box.classList.add("is-idle");
+    v.addEventListener("playing", () => box.classList.remove("is-idle"));
+    box.addEventListener("click", () => { if (v.paused) { v.dataset.held = ""; load(v); } else { v.dataset.held = "1"; v.pause(); box.classList.add("is-idle"); } });
+  });
+  if (!light && phone && "IntersectionObserver" in window) {
+    const seen = new IntersectionObserver((es) => es.forEach((e) => {
+      const v = e.target;
+      if (e.isIntersecting) { if (!v.dataset.held) load(v); }
+      else if (!v.paused) { v.pause(); v.parentElement.classList.add("is-idle"); }
+    }), { threshold: 0.6 });
+    vids.forEach((v) => seen.observe(v));
+  } else if (!light) addEventListener("load", () => vids.forEach((v, i) => setTimeout(() => load(v), 700 + i * 900)));
+})();
+</script>
+</body>
+</html>
