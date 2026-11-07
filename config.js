@@ -66,8 +66,8 @@ window.SE7EN_CONFIG = {
   // hook = pain line above the headline. A "|" in h splits it; the part after renders muted.
   headlines: [
     { hook: "The MD-led executive performance coaching clinic",
-      h: "Find what's standing in the way of your executive performance.",
-      sub: "Three steps, one MD, $699. Results or 100% of your money back.*" },
+      h: "Outperform every executive in the room. | Get your own wellness care team, built for exactly your goals.",
+      sub: "Vetted specialists working on every area of your wellness to boost your performance and hit your life goals, mapped out by Karim Atassi, MD, in 90 days. Results or 100% of your money back.*" },
     { hook: "Get an MD as your life coach",
       h: "Your doctor treats your health. | This MD uncovers how your social habits are impacting it.",
       sub: "Get an MD-built plan that tells you exactly what to change each week, in the next 90 days. It starts with one 90-minute conversation." },
