@@ -97,7 +97,7 @@
     if (h.hook) ($("[data-hook]") || {}).textContent = h.hook;
     if (h.final && $("#finalH")) $("#finalH").textContent = h.final;
     if (h.worth && $("#worthA")) $("#worthA").textContent = h.worth;
-    // ad visitors are cold: the free call leads, the $799 booking follows
+    // ad visitors are cold: the free call leads, the $699 booking follows
     if (h.key && $("#heroCall") && $("#heroBook")) {
       $("#heroCall").className = "btn btn-primary"; $("#heroBook").className = "btn btn-ghost";
       $("#heroBook").parentNode.insertBefore($("#heroCall"), $("#heroBook"));
@@ -468,7 +468,7 @@
   });
   const LEGAL = {
     privacy: ["Privacy", `<p>${SE_HTML} collects only what's needed to coach you, and only Karim sees it.</p><p><b>What we collect.</b> Your name, email and phone; what you write when you book; your intake answers, session notes, 360° Life Report and plan. Payments are handled by our payment provider; we never see your card.</p><p><b>How it's used.</b> Only to deliver your coaching. It is never sold, and never shared with your employer, insurer or anyone else.</p><p><b>Not a medical record.</b> ${SE_HTML} is coaching, not healthcare, so no health record is created.</p><p><b>AI.</b> We never put what you share into an AI tool. Your AI-ready copy is yours to use only if you choose, and GROW's custom AI coach is set up only if you ask for it.</p><p><b>Your rights.</b> Ask for a copy of your information at any time, and when you finish, ask for it to be deleted; we'll delete it.</p>`],
-    terms: ["Terms", `<p><b>What you buy.</b> The 90-day program: a short online intake, a 90-minute assessment and a 30-minute review with Karim by video, your 360° Life Report within 72 hours of your assessment, your 90-Day Transformation Plan and an AI-ready copy of your report. $799 CAD plus HST.</p><p><b>Results or 100% money back.</b> Attend both sessions and work through your plan. If you still don't feel it helped you make a transformational change within 90 days, get a full refund, no questions asked.</p><p><b>Coaching, not healthcare.</b> ${SE_HTML} provides coaching only. It does not diagnose, treat or prescribe, and it does not replace your doctor, therapist, or financial or legal advisor.</p><p><b>Questions.</b> Email Karim before you book.</p>`],
+    terms: ["Terms", `<p><b>What you buy.</b> The 90-day program: a short online intake, a 90-minute assessment and a 30-minute review with Karim by video, your 360° Life Report within 72 hours of your assessment, your 90-Day Transformation Plan and an AI-ready copy of your report. $699 CAD plus HST.</p><p><b>Results or 100% money back.</b> Attend both sessions and work through your plan. If you still don't feel it helped you make a transformational change within 90 days, get a full refund, no questions asked.</p><p><b>Coaching, not healthcare.</b> ${SE_HTML} provides coaching only. It does not diagnose, treat or prescribe, and it does not replace your doctor, therapist, or financial or legal advisor.</p><p><b>Questions.</b> Email Karim before you book.</p>`],
   };
 
   document.addEventListener("click", (e) => {
@@ -485,7 +485,7 @@
     } else if (kind === "apply") {
       const tier = t.dataset.tier, T = (CFG.tiers || {})[tier] || {};
       const copy = {
-        grow: ["Weekly support", "GROW", "Everything in the $799 program, plus 4 weekly 1-hour sessions with Karim over 30 days and an optional custom AI coach, with accountability standards to keep you on track toward your goal. Tell us your goal and we'll confirm fit."],
+        grow: ["Weekly support", "GROW", "Everything in the $699 program, plus 4 weekly 1-hour sessions with Karim over 30 days and an optional custom AI coach, with accountability standards to keep you on track toward your goal. Tell us your goal and we'll confirm fit."],
         platinum: ["Limited to 7 people", "TRANSFORM", "A seat among the 7 founding members: everything in GROW, plus a social concierge, a personalized Google Map of the restaurants, cafés and venues that fit your goal, a 30-day event calendar, members' dinners with Karim, the NYE Resolution Retreat and a direct line to Karim. $7,000. Tell us your goal and we'll confirm fit."],
       }[tier];
       $("#ap-kicker").textContent = copy[0]; $("#ap-title").textContent = copy[1]; $("#ap-body").textContent = copy[2];
@@ -708,7 +708,7 @@
       const picks = [].concat(next || []);
       const tier = picks.includes("High-touch support, start to finish.") ? "platinum" : picks.includes("Weekly sessions to help me carry it out.") ? "grow" : "reset";
       const R = {
-        grow: ["GROW", "$2,499 · 30 days", "Everything in the $799 program, plus your custom GPT, 4 weekly 1-hour sessions with Karim over 30 days, and Accountability Standards.", `<button type="button" class="btn btn-primary" data-open="apply" data-tier="grow" data-loc="checkin_result">Go for GROW</button>`],
+        grow: ["GROW", "$2,499 · 30 days", "Everything in the $699 program, plus your custom GPT, 4 weekly 1-hour sessions with Karim over 30 days, and Accountability Standards.", `<button type="button" class="btn btn-primary" data-open="apply" data-tier="grow" data-loc="checkin_result">Go for GROW</button>`],
         platinum: ["TRANSFORM", "$7,000 · 7 founding seats", "Everything in GROW, plus a founding seat in our private members' club: social concierge, personalized Google Map and event calendar, members' dinners, the NYE Resolution Retreat and a direct line to Karim.", `<button type="button" class="btn btn-primary" data-open="apply" data-tier="platinum" data-loc="checkin_result">Apply for TRANSFORM</button>`],
         reset: ["The 90-day program", `$${fmt(PRICE)} · once`, "Your 90-minute 7-in-1 Assessment, your 360° Life Report within 72 hours (plus an AI-ready copy), your 90-Day Transformation Plan and a 30-minute review with Karim.", `<button type="button" class="btn btn-primary" data-open="checkout" data-loc="checkin_result">Get started — $${fmt(PRICE)}</button>`],
       };
