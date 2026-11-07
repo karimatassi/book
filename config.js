@@ -65,9 +65,9 @@ window.SE7EN_CONFIG = {
   // Hero A/B test. Visit ?h=2, ?h=3 ... to preview a variant; put the workshop QR on the winner.
   // hook = pain line above the headline. A "|" in h splits it; the part after renders muted.
   headlines: [
-    { hook: "The MD-led executive performance program",
-      h: "Boost your executive performance. | Hit your life and health goals in 90 days.",
-      sub: "Get an MD-led life assessment that uncovers how to tune every area of your health to boost your performance and reach your life goals. Then get a 90-day transformation plan and a detailed referral breakdown of the providers you need, so you can build your own personal concierge care team. Results or 100% of your money back.*" },
+    { hook: "The MD-led executive performance coaching clinic",
+      h: "Find what's standing in the way of your executive performance.",
+      sub: "Three steps, one MD, $699. Results or 100% of your money back.*" },
     { hook: "Get an MD as your life coach",
       h: "Your doctor treats your health. | This MD uncovers how your social habits are impacting it.",
       sub: "Get an MD-built plan that tells you exactly what to change each week, in the next 90 days. It starts with one 90-minute conversation." },
@@ -79,10 +79,10 @@ window.SE7EN_CONFIG = {
       sub: "Uncover the hidden areas of your wellness that are limiting you from achieving your goal." },
     { hook: "MD-led life assessment · Toronto",
       h: "Find what's blocking your goal. | A 90-minute MD-led assessment of your whole life.",
-      sub: "Evidence-based assessment with Karim Atassi, MD · written report in 72 hours · 90-day plan · your care team referrals." },
+      sub: "Evidence-based assessment with Karim Atassi, MD · written report in 72 hours · 90-day plan · your personalized wellness care team." },
     { hook: "MD-led life coaching · Toronto",
       h: "Your doctor treats your health. | An MD life coach helps you care for your life as a whole.",
-      sub: "Evidence-based assessment with Karim Atassi, MD · written report in 72 hours · 90-day plan · your care team referrals." },
+      sub: "Evidence-based assessment with Karim Atassi, MD · written report in 72 hours · 90-day plan · your personalized wellness care team." },
     // Ad variants by segment: index.html?h=partner · ?h=solo · ?h=clarity (also opens the matching problem card)
     { key: "partner", card: 5,
       why: "Why an MD? Doctors are trained to find the one cause behind many symptoms. Here, that means finding which areas of your life are holding your goal back.",
@@ -127,16 +127,16 @@ window.SE7EN_CONFIG = {
   // Source: SE7EN_Testimonials.md (Karim, Oct 28 2026), first name + role only.
   // client: true = coaching; false = worked with Karim on a project (shown with a "Worked together" tag).
   testimonials: [
-    { name: "R.M.", photo: "assets/clients/rami.jpg?v=2", role: "Physician", topic: "Sleep", client: true, quote: "As a doctor I'm terrible at taking my own advice. This gave me structure. I'm sleeping more and I actually have my evenings back." },
     { name: "N.S.", photo: "assets/clients/nour.jpg?v=2", role: "VP, Sales & Operations", topic: "Burnout & stress", client: true, quote: "I was pretty burnt out in sales and kept going back and forth on leaving. Karim didn't push me either way. He helped me figure out what I actually wanted and a plan I could afford. That alone was worth it." },
-    { name: "L.R.", photo: "assets/clients/lara.jpg?v=2", role: "Consultant", topic: "Loneliness", client: true, quote: "Moved to Toronto for work and realized all my “friends” were coworkers. The plan was super practical, like which places to go and when. I have a real group now." },
-    { name: "A.A.", photo: "assets/clients/abdullatif.jpg?v=2", role: "Consultant", topic: "Focus", client: true, quote: "I overthink everything. Karim made me pick one thing and put a date on it. That's it. It worked." },
-    { name: "L.A.", photo: "assets/clients/lydia.jpg?v=2", role: "Dentist", topic: "Clarity", client: true, quote: "Short and to the point. He caught two things I'd been avoiding for years. I still have the list on my fridge." },
     { name: "J.H.", photo: "assets/clients/juliet.jpg?v=2", role: "VP, Business Development", topic: "Love", client: true, quote: "I went in thinking my problem was dating. Turns out I was just around the same people all the time, mostly from work. Karim had me change where I spend my evenings and honestly my whole social life changed. Wish I'd done it two years ago." },
-    { name: "A.J.", photo: "assets/clients/andrea.jpg?v=2", role: "Fashion Influencer", topic: "Dating", client: true, quote: "He picked up on how I communicate when I'm stressed within about 20 minutes. Kind of annoying how right he was. It's helped with my partner, my family, everyone." },
-    { name: "A.A.", photo: "assets/clients/ajamu.jpg?v=2", role: "EdTech Entrepreneur", topic: "Building", client: true, quote: "Karim helped me take a big idea and actually make it real. He knows how to get the right people in a room. We ended up closing a major institutional partner." },
     { name: "J.P.", photo: "assets/clients/justin.jpg?v=2", role: "VP, Business Development", topic: "Building", client: true, quote: "I'd been talking about starting something on the side for years. Karim helped me stop talking and start. It's live now." },
     { name: "S.M.", photo: "assets/clients/sultan.jpg?v=2", role: "FinTech Entrepreneur", topic: "Building", client: true, quote: "Karim knows how to connect people. A couple of his introductions completely changed where my company went." },
+    { name: "A.A.", photo: "assets/clients/ajamu.jpg?v=2", role: "EdTech Entrepreneur", topic: "Building", client: true, quote: "Karim helped me take a big idea and actually make it real. He knows how to get the right people in a room. We ended up closing a major institutional partner." },
+    { name: "L.R.", photo: "assets/clients/lara.jpg?v=2", role: "Consultant", topic: "Loneliness", client: true, quote: "Moved to Toronto for work and realized all my “friends” were coworkers. The plan was super practical, like which places to go and when. I have a real group now." },
+    { name: "A.A.", photo: "assets/clients/abdullatif.jpg?v=2", role: "Consultant", topic: "Focus", client: true, quote: "I overthink everything. Karim made me pick one thing and put a date on it. That's it. It worked." },
+    { name: "R.M.", photo: "assets/clients/rami.jpg?v=2", role: "Physician", topic: "Sleep", client: true, quote: "As a doctor I'm terrible at taking my own advice. This gave me structure. I'm sleeping more and I actually have my evenings back." },
+    { name: "L.A.", photo: "assets/clients/lydia.jpg?v=2", role: "Dentist", topic: "Clarity", client: true, quote: "Short and to the point. He caught two things I'd been avoiding for years. I still have the list on my fridge." },
+    { name: "A.J.", photo: "assets/clients/andrea.jpg?v=2", role: "Fashion Influencer", topic: "Dating", client: true, quote: "He picked up on how I communicate when I'm stressed within about 20 minutes. Kind of annoying how right he was. It's helped with my partner, my family, everyone." },
   ],
 
   // Honest scarcity only: a real number of open spots this month, or null to hide.
