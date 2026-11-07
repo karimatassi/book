@@ -65,9 +65,9 @@ window.SE7EN_CONFIG = {
   // Hero A/B test. Visit ?h=2, ?h=3 ... to preview a variant; put the workshop QR on the winner.
   // hook = pain line above the headline. A "|" in h splits it; the part after renders muted.
   headlines: [
-    { hook: "Transform your life in 90 days or 100% of your money back",
-      h: "Your doctor sees your health. Your coach sees your life. | This MD sees both.",
-      sub: "We help executives and high performers tune every dimension of their health toward their performance and health goals. In one 90-minute session, an MD finds what's holding you back, then hands you a 90-day plan to get there." },
+    { hook: "The MD-led transformation program for executives",
+      h: "Boost your executive performance. | Hit your life and health goals in 90 days.",
+      sub: "One whole-life assessment with Karim Atassi, MD shows exactly what to tune across all 7 areas of your health. Then we build your personal board of health directors: vetted, licensed, leading providers in Toronto. Results or 100% of your money back.*" },
     { hook: "Get an MD as your life coach",
       h: "Your doctor treats your health. | This MD uncovers how your social habits are impacting it.",
       sub: "Get an MD-built plan that tells you exactly what to change each week, in the next 90 days. It starts with one 90-minute conversation." },
@@ -79,10 +79,10 @@ window.SE7EN_CONFIG = {
       sub: "Uncover the hidden areas of your wellness that are limiting you from achieving your goal." },
     { hook: "MD-led life assessment · Toronto",
       h: "Find what's blocking your goal. | A 90-minute MD-led assessment of your whole life.",
-      sub: "Evidence-based assessment with Karim Atassi, MD · written report in 72 hours · 90-day plan · 1:1 review." },
+      sub: "Evidence-based assessment with Karim Atassi, MD · written report in 72 hours · 90-day plan · your board of health directors." },
     { hook: "MD-led life coaching · Toronto",
       h: "Your doctor treats your health. | An MD life coach helps you care for your life as a whole.",
-      sub: "Evidence-based assessment with Karim Atassi, MD · written report in 72 hours · 90-day plan · 1:1 review." },
+      sub: "Evidence-based assessment with Karim Atassi, MD · written report in 72 hours · 90-day plan · your board of health directors." },
     // Ad variants by segment: index.html?h=partner · ?h=solo · ?h=clarity (also opens the matching problem card)
     { key: "partner", card: 5,
       why: "Why an MD? Doctors are trained to find the one cause behind many symptoms. Here, that means finding which areas of your life are holding your goal back.",
@@ -116,7 +116,7 @@ window.SE7EN_CONFIG = {
   // Risk reversal. Set to "" to hide. Have counsel review before taking payment.
   guarantee: {
     title: "Results or 100% money back",
-    text: "Attend both sessions and work through your plan. If you still don't feel it helped you make a transformational change within 90 days, get a full refund, no questions asked.",  // Karim, Oct 28 2026: conditional on attending both sessions and working the plan; the client judges, claims by email
+    text: "Attend your assessment and work through your plan. If you still don't feel it helped you make a transformational change within 90 days, get a full refund, no questions asked.",  // Karim, Oct 28 2026: conditional on attending both sessions and working the plan; the client judges, claims by email
   },
 
   // Real client testimonials only (with written permission). Each: { quote, name, role, photo }.
