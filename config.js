@@ -50,7 +50,7 @@ window.SE7EN_CONFIG = {
   // (?utm_source=workshop or ?venue=...). Leave "" to always show the pain hook.
   workshopHook: "You heard Karim at the workshop. Here's the next step.",
 
-  prices: { reset: 699, currency: "CAD" },  // The Life Diagnostic (Karim, Nov 6 2026)
+  prices: { reset: 699, currency: "CAD" },  // back to 699 (Karim, Nov 6 2026)
 
   // The offer ladder. RESET is booked directly; GROW and PLATINUM open by application.
   // applyUrl = a form (Tally / Typeform / Google Form). Empty = "Applications open shortly" + contact line.
@@ -65,11 +65,11 @@ window.SE7EN_CONFIG = {
   // Hero A/B test. Visit ?h=2, ?h=3 ... to preview a variant; put the workshop QR on the winner.
   // hook = pain line above the headline. A "|" in h splits it; the part after renders muted.
   headlines: [
-    { hook: "For executives and high performers",
-      h: "Tune every area of your life. | Perform at your peak.",
-      sub: "A whole-life assessment that finds what's holding back your performance, and a plan to fix it." },
+    { hook: "Transform your life in 90 days or 100% of your money back",
+      h: "Your doctor sees your health. Your coach sees your life. | This MD sees both.",
+      sub: "We help executives and high performers tune every dimension of their health toward their performance and health goals. In one 90-minute session, an MD finds what's holding you back, then hands you a 90-day plan to get there." },
     { hook: "Get an MD as your life coach",
-      h: "Your doctor treats your health. | This MD tunes the rest of your life for performance.",
+      h: "Your doctor treats your health. | This MD uncovers how your social habits are impacting it.",
       sub: "Get an MD-built plan that tells you exactly what to change each week, in the next 90 days. It starts with one 90-minute conversation." },
     { hook: "Get an MD as your life coach",
       h: "Successful on paper. Stuck in real life. | An MD finds what's holding you back in 90 minutes.",
@@ -79,10 +79,10 @@ window.SE7EN_CONFIG = {
       sub: "Uncover the hidden areas of your wellness that are limiting you from achieving your goal." },
     { hook: "MD-led life assessment · Toronto",
       h: "Find what's blocking your goal. | A 90-minute MD-led assessment of your whole life.",
-      sub: "Evidence-based assessment with Karim Atassi, MD · written report in 72 hours · 90-day plan · provider referrals." },
+      sub: "Evidence-based assessment with Karim Atassi, MD · written report in 72 hours · 90-day plan · 1:1 review." },
     { hook: "MD-led life coaching · Toronto",
       h: "Your doctor treats your health. | An MD life coach helps you care for your life as a whole.",
-      sub: "Evidence-based assessment with Karim Atassi, MD · written report in 72 hours · 90-day plan · provider referrals." },
+      sub: "Evidence-based assessment with Karim Atassi, MD · written report in 72 hours · 90-day plan · 1:1 review." },
     // Ad variants by segment: index.html?h=partner · ?h=solo · ?h=clarity (also opens the matching problem card)
     { key: "partner", card: 5,
       why: "Why an MD? Doctors are trained to find the one cause behind many symptoms. Here, that means finding which areas of your life are holding your goal back.",
@@ -91,22 +91,22 @@ window.SE7EN_CONFIG = {
       hook: "MD-led life coaching for corporate professionals",
       compare: "Most help looks at one area of your life. | We assess all 7 to uncover what's limiting your goal, then change your environment so you reach it.",
       h: "Want a partner, but something keeps getting in the way? | Find out what in your life is limiting you, and change your environment to meet them.",
-      sub: "One 90-minute whole-life assessment uncovers the areas of your life limiting your goal: your hours, energy, circle and environment. Your Life Diagnostic Report and 90-day plan show exactly what to change. Backed by the Clarity Guarantee.*" },
-    { key: "solo", card: 2, sum: "Thousands to start, and nobody connecting the pieces.", provs: [["Business Coach", "Vocational", "Works on the business, not your runway, energy or household.", "~$300 / session"], ["Financial Planner", "Financial", "Sees your portfolio, not whether your offer will sell.", "$1,500+ / plan"], ["Employment Lawyer", "Vocational", "Reads your contract, not your plan.", "~$400 / hour"], ["Career Coach", "Vocational", "Helps you find the next job, not build your own.", "~$200 / session"]], why: "Why an MD? Most people don't fail on the idea; they run out of runway or energy first. Karim assesses both, and he has co-founded a company himself.", alts: [["A financial planner", "sees your money"], ["A career coach", "sees your next job"], ["Mentors", "see their own path"]], worth: "One month of runway in our sample is $7,800. A fee-only planner starts around $1,500 and only sees your money. Timing the leap wrong costs far more than $799, and you're covered by the guarantee.", compare: "Planners, mentors and career coaches each see one piece. | We assess all 7 dimensions of your life to find what's really holding your launch back.", hook: "Leaving corporate? With Karim Atassi, MD · xCo-founder of Zatiq ($1.6M raised)",
+      sub: "One 90-minute whole-life assessment uncovers the areas of your life limiting your goal: your hours, energy, circle and environment. Your 360° Life Report and 90-day plan show exactly what to change. Or receive 100% of your money back.*" },
+    { key: "solo", card: 2, sum: "Thousands to start, and nobody connecting the pieces.", provs: [["Business Coach", "Vocational", "Works on the business, not your runway, energy or household.", "~$300 / session"], ["Financial Planner", "Financial", "Sees your portfolio, not whether your offer will sell.", "$1,500+ / plan"], ["Employment Lawyer", "Vocational", "Reads your contract, not your plan.", "~$400 / hour"], ["Career Coach", "Vocational", "Helps you find the next job, not build your own.", "~$200 / session"]], why: "Why an MD? Most people don't fail on the idea; they run out of runway or energy first. Karim assesses both, and he has co-founded a company himself.", alts: [["A financial planner", "sees your money"], ["A career coach", "sees your next job"], ["Mentors", "see their own path"]], worth: "One month of runway in our sample is $7,800. A fee-only planner starts around $1,500 and only sees your money. Timing the leap wrong costs far more than $699, and you're covered by the guarantee.", compare: "Planners, mentors and career coaches each see one piece. | We assess all 7 dimensions of your life to find what's really holding your launch back.", hook: "Leaving corporate? With Karim Atassi, MD · xCo-founder of Zatiq ($1.6M raised)",
       h: "Ten years in corporate. | Ready to build your own, without blowing up your finances?",
-      sub: "One 90-minute whole-life assessment finds what's really holding you back: your runway, your energy, your network. Your Life Diagnostic Report and 90-day plan take you to a tested next step and a decision date. Backed by the Clarity Guarantee.*" },
+      sub: "One 90-minute whole-life assessment finds what's really holding you back: your runway, your energy, your network. Your 360° Life Report and 90-day plan take you to a tested next step and a decision date. Or receive 100% of your money back.*" },
     { key: "clarity", sum: "Hundreds spent, and still no direction.", provs: [["Personality Tests", "Intellectual", "Tell you your type, not what to try next.", "~$100 / test"], ["Career Coach", "Vocational", "Sees your job, not the rest of your week.", "~$200 / session"], ["Online Courses", "Intellectual", "More learning, no decision.", "$500+ / course"], ["Therapist", "Mental", "Essential for your mind, but not set up to test a direction.", "~$170 / session"]], why: "Why an MD? Feeling all over the place is often a sleep, energy or workload problem that looks like a purpose problem. Karim looks at those first, so you don't chase a new direction to fix a tired week.", alts: [["Personality tests", "see your type"], ["Self-help books", "see someone else's life"], ["A career coach", "sees your job"]], worth: "A career coach is about $200 a session and only sees your job. The program looks at all seven areas and ends with two tested directions and a decision date. Covered by the guarantee.", compare: "Tests and books each see one piece. | We assess all 7 dimensions of your life to show where your time, money and energy actually go.", hook: "MD-led life coaching for corporate professionals",
       h: "Successful on paper. | Not sure what you actually want?",
-      sub: "One 90-minute whole-life assessment shows where your time, money and energy really go. Your Life Diagnostic Report and 90-day plan turn that into two experiments and one clear direction. Backed by the Clarity Guarantee.*" }
+      sub: "One 90-minute whole-life assessment shows where your time, money and energy really go. Your 360° Life Report and 90-day plan turn that into two experiments and one clear direction. Or receive 100% of your money back.*" }
   ],
 
   // Credential strip under the hero. Edit to exactly what you're cleared to publish.
   credentials: [
-    "MD · McGill University",
-    "Family Medicine · McMaster University",
+    "MDCM · McGill University",
+    "Family Medicine · McMaster",
     "World Economic Forum Global Shaper",
     "G20 Young Entrepreneurs' Alliance Delegate",
-    "TEDxMcGill Speaker",
+    "TEDx Speaker",
   ],
   // Proof numbers Karim confirmed (Oct 28 2026). Keep them true.
   proof: { peopleHelped: "100+", workshops: "Dozens of" },
@@ -115,8 +115,8 @@ window.SE7EN_CONFIG = {
 
   // Risk reversal. Set to "" to hide. Have counsel review before taking payment.
   guarantee: {
-    title: "The Clarity Guarantee",
-    text: "If your Life Diagnostic doesn't reveal at least 3 things about your life you didn't know, or doesn't give you a clear plan to act on them, you get 100% of your money back.",  // Karim, Nov 6 2026
+    title: "Results or 100% money back",
+    text: "Attend both sessions and work through your plan. If you still don't feel it helped you make a transformational change within 90 days, get a full refund, no questions asked.",  // Karim, Oct 28 2026: conditional on attending both sessions and working the plan; the client judges, claims by email
   },
 
   // Real client testimonials only (with written permission). Each: { quote, name, role, photo }.
