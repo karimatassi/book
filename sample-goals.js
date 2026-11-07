@@ -1,63 +1,106 @@
-/* Sample 360° Life Report: one report, three example goals (partner · leaving corporate · purpose).
- * Deep links: sample.html?goal=solo · sample.html?goal=clarity */
+/* Sample 360° Life Report for executives (Nov 6 2026): three example goals (energy · burnout & sleep · weight).
+ * Flow: assessment → 360° Life Report → Transformation Plan → referrals to your personalized wellness care team.
+ * Deep links: sample.html?goal=burnout · sample.html?goal=weight */
 (function () {
   const AREAS = ["Physical", "Mental", "Social", "Vocational", "Financial", "Intellectual", "Spiritual"];
-  const PARTNER = {"tab": "Finding a partner", "goal": "Find a long-term partner.", "scores": [5, 6, 3, 4, 6, 7, 5], "rows": [["You average 5 h 40 of sleep on weeknights. Short sleep flattens mood and social drive, so weeknight plans feel like a chore and you cancel about 1 in 3.", "Tonight: set a 10:45 pm phone-down alarm and charge your phone outside the bedroom. This week: book one Saturday-morning group run at your nearest Running Room, so your workout doubles as a social plan."], ["Your stress score (PSS-10) peaks while you wait for replies, not before dates. Waiting to hear back drains more of your energy than the dates themselves.", "Before your next date, write down what you'll do if they don't reply within a day: a walk, a call to a friend, the gym. This week: pick your two nights out and protect them, and stop checking messages after 9 pm."], ["8 of your last 10 dates came from apps or bars, where people are choosing for the night, not for a partner. You've rarely been in a room selected for your values.", "This week: buy a ticket to the next AGO First Thursdays and bring one friend who's also single. Follow three Toronto hosts on Luma and RSVP to one dinner. Tell two friends you're open to being set up, and what you're looking for."], ["Your 60-hour weeks aren't fixed by the job. They're the result of never negotiating your hours since your last promotion.", "This week: send your manager a three-line note asking for two fixed 6 pm finishes. Block those two evenings in your calendar as social plans before anything else can take them."], ["Your spending jumps in your most stressful weeks: takeout, rideshares, impulse buys. You're spending to recover from work, which keeps you working more.", "Today: turn on weekly spending alerts in your banking app. This month: open a separate account and move $300 into it for events, classes and dinners, so your social life is funded on purpose."], ["You read about 20 books a year, all about work, and every room you learn in is full of colleagues.", "This week: sign up for one 8-week evening class outside your field, like a George Brown College continuing-education cooking course. New skill, new people, built-in conversation."], ["“Career first” became your core value after a hard breakup at 27. It protects you from rejection, and it's now what keeps partners at a distance.", "Tonight: write your 5 non-negotiables for a partner and for a life together, and reread them before your next date. This month: sign up for one volunteer shift through Volunteer Toronto for a cause you care about."]], "findings": [[["Vocational", "Social", "Mental"], "60-hour weeks push your dating into late-night bars, where you meet people who don't share your ambition. Each mismatch reinforces the belief that the right person doesn't exist."], [["Mental", "Spiritual", "Social"], "A hard breakup made \"career first\" feel safe. It protects you from rejection, and it also keeps partners at a distance."], [["Physical", "Financial", "Vocational"], "Under 6 hours of sleep and stress-spending keep you in a role that demands long hours. Your time problem is partly a money problem."]], "plan": [["Weeks 1–2", "Make room", ["Sleep reset: 7 hours, 5 nights a week", "Two hard stops at 6 pm, blocked in your calendar", "List your five non-negotiables for a partner"]], ["Weeks 3–4", "Get in the right rooms", ["First two curated Luma events, booked", "Ask five trusted friends for one introduction each", "Request company funding for one industry conference"]], ["Weeks 5–8", "Build momentum", ["Two events a week, on autopilot in your calendar", "Apply to one members' club that fits your level", "Debrief each date: what fit, what didn't"]], ["Weeks 9–12", "Lock it in", ["Narrow to the rooms that worked", "Review all 7 areas against your Day-1 scores", "Set your next 90 days"]]]};
-  const OTHERS = {
-    solo: {
-      tab: "Go out on my own",
-      goal: "Leave corporate and build my own consultancy.",
-      scores: [6, 5, 6, 4, 4, 8, 6],
-      findings: [
-        [["Financial", "Mental", "Vocational"], "You've never calculated your real runway, so every “what if it fails” thought feels catastrophic. Most of the fear is a missing number."],
-        [["Vocational", "Social", "Intellectual"], "Nine in ten people in your network work at your own firm. Nobody outside it knows what you'd sell, so you have no first clients lined up."],
-        [["Physical", "Mental", "Vocational"], "55-hour client weeks leave no energy to build after work, so the idea has lived in your notes app for two years."],
-      ],
+  const SAMPLES = {
+    energy: {
+      tab: "Energy in the boardroom",
+      who: "VP, Operations · 58-hour weeks",
+      goal: "Have the energy to lead at my best, all day.",
+      scores: [3, 5, 6, 4, 7, 6, 5],
       rows: [
-        ["You sleep 6 hours in client weeks and only exercise on weekends. Your evenings go to recovery, not building.", "This week: protect two evenings with a 6:30 pm stop and a 30-minute walk. Use one of them for a 90-minute build block."],
-        ["Your biggest fear is failing in public, not the money. You've rehearsed the worst case many times and the likely case never.", "Tonight: write three outcomes (worst, likely, best) and what you'd do in each. Reread it when the fear spikes."],
-        ["Your partner supports the idea but hasn't seen any numbers, so every conversation about it turns into worry.", "Every Sunday: a 30-minute “board meeting” with your partner. Runway, pipeline, next step."],
-        ["You can describe your skills but not your offer. Three people outside your firm's client list have asked you for help informally, and none were charged.", "This week: write a one-page offer for one problem you've solved ten times, and send it to the three people who already asked."],
-        ["Your real monthly burn (mortgage, childcare, living costs and lost benefits, after your partner's income) is $7,800. Your $39,000 in savings covers 5 months; a safe launch needs about 9, or $70,000.", "Today: list every fixed cost in one sheet. From this month, while you're still salaried: move $4,000 a month into a runway account, plus the $3,000 of your own money you'd set aside for a certification. That reaches 9 months of runway in about 7 months. Bring the number to your financial planner to check."],
-        ["Your expertise is strong and current. You don't need another course or certification before you start.", "Skip the certification you were going to pay for yourself, and put that $3,000 into your runway instead."],
-        ["You want autonomy and to be home for bedtime, but you've never written either down as a decision rule.", "Write three non-negotiables for the business, such as home by 6 pm three nights a week, and test every opportunity against them."],
+        ["You average 5 h 50 of sleep on weeknights, skip breakfast and have your fourth coffee around 3 p.m. Your afternoon crash is predictable, not a willpower problem.", "This week: caffeine cut-off at 1 p.m., protein within an hour of waking, a 10-minute walk after lunch. Ask your family doctor for routine bloodwork, so a medical cause is ruled out."],
+        ["Your stress score (PSS-10) is high, driven by decisions you carry home. You replay meetings in bed.", "Tonight: a 5-minute shutdown note with your open loops and tomorrow's first move. Then the laptop stays closed."],
+        ["You haven't had a dinner outside work in five weeks. The people who refuel you are the first thing you cancel.", "Book one standing dinner a month with two friends, in your calendar before work can take it."],
+        ["41% of your week is back-to-back meetings, so your real work starts after 8 p.m. Your best energy hours go to meetings that don't need you.", "This week: drop or delegate three recurring meetings. Block 8–10 a.m. twice a week for strategic work."],
+        ["Your finances are solid. Money isn't the bottleneck, which means you can buy help instead of grinding.", "Set a yearly performance budget for your care team, the way you would for any key hire."],
+        ["About 2 hours a day of news and podcasts, mostly in the gaps where your brain should recover.", "Three days a week, swap the commute podcast for silence or a walk."],
+        ["You can't say what this role is building toward beyond the next promotion, so every hard week feels like pure cost.", "Write one sentence for what you want your tenure here to stand for. Reread it every Friday."],
+      ],
+      findings: [
+        [["Vocational", "Physical", "Mental"], "Back-to-back meetings push your real work past 8 p.m. That cuts your sleep, and short sleep drives the 3 p.m. crash. Your energy problem starts in your calendar."],
+        [["Physical", "Mental"], "Late caffeine hides the fatigue and fragments your sleep, so you wake up tired and reach for more."],
+        [["Social", "Spiritual", "Mental"], "You've cut everything that refuels you to protect work time, so work now runs on an empty tank."],
       ],
       plan: [
-        ["Weeks 1–2", "Get your number", ["Fixed-cost sheet and runway target, done", "Runway account opened, first transfer set", "Two protected build evenings a week"]],
-        ["Weeks 3–6", "Test before you leap", ["One-page offer sent to three warm contacts", "Two conversations a week with independent consultants", "Contract checked with an employment lawyer; first pilot proposed only where it's allowed"]],
-        ["Weeks 7–10", "Make it real", ["First paid project delivered within your employer's rules", "Sunday board meetings with your partner", "Pipeline of five named prospects"]],
-        ["Weeks 11–12", "Decide", ["Decision date in your calendar", "Yes if: on track for 9 months of runway and 2 paying clients", "Set your next 90 days"]],
+        ["Phase 1", "Fix the foundation", ["Sleep window: 7 hours, 5 nights a week", "Caffeine cut-off at 1 p.m.", "Bloodwork booked with your family doctor"]],
+        ["Phase 2", "Take back your calendar", ["Three recurring meetings dropped or delegated", "Two morning deep-work blocks a week", "Hard stop at 7 p.m., three nights a week"]],
+        ["Phase 3", "Build your team", ["Discovery calls with your matched providers", "Training sessions booked at 7 a.m.", "Meals planned around your meeting days"]],
+        ["Phase 4", "Lock it in", ["Re-score all 7 areas against day one", "Keep what worked, drop what didn't", "Set your next goal"]],
+      ],
+      team: [
+        ["Registered dietitian", "Physical", "Builds how you eat around your meetings and travel, so your energy holds past 3 p.m."],
+        ["Personal trainer", "Physical", "Three 30-minute sessions a week, before your first meeting."],
+        ["Executive coach", "Vocational", "Redesigns your calendar and what you delegate."],
+        ["Therapist (CBT for sleep)", "Mental", "Only if your sleep hasn't improved after Phase 1."],
       ],
     },
-    clarity: {
-      tab: "Decide what I want",
-      goal: "Figure out what I actually want next.",
-      scores: [6, 5, 7, 5, 7, 6, 3],
-      findings: [
-        [["Spiritual", "Vocational", "Mental"], "You've never ranked what matters to you, so every new idea feels equally urgent. Five half-started projects are the result, not the cause."],
-        [["Intellectual", "Mental"], "You research instead of testing. About 40 hours of reading and personality tests this year, and no small experiments."],
-        [["Physical", "Mental"], "Scrolling in bed until 1 am leaves you too tired on weekends to commit to anything."],
-      ],
+    burnout: {
+      tab: "Burnout and sleep",
+      who: "Managing Director · on call across time zones",
+      goal: "Sleep through the night and lead without burning out.",
+      scores: [4, 3, 5, 4, 6, 6, 4],
       rows: [
-        ["You sleep about 6 hours, with your phone in bed until 1 am. Your best thinking hours go to scrolling.", "Phone out of the bedroom from 11 pm. Saturday 9–11 am becomes your “direction block”."],
-        ["You drop a project when it gets hard, then judge yourself for it. That's a pattern, not a character flaw.", "Pick one project and commit to six weeks before you judge it. Write the end date down."],
-        ["Strong friendships, but almost everyone is in your industry, so you keep getting the same advice.", "Book two coffees this month with people who've made a change you're curious about."],
-        ["You're good at your job but energized by about 20% of it: the workshops and the storytelling.", "Ask to lead one cross-team workshop this quarter, and note your energy afterwards."],
-        ["Solid savings, which means you can afford small experiments without real risk.", "Set a $500 experiment budget for the next 90 days."],
-        ["Tests and books have told you what type you are, not what to try.", "No new courses for 90 days. Turn the two ideas you keep coming back to into experiments instead."],
-        ["Asked what you'd want people to say about you at 50, you answered in ten seconds: “They made things that helped people.” Almost nothing in your week reflects it.", "Write that sentence on a card and score every experiment against it."],
+        ["You fall asleep fast but wake at 3 a.m. most nights, and check your phone. Weekends are spent recovering, not living.", "Phone charges outside the bedroom from tonight. Same wake time 7 days a week, even after a bad night."],
+        ["Your burnout screen shows high exhaustion and growing cynicism about work you used to love. You feel it most on Sunday evenings.", "This week: write down the three parts of your job that drain you most. Bring the list to your coach and your therapist."],
+        ["Your partner says they get “what's left of you”. You want to be present, but you're never fully off.", "Two evenings a week with no devices after 7 p.m., agreed with your partner and in your calendar."],
+        ["You answer messages from three time zones, with no protected hours. Every evening is a possible work evening.", "Set office hours for each time zone and an auto-reply after 7 p.m. Name a deputy for urgent calls."],
+        ["Income is strong, but spending rises in your worst weeks: takeout, upgrades, impulse buys. You're spending to recover.", "Turn on weekly spending alerts. Put that money toward the help that actually restores you."],
+        ["You've stopped reading anything that isn't for work. Nothing in your week is just for you.", "One hour every Saturday for something you're learning only because you enjoy it."],
+        ["Asked why you do this work, you paused for a long time. The meaning that drove you has gone quiet.", "Write down the moment in your career you were proudest of, and what made it matter. Use it to choose what to say no to."],
+      ],
+      findings: [
+        [["Vocational", "Physical", "Mental"], "No protected hours means your brain never fully stands down. The 3 a.m. wake-ups are your work, still running."],
+        [["Mental", "Social"], "Exhaustion turned into cynicism, and cynicism is now leaking into your home life. That's the stage where burnout gets expensive."],
+        [["Spiritual", "Vocational"], "You've lost touch with why you do this, so every demand feels equal. Without a filter, you can't say no."],
       ],
       plan: [
-        ["Weeks 1–2", "Clear the noise", ["Sleep and phone reset", "Every open project listed; all but two paused", "Saturday direction block, booked"]],
-        ["Weeks 3–6", "Two experiments", ["Experiment A: teach a four-week evening workshop", "Experiment B: three small freelance storytelling projects", "Weekly energy log for both"]],
-        ["Weeks 7–10", "Go deeper on the winner", ["Double down on the experiment that scored higher", "Four coffees with people already doing it", "One public step: a talk, a post, a pitch"]],
-        ["Weeks 11–12", "Decide", ["Decision date in your calendar", "Choose by energy, fit with your 50-year sentence, and income potential", "Set your next 90 days"]],
+        ["Phase 1", "Stop the bleeding", ["Phone out of the bedroom", "Same wake time, 7 days a week", "Office hours and a deputy, set"]],
+        ["Phase 2", "Recover", ["Two device-free evenings a week", "First sessions with your therapist", "One restoring activity every Saturday"]],
+        ["Phase 3", "Redesign the role", ["Coach sessions: what to keep, delegate, drop", "A clear no-list, written", "Travel and time zones re-planned"]],
+        ["Phase 4", "Lock it in", ["Re-score all 7 areas against day one", "Burnout screen repeated", "Set your next goal"]],
+      ],
+      team: [
+        ["Therapist (CBT for sleep and burnout)", "Mental", "Treats the 3 a.m. wake-ups and the stress behind them, with an approach built for sleep."],
+        ["Executive coach", "Vocational", "Helps you redesign your role, your no-list and your boundaries."],
+        ["Registered massage therapist", "Physical", "A weekly reset for the tension you carry."],
+        ["Couples counsellor", "Social", "Only if you and your partner want help reconnecting."],
+      ],
+    },
+    weight: {
+      tab: "Weight on a packed calendar",
+      who: "Partner, law firm · 2 business trips a month",
+      goal: "Lose 15 pounds without losing time at work.",
+      scores: [3, 5, 6, 4, 7, 6, 6],
+      rows: [
+        ["You train hard twice a week, then miss two weeks when travel hits. Most of your calories come after 8 p.m., at client dinners and at your desk.", "Two 30-minute sessions a week you can do anywhere, including a hotel gym. Your dietitian sets a simple rule for client dinners."],
+        ["You eat to decompress after hard days. The urge peaks around 9 p.m., when the work finally stops.", "Notice it for one week: what happened in the hour before each late snack. Bring the notes to your dietitian."],
+        ["Every social plan you have is a dinner or drinks. Food and alcohol are how you connect.", "Swap one dinner a month for a walk, a game or a class with the same people."],
+        ["Two trips a month and late client dinners break every routine you start. Your plans assume a normal week you rarely have.", "Plan for your real week: a travel version of your routine, not just a home version."],
+        ["You're spending on gym memberships you don't use and meal kits that go to waste.", "Cancel what you don't use. Put the money toward a trainer who comes to you."],
+        ["You know the nutrition. Knowledge isn't the gap. Structure and support are.", "No new diet books. Your dietitian's plan is the only plan."],
+        ["You want to be the parent who keeps up with your kids at 60. Nothing in your week says so yet.", "Put that sentence on your phone's lock screen. It's your reason on the hard weeks."],
+      ],
+      findings: [
+        [["Vocational", "Physical"], "Your plans fail on travel weeks because they were built for a home week. The weight problem is a scheduling problem."],
+        [["Mental", "Physical"], "Late eating is how you come down from the day. Taking it away without replacing it won't last."],
+        [["Social", "Physical"], "Every plan with people is built around food and drinks, so connecting and eating well keep competing."],
+      ],
+      plan: [
+        ["Phase 1", "Design for your real week", ["Home and travel versions of your routine", "Two 30-minute sessions a week, booked", "Unused memberships cancelled"]],
+        ["Phase 2", "Fix the evenings", ["A wind-down that replaces late snacking", "A client-dinner rule from your dietitian", "One food-free social plan a month"]],
+        ["Phase 3", "Build your team", ["Discovery calls with your matched providers", "Trainer sessions, including on the road", "Monthly check-in with your dietitian"]],
+        ["Phase 4", "Lock it in", ["Re-score all 7 areas against day one", "Keep what worked on travel weeks", "Set your next goal"]],
+      ],
+      team: [
+        ["Registered dietitian", "Physical", "A plan that works at client dinners, in airports and at your desk."],
+        ["Personal trainer", "Physical", "Short sessions you can do at home or in a hotel gym."],
+        ["Sports medicine physician", "Physical", "Checks your knees and back before you train harder."],
+        ["Therapist", "Mental", "Only if stress eating doesn't ease once your evenings change."],
       ],
     },
   };
-  OTHERS.solo.tab = "Transitioning out of corporate";
-  OTHERS.clarity.tab = "Finding purpose";
-  const SAMPLES = { partner: PARTNER, solo: OTHERS.solo, clarity: OTHERS.clarity };
   const $ = (s, r = document) => r.querySelector(s);
   const root = $("#rp"); if (!root) return;
   const tabs = $("#rpTabs");
@@ -66,29 +109,32 @@
   function show(key) {
     const S = SAMPLES[key], low = Math.min(...S.scores);
     root.innerHTML = `
-      <header class="rp-head"><p class="rp-k mono">Goal</p><h3>${S.goal}</h3></header>
+      <header class="rp-head"><p class="rp-k mono">Goal · ${S.who}</p><h3>${S.goal}</h3></header>
       <section class="rp-sec"><p class="rp-k mono">Your 7 areas · tap one to see why</p>
         <ul class="rp-areas">${S.rows.map(([a, r], i) => `
           <li class="${S.scores[i] === low ? "blind" : ""}"><details><summary><span class="rp-n">${AREAS[i]}</span><i style="--v:${S.scores[i] * 10}%"></i><b class="mono">${S.scores[i]}/10</b>${S.scores[i] === low ? '<em class="mono">Blind spot</em>' : ""}</summary>
-            <p><span class="mono">What we found</span>${a}</p><p><span class="mono">What to do</span>${r}</p></details></li>`).join("")}
+            <p><span class="mono">What we found</span>${a}</p><p><span class="mono">What to tweak</span>${r}</p></details></li>`).join("")}
         </ul></section>
-      <section class="rp-sec"><p class="rp-k mono">What's really holding you back</p>
+      <section class="rp-sec"><p class="rp-k mono">What's really holding your performance back</p>
         <ol class="rp-finds">${S.findings.map(([path, t]) => `<li><p class="rp-path mono">${path.join(" → ")}</p><p>${t}</p></li>`).join("")}</ol></section>
-      <section class="rp-sec" id="plan"><p class="rp-k mono">Your 90-day plan</p>
-        <ol class="rp-plan">${S.plan.map(([when, h, items]) => `<li><p class="mono">${when}</p><h4>${h}</h4><ul>${items.map((x) => `<li>${x}</li>`).join("")}</ul></li>`).join("")}</ol></section>`;
+      <section class="rp-sec" id="plan"><p class="rp-k mono">Your transformation plan</p>
+        <ol class="rp-plan">${S.plan.map(([when, h, items]) => `<li><p class="mono">${when}</p><h4>${h}</h4><ul>${items.map((x) => `<li>${x}</li>`).join("")}</ul></li>`).join("")}</ol></section>
+      <section class="rp-sec" id="team"><p class="rp-k mono">Your personalized wellness care team · Toronto referrals</p>
+        <ol class="rp-finds">${S.team.map(([role, area, why]) => `<li><p class="rp-path mono">${area} · ${role}</p><p>${why}</p></li>`).join("")}</ol>
+        <p class="rp-note mono">Vetted, licensed providers. You choose who joins, and each one bills you directly.</p></section>`;
     tabs.querySelectorAll("button").forEach((b) => b.setAttribute("aria-selected", b.dataset.goal === key ? "true" : "false"));
   }
   tabs.addEventListener("click", (e) => {
     const b = e.target.closest("button[data-goal]"); if (!b) return;
     show(b.dataset.goal);
-    const u = new URL(location.href); if (b.dataset.goal === "partner") u.searchParams.delete("goal"); else u.searchParams.set("goal", b.dataset.goal);
+    const u = new URL(location.href); if (b.dataset.goal === "energy") u.searchParams.delete("goal"); else u.searchParams.set("goal", b.dataset.goal);
     history.replaceState(null, "", u);
   });
   const q = new URLSearchParams(location.search).get("goal");
-  show(SAMPLES[q] ? q : "partner");
-  if (location.hash === "#plan") window.addEventListener("load", () => setTimeout(() => { const p = document.getElementById("plan"); if (p) window.scrollTo({ top: p.getBoundingClientRect().top + scrollY - 90, behavior: "instant" }); }, 60));
+  show(SAMPLES[q] ? q : "energy");
+  if (location.hash === "#plan" || location.hash === "#team") window.addEventListener("load", () => setTimeout(() => { const p = document.getElementById(location.hash.slice(1)); if (p) window.scrollTo({ top: p.getBoundingClientRect().top + scrollY - 90, behavior: "instant" }); }, 60));
 
-  /* "Back to the offer" keeps the visitor's own ad variant */
+  /* "Back to the offer" lands on the offer */
   const back = document.querySelector('.nav a[href^="index.html"]');
-  if (back) { const h = { solo: "solo", clarity: "clarity" }[q] || ""; back.href = `index.html${h ? `?h=${h}` : ""}#offer`; }
+  if (back) back.href = "index.html#offer";
 })();

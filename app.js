@@ -177,7 +177,7 @@
   $$("[data-socials]").forEach((ul) => { ul.innerHTML = socialItems; ul.hidden = !socialItems; });
 
   ($("#dims") || {}).innerHTML = DIMS.map((d, i) => `<li><b>${i + 1}</b><div><h3>${d.name} <span class="formal">${d.formal}</span></h3><p>${d.covers}</p></div></li>`).join("");
-  const GOALS = ["Find a partner", "Stop feeling anxious", "Open up and be vulnerable", "Change careers", "Fix my relationship with money", "Get my energy back", "Find my purpose"];
+  const GOALS = ["More energy at work", "Sleep through the night", "Manage stress and burnout", "Lose weight on a busy schedule", "Train for a marathon", "Feel less alone at the top"];
   ($("#problems") || {}).innerHTML = GOALS.map((g) => `<li><i aria-hidden="true"></i>${g}</li>`).join("");
 
   /* ---------- Board of health directors: a circle of care around you ---------- */
@@ -234,7 +234,7 @@
       mode = m;
       groups.forEach((g, i) => g.classList.toggle("on", m === "all" || i === 0));
       svg.classList.toggle("all", m === "all");
-      title.innerHTML = m === "all" ? `${SE_HTML} 90-day program` : "A typical check-up";
+      title.innerHTML = m === "all" ? `${SE_HTML} program` : "A typical check-up";
       count.textContent = m === "all" ? "7 of 7" : "1 of 7";
       tabs.forEach((t) => t.setAttribute("aria-selected", String(t.dataset.mode === m)));
     }
@@ -364,7 +364,7 @@
     function panel() {
       box.classList.toggle("show", sel !== null);
       if (sel === null) { box.innerHTML = ""; return; }
-      if (sel === "core") { box.innerHTML = `<p class="wc-n mono">Alignment</p><p class="wc-why">When your physical, mental, social, vocational, financial, intellectual and spiritual health are all tuned toward your main goal.</p><p class="wc-items">That's what your 90-day plan is built to reach.</p>`; return; }
+      if (sel === "core") { box.innerHTML = `<p class="wc-n mono">Alignment</p><p class="wc-why">When your physical, mental, social, vocational, financial, intellectual and spiritual health are all tuned toward your main goal.</p><p class="wc-items">That's what your transformation plan is built to reach.</p>`; return; }
       const [name, q, items, meas, ev] = W[sel];
       box.innerHTML = `<p class="wc-n mono">${sel + 1} / 7 · ${name} health</p><p class="wc-why">${q}</p><ul class="wc-list">${items.map(([l, d]) => `<li>${icon(l)}<b>${l}</b><span>${d}</span></li>`).join("")}</ul><p class="wc-ev mono"><span>Informed by · ${meas}</span><span>Evidence base · ${ev}</span></p>`;
     }
@@ -468,7 +468,7 @@
   });
   const LEGAL = {
     privacy: ["Privacy", `<p>${SE_HTML} collects only what's needed to coach you, and only Karim sees it.</p><p><b>What we collect.</b> Your name, email and phone; what you write when you book; your intake answers, session notes, 360° Life Report and plan. Payments are handled by our payment provider; we never see your card.</p><p><b>How it's used.</b> Only to deliver your coaching. It is never sold, and never shared with your employer, insurer or anyone else.</p><p><b>Not a medical record.</b> ${SE_HTML} is coaching, not healthcare, so no health record is created.</p><p><b>AI.</b> We never put what you share into an AI tool. GROW's custom AI coach is set up only if you ask for it.</p><p><b>Your rights.</b> Ask for a copy of your information at any time, and when you finish, ask for it to be deleted; we'll delete it.</p>`],
-    terms: ["Terms", `<p><b>What you buy.</b> The 90-day program: a short online intake, a 90-minute assessment with Karim by video, your 360° Life Report within 72 hours of your assessment, your 90-Day Transformation Plan, and referrals to your personalized wellness care team: vetted, licensed providers in Toronto matched to your report. Each provider you choose bills you directly. $699 CAD plus HST.</p><p><b>Results or 100% money back.</b> Attend your assessment and work through your plan. If you still don't feel it helped you make a transformational change within 90 days, get a full refund, no questions asked.</p><p><b>Coaching, not healthcare.</b> ${SE_HTML} provides coaching only. It does not diagnose, treat or prescribe, and it does not replace your doctor, therapist, or financial or legal advisor.</p><p><b>Questions.</b> Email Karim before you book.</p>`],
+    terms: ["Terms", `<p><b>What you buy.</b> The Executive Performance Program: a short online intake, a 90-minute assessment with Karim by video, your 360° Life Report within 72 hours of your assessment, your Transformation Plan, and referrals to your personalized wellness care team: vetted, licensed providers in Toronto matched to your report. Each provider you choose bills you directly. $699 CAD plus HST.</p><p><b>Results or 100% money back.</b> Attend your assessment and work through your plan. If you still don't feel it helped you make a transformational change within 90 days, get a full refund, no questions asked.</p><p><b>Coaching, not healthcare.</b> ${SE_HTML} provides coaching only. It does not diagnose, treat or prescribe, and it does not replace your doctor, therapist, or financial or legal advisor.</p><p><b>Questions.</b> Email Karim before you book.</p>`],
   };
 
   document.addEventListener("click", (e) => {
@@ -523,7 +523,7 @@
     "When work gets heavy, my sleep and energy drop.": ["Vocational", "Physical"],
     "Money stress spills into my relationships.": ["Financial", "Social"],
     "Low energy keeps me from seeing people.": ["Physical", "Social"],
-    "Anxiety holds me back at work or in dating.": ["Mental", "Vocational"],
+    "Anxiety holds me back at work.": ["Mental", "Vocational"],
     "I'm not sure my career fits my values.": ["Vocational", "Spiritual"],
     "I'm missing skills I need for my next step.": ["Intellectual", "Vocational"],
     "I know what to do, but I can't stay consistent.": ["Mental", "Physical"],
@@ -534,19 +534,19 @@
     "When work gets heavy, my sleep and energy drop.": "Your work is borrowing from your recovery. Less sleep lowers mood, patience and willpower, so every other area, including your goal, gets harder to move.",
     "Money stress spills into my relationships.": "Money stress rarely stays in your bank account. It shows up as tension, avoidance or overwork, and quietly decides who you have time and energy for.",
     "Low energy keeps me from seeing people.": "When your energy drops, your world shrinks. Fewer plans means fewer chances: for a partner, for opportunities, for support.",
-    "Anxiety holds me back at work or in dating.": "Anxiety makes you play it safe. You skip the conversation, the pitch or the second date, and it looks like a lack of options when it's really a lack of exposure.",
+    "Anxiety holds me back at work.": "Anxiety makes you play it safe. You skip the conversation, the pitch or the second date, and it looks like a lack of options when it's really a lack of exposure.",
     "I'm not sure my career fits my values.": "When your work and your values don't match, success stops feeling like progress. That gap is often what “stuck” really means.",
     "I'm missing skills I need for my next step.": "A skills gap makes the next step feel bigger than it is. It's usually one or two specific skills, not a whole new you.",
     "I know what to do, but I can't stay consistent.": "Inconsistency is rarely a willpower problem. It's usually a missing structure: a plan, a weekly check-in and someone holding you to it.",
     "I stay in a role for the money, not the meaning.": "Golden handcuffs: your finances are making your career decisions for you. Building runway is often the first real step to change.",
   };
   const GOAL_INSIGHT = {
-    "Find a long-term partner": "Finding a partner is rarely a dating problem. It's where you spend your time (Social), how much energy you have left (Physical, Vocational) and what you're unconsciously screening for (Mental, Spiritual).",
-    "Grow or change my career": "Career moves stall when your money (Financial), confidence (Mental) or skills (Intellectual) aren't lined up behind them.",
-    "Start my own thing": "Starting something depends on runway (Financial), energy (Physical) and the people around you (Social) as much as on the idea.",
-    "Feel healthier and more energetic": "Health habits usually break because of work hours (Vocational), stress (Mental) and environment (Social), not because of what you know.",
-    "Get on top of my finances": "Money goals are driven as much by your values (Spiritual) and your work (Vocational) as by budgeting.",
-    "Find direction and purpose": "Purpose usually comes from lining up your work (Vocational) and relationships (Social) with what you actually value (Spiritual).",
+    "More energy at work": "Low energy at work is rarely just a sleep problem. It's your calendar (Vocational), what you eat and drink on meeting days (Physical) and the stress you carry home (Mental).",
+    "Sleep through the night": "Broken sleep usually starts during the day: no protected hours (Vocational), decisions you replay at night (Mental) and late caffeine or screens (Physical).",
+    "Manage stress and burnout": "Burnout builds where work has no edges (Vocational), recovery gets cut (Physical, Social) and you lose touch with why you do it (Spiritual).",
+    "Lose weight on a busy schedule": "Weight goals break on travel weeks and late client dinners (Vocational), stress eating (Mental) and food-centred social plans (Social), not on knowledge.",
+    "Train for a goal, like a marathon": "Training plans fail when they ignore your calendar (Vocational), your recovery (Physical) and the people who can train with you (Social).",
+    "Feel less alone at the top": "Isolation at the top grows when work fills every evening (Vocational), friends drift (Social) and no one outside your company knows what you carry (Mental).",
     "Something else": "Whatever your goal is, it's being pulled on by more than one area of your life.",
   };
   const AREA_INSIGHT = {
@@ -560,7 +560,7 @@
   };
   const QUESTIONS = [
     { id: "goal", title: "What are your main life goals right now?", hint: "Pick all that apply.", type: "many",
-      opts: ["Find a long-term partner", "Grow or change my career", "Start my own thing", "Feel healthier and more energetic", "Get on top of my finances", "Find direction and purpose", "Something else"] },
+      opts: ["More energy at work", "Sleep through the night", "Manage stress and burnout", "Lose weight on a busy schedule", "Train for a goal, like a marathon", "Feel less alone at the top", "Something else"] },
     { id: "off", title: "Which areas of your life feel off right now?", hint: "Pick all that apply.", type: "many",
       opts: ["Physical: sleep, energy, body", "Mental: stress, mood, anxiety", "Social: partner, friends, family", "Vocational: work, career, direction", "Financial: money, debt, runway", "Intellectual: skills, learning, focus", "Spiritual: purpose, values, meaning"] },
     { id: "links", title: "Which of these sound like you?", hint: "Pick all that apply. Notice how one area pulls on another.", type: "many", opts: Object.keys(LINKS) },
@@ -580,8 +580,8 @@
   };
   const NEXT_COPY = {
     "Clarity on what matters": "That's exactly what the program does: all 7 dimensions mapped, and your top 3 priorities named.",
-    "A concrete action plan": "The program ends with a 90-day action plan built around your top 3 priorities.",
-    "Weekly accountability": "The program gives you a 90-day plan with clear actions — and a results review to lock it in.",
+    "A concrete action plan": "The program ends with a transformation plan built around your top 3 priorities.",
+    "Weekly accountability": "The program gives you a transformation plan with clear actions — and a results review to lock it in.",
     "The right professional support": "The program includes a specialist shortlist: which experts are worth seeing for your goal.",
   };
 
@@ -710,7 +710,7 @@
       const R = {
         grow: ["GROW", "$2,499 · 30 days", "Everything in the $699 program, plus your custom GPT, 4 weekly 1-hour sessions with Karim over 30 days, and Accountability Standards.", `<button type="button" class="btn btn-primary" data-open="apply" data-tier="grow" data-loc="checkin_result">Go for GROW</button>`],
         platinum: ["TRANSFORM", "$7,000 · 7 founding seats", "Everything in GROW, plus a founding seat in our private members' club: social concierge, personalized Google Map and event calendar, members' dinners, the NYE Resolution Retreat and a direct line to Karim.", `<button type="button" class="btn btn-primary" data-open="apply" data-tier="platinum" data-loc="checkin_result">Apply for TRANSFORM</button>`],
-        reset: ["The 90-day program", `$${fmt(PRICE)} · once`, "Your 90-minute 7-in-1 Assessment, your 360° Life Report within 72 hours, your 90-Day Transformation Plan and your personalized wellness care team referrals.", `<button type="button" class="btn btn-primary" data-open="checkout" data-loc="checkin_result">Get started — $${fmt(PRICE)}</button>`],
+        reset: ["The Executive Performance Program", `$${fmt(PRICE)} · once`, "Your 90-minute 7-in-1 Assessment, your 360° Life Report within 72 hours, your Transformation Plan and your personalized wellness care team referrals.", `<button type="button" class="btn btn-primary" data-open="checkout" data-loc="checkin_result">Get started — $${fmt(PRICE)}</button>`],
       };
       const [name, price, what, btn] = R[tier];
       return `<div class="result-block rec"><h3>Recommended for you</h3><p class="rec-name mono">${name} <span>${price}</span></p><p>${what}</p><div class="cta-row">${btn}</div></div>`;

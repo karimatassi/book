@@ -67,10 +67,10 @@ window.SE7EN_CONFIG = {
   headlines: [
     { hook: "The MD-led executive performance coaching clinic",
       h: "Outperform every executive in the room. | Get your own wellness care team, built for exactly your goals.",
-      sub: "Vetted specialists working on every area of your wellness to boost your performance and hit your life goals, mapped out by Karim Atassi, MD, in 90 days. Results or 100% of your money back.*" },
+      sub: "Vetted specialists working on every area of your wellness to boost your performance and hit your life goals, mapped out by Karim Atassi, MD." },
     { hook: "Get an MD as your life coach",
       h: "Your doctor treats your health. | This MD uncovers how your social habits are impacting it.",
-      sub: "Get an MD-built plan that tells you exactly what to change each week, in the next 90 days. It starts with one 90-minute conversation." },
+      sub: "Get an MD-built plan that tells you exactly what to change each week, next. It starts with one 90-minute conversation." },
     { hook: "Get an MD as your life coach",
       h: "Successful on paper. Stuck in real life. | An MD finds what's holding you back in 90 minutes.",
       sub: "Uncover the hidden areas of your wellness that are limiting you from achieving your goal." },
@@ -79,10 +79,10 @@ window.SE7EN_CONFIG = {
       sub: "Uncover the hidden areas of your wellness that are limiting you from achieving your goal." },
     { hook: "MD-led life assessment · Toronto",
       h: "Find what's blocking your goal. | A 90-minute MD-led assessment of your whole life.",
-      sub: "Evidence-based assessment with Karim Atassi, MD · written report in 72 hours · 90-day plan · your personalized wellness care team." },
+      sub: "Evidence-based assessment with Karim Atassi, MD · written report in 72 hours · transformation plan · your personalized wellness care team." },
     { hook: "MD-led life coaching · Toronto",
       h: "Your doctor treats your health. | An MD life coach helps you care for your life as a whole.",
-      sub: "Evidence-based assessment with Karim Atassi, MD · written report in 72 hours · 90-day plan · your personalized wellness care team." },
+      sub: "Evidence-based assessment with Karim Atassi, MD · written report in 72 hours · transformation plan · your personalized wellness care team." },
     // Ad variants by segment: index.html?h=partner · ?h=solo · ?h=clarity (also opens the matching problem card)
     { key: "partner", card: 5,
       why: "Why an MD? Doctors are trained to find the one cause behind many symptoms. Here, that means finding which areas of your life are holding your goal back.",
@@ -91,13 +91,13 @@ window.SE7EN_CONFIG = {
       hook: "MD-led life coaching for corporate professionals",
       compare: "Most help looks at one area of your life. | We assess all 7 to uncover what's limiting your goal, then change your environment so you reach it.",
       h: "Want a partner, but something keeps getting in the way? | Find out what in your life is limiting you, and change your environment to meet them.",
-      sub: "One 90-minute whole-life assessment uncovers the areas of your life limiting your goal: your hours, energy, circle and environment. Your 360° Life Report and 90-day plan show exactly what to change. Or receive 100% of your money back.*" },
+      sub: "One 90-minute whole-life assessment uncovers the areas of your life limiting your goal: your hours, energy, circle and environment. Your 360° Life Report and transformation plan show exactly what to change. Or receive 100% of your money back.*" },
     { key: "solo", card: 2, sum: "Thousands to start, and nobody connecting the pieces.", provs: [["Business Coach", "Vocational", "Works on the business, not your runway, energy or household.", "~$300 / session"], ["Financial Planner", "Financial", "Sees your portfolio, not whether your offer will sell.", "$1,500+ / plan"], ["Employment Lawyer", "Vocational", "Reads your contract, not your plan.", "~$400 / hour"], ["Career Coach", "Vocational", "Helps you find the next job, not build your own.", "~$200 / session"]], why: "Why an MD? Most people don't fail on the idea; they run out of runway or energy first. Karim assesses both, and he has co-founded a company himself.", alts: [["A financial planner", "sees your money"], ["A career coach", "sees your next job"], ["Mentors", "see their own path"]], worth: "One month of runway in our sample is $7,800. A fee-only planner starts around $1,500 and only sees your money. Timing the leap wrong costs far more than $699, and you're covered by the guarantee.", compare: "Planners, mentors and career coaches each see one piece. | We assess all 7 dimensions of your life to find what's really holding your launch back.", hook: "Leaving corporate? With Karim Atassi, MD · xCo-founder of Zatiq ($1.6M raised)",
       h: "Ten years in corporate. | Ready to build your own, without blowing up your finances?",
-      sub: "One 90-minute whole-life assessment finds what's really holding you back: your runway, your energy, your network. Your 360° Life Report and 90-day plan take you to a tested next step and a decision date. Or receive 100% of your money back.*" },
+      sub: "One 90-minute whole-life assessment finds what's really holding you back: your runway, your energy, your network. Your 360° Life Report and transformation plan take you to a tested next step and a decision date. Or receive 100% of your money back.*" },
     { key: "clarity", sum: "Hundreds spent, and still no direction.", provs: [["Personality Tests", "Intellectual", "Tell you your type, not what to try next.", "~$100 / test"], ["Career Coach", "Vocational", "Sees your job, not the rest of your week.", "~$200 / session"], ["Online Courses", "Intellectual", "More learning, no decision.", "$500+ / course"], ["Therapist", "Mental", "Essential for your mind, but not set up to test a direction.", "~$170 / session"]], why: "Why an MD? Feeling all over the place is often a sleep, energy or workload problem that looks like a purpose problem. Karim looks at those first, so you don't chase a new direction to fix a tired week.", alts: [["Personality tests", "see your type"], ["Self-help books", "see someone else's life"], ["A career coach", "sees your job"]], worth: "A career coach is about $200 a session and only sees your job. The program looks at all seven areas and ends with two tested directions and a decision date. Covered by the guarantee.", compare: "Tests and books each see one piece. | We assess all 7 dimensions of your life to show where your time, money and energy actually go.", hook: "MD-led life coaching for corporate professionals",
       h: "Successful on paper. | Not sure what you actually want?",
-      sub: "One 90-minute whole-life assessment shows where your time, money and energy really go. Your 360° Life Report and 90-day plan turn that into two experiments and one clear direction. Or receive 100% of your money back.*" }
+      sub: "One 90-minute whole-life assessment shows where your time, money and energy really go. Your 360° Life Report and transformation plan turn that into two experiments and one clear direction. Or receive 100% of your money back.*" }
   ],
 
   // Credential strip under the hero. Edit to exactly what you're cleared to publish.

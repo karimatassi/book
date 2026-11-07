@@ -4205,3 +4205,7 @@ dialog, .dlg { overscroll-behavior: contain; }
 
 /* v354 — outcome-first hero */
 #heroH .soft { display: block; margin-top: .25em; font-size: .58em; line-height: 1.2; }
+
+/* v355 — guarantee under the hero CTA */
+.hero-g { margin: -6px 0 18px; font: 500 .82rem/1.3 var(--f-mono); letter-spacing: .03em; }
+.hero-g a { color: #E2C27A; text-decoration: none; border-bottom: 1px solid rgba(226,194,122,.4); }
