@@ -158,7 +158,7 @@
   if (CFG.spotsThisMonth) { ($("#spots") || {}).hidden = false; ($("#spots") || {}).textContent = `${CFG.spotsThisMonth} spots left this month.`; }
   else if (CFG.resetsPerMonth) { ($("#spots") || {}).hidden = false; ($("#spots") || {}).textContent = `Karim takes on ${CFG.resetsPerMonth} RESETs a month.`; }
   if (CFG.resetsPerMonth) $$("[data-cap]").forEach((el) => (el.textContent = CFG.resetsPerMonth));
-  if (!CFG.resetCheckoutUrl && $("#previewBar")) $("#previewBar").hidden = false;
+  // no public "payment not connected" banner (Karim, Nov 7 2026): "Get started" offers the free call until Stripe is live
   if (CFG.contactEmail) ($("#contactSlot") || {}).innerHTML = `<a href="mailto:${esc(CFG.contactEmail)}">${esc(CFG.contactEmail)}</a>`;
   $("#year").textContent = new Date().getFullYear();
   /* ---------- Karim's profiles: only the ones with a URL in config.js are shown ---------- */
