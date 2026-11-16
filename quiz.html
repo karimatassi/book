@@ -106,6 +106,18 @@ h2{font-size:clamp(23px,4.6vw,30px);line-height:1.2}
 .cta .btn.alt{background:transparent;color:#F3EDE3;border:1px solid #5A5148}
 .cta .btn.alt:hover{background:#2A231D}
 .cta small{display:block;color:#A89F92;margin-top:12px;font-size:13px}
+.locked{display:grid;gap:12px;margin-top:16px}
+.lk{position:relative;border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:var(--card);overflow:hidden}
+.lk .hd{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.lk h3{margin:0;font-size:19px}
+.lk .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;border-radius:999px;padding:3px 10px}
+.lk .bl{filter:blur(6px);user-select:none;pointer-events:none;margin-top:10px;color:var(--ink2);font-size:15px}
+.lk .bl p{margin:0 0 6px}
+.lk .ov{position:absolute;left:0;right:0;bottom:0;top:52px;display:grid;place-items:center}
+.lk .lock{width:42px;height:42px;border-radius:50%;background:var(--ink);display:grid;place-items:center;box-shadow:0 4px 14px rgba(31,25,20,.25)}
+.lk .lock svg{width:18px;height:18px}
+.unlock{margin-top:16px;width:100%}
+.unlock svg{width:16px;height:16px}
 section+section{margin-top:34px}
 .fine{font-size:12.5px;color:var(--mute);margin-top:26px;line-height:1.5}
 .again{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
@@ -174,6 +186,13 @@ section+section{margin-top:34px}
       <p class="eb">Where to start</p>
       <h2>Your 2 weakest areas</h2>
       <div class="focus" id="focus" style="margin-top:16px"></div>
+    </section>
+
+    <section>
+      <p class="eb">The rest of your map</p>
+      <h2>Your other 5 areas</h2>
+      <div class="locked" id="locked"></div>
+      <a class="btn unlock" href="https://karimatassi.github.io/book/book.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Unlock all 7 areas on a free 15-minute call</a>
     </section>
 
     <section class="cta">
@@ -338,6 +357,8 @@ function results(){
     const items=Q.map((q,k)=>({q,k})).filter(x=>x.q.d===i).sort((a,b)=>ans[a.k]-ans[b.k]).slice(0,2);
     const fixes=items.map(x=>`<div class="fix"><q data-a="${SCALE[ans[x.k]].toLowerCase()}">${esc(x.q.t)}</q><dd>${d[3][x.q.j][1]}</dd></div>`).join("");
     return `<div class="fx"><span class="tag" style="background:${c}">${l} · ${scores[i]}</span><h3>${d[0]}</h3><p>${d[1]}</p><dl><dt>How to fix it</dt>${fixes}<dt style="margin-top:6px">Who helps</dt><dd>${d[2]}</dd></dl></div>`}).join("");
+  const LOCK='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
+  $("#locked").innerHTML=order.slice(2).map(i=>{const d=D[i],[c,l]=band(scores[i]);return `<div class="lk"><div class="hd"><h3>${d[0]}</h3><span class="tag" style="background:${c}">${l} · ${scores[i]}</span></div><div class="bl" aria-hidden="true"><p>${d[1]}</p><p><b>How to fix it:</b> ${d[3][0][1]}</p></div><div class="ov"><span class="lock" aria-label="Locked">${LOCK}</span></div></div>`}).join("");
   $("#ctah").textContent=`Fix your ${D[lo[0]][0].toLowerCase()} and ${D[lo[1]][0].toLowerCase()} scores in 30 days.`;
   $("#ctap").textContent=`The 30-Day Unstuck Sprint is built for exactly this. In a 90-minute session, Karim Atassi, MD finds what's really holding you back across all 7 areas, then builds your plan around your weakest ones, with weekly calls and specialists when you need them.`;
   $("#prog").style.width="100%";
