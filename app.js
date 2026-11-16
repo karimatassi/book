@@ -116,7 +116,7 @@
       $$("#how p, #offer p, #offer b").forEach((el) => { if (/biopsychosocial/i.test(el.textContent)) el.innerHTML = el.innerHTML.replace(/evidence-based biopsychosocial/gi, "evidence-based").replace(/biopsychosocial assessment/gi, "structured assessment").replace(/biopsychosocial /gi, ""); });
       // options after the questions, so the free call doesn't feel like a pitch for them
       const pr = $("#pricing"), fq = $("#faq"); if (pr && fq) fq.after(pr);
-      $("#heroBook").parentNode.insertAdjacentHTML("afterend", '<p class="hero-call-note">Free call: 15 minutes by video, weekdays at lunch or evenings, or Saturday mornings. Tell Karim what\'s going on; he\'ll tell you honestly whether the RESET fits.</p>');
+      $("#heroBook").parentNode.insertAdjacentHTML("afterend", '<p class="hero-call-note">Free call: 15 minutes by video, weekdays at lunch or evenings, or Saturday mornings. Tell Karim what\'s going on; he\'ll tell you honestly whether the Sprint fits.</p>');
       // …and every other main button on the page offers the call too
       const toCall = (b, label) => { b.dataset.open = "infocall"; b.removeAttribute("href"); b.setAttribute("role", "button"); b.textContent = label; };
       const navBtn = $("#nav .btn"); if (navBtn) toCall(navBtn, "Free call");
@@ -468,7 +468,7 @@
   });
   const LEGAL = {
     privacy: ["Privacy", `<p>${SE_HTML} collects only what's needed to coach you, and only Karim sees it.</p><p><b>What we collect.</b> Your name, email and phone; what you write when you book; your intake answers, session notes, 360° Life Report and plan. Payments are handled by our payment provider; we never see your card.</p><p><b>How it's used.</b> Only to deliver your coaching. It is never sold, and never shared with your employer, insurer or anyone else.</p><p><b>Not a medical record.</b> ${SE_HTML} is coaching, not healthcare, so no health record is created.</p><p><b>AI.</b> We never put what you share into an AI tool. GROW's custom AI coach is set up only if you ask for it.</p><p><b>Your rights.</b> Ask for a copy of your information at any time, and when you finish, ask for it to be deleted; we'll delete it.</p>`],
-    terms: ["Terms", `<p><b>What you buy.</b> The Executive Performance Program: a short online intake, a 90-minute assessment with Karim by video, your 360° Life Report within 72 hours of your assessment, your Transformation Plan, and referrals to your personalized wellness care team: vetted, licensed providers in Toronto matched to your report. Each provider you choose bills you directly. $699 CAD plus HST.</p><p><b>Results or 100% money back.</b> Attend your assessment and work through your plan. If you still don't feel it helped you make a transformational change within 90 days, get a full refund, no questions asked.</p><p><b>Coaching, not healthcare.</b> ${SE_HTML} provides coaching only. It does not diagnose, treat or prescribe, and it does not replace your doctor, therapist, or financial or legal advisor.</p><p><b>Questions.</b> Email Karim before you book.</p>`],
+    terms: ["Terms", `<p><b>What you buy.</b> The 30-Day Unstuck Sprint: your before-and-after Life Assessment, a 90-minute Whole-Life Diagnosis with Karim by video, your Environment Blueprint within 48 hours, 3 weekly 30-minute Sprint Calls, Hard-Conversation Scripts, and the Specialist Fast-Pass: introductions to vetted, licensed providers in Toronto, with your first appointments booked for you. Each provider you choose bills you directly. $997 CAD plus HST.</p><p><b>Double guarantee.</b> If your first session doesn't give you a plan you believe in, email Karim for a full refund. If you attend every Sprint Call, complete your weekly actions and miss your day-30 target, Karim keeps coaching you for free until you hit it.</p><p><b>Coaching, not healthcare.</b> ${SE_HTML} provides coaching only. It does not diagnose, treat or prescribe, and it does not replace your doctor, therapist, or financial or legal advisor.</p><p><b>Questions.</b> Email Karim before you book.</p>`],
   };
 
   document.addEventListener("click", (e) => {
@@ -485,7 +485,7 @@
     } else if (kind === "apply") {
       const tier = t.dataset.tier, T = (CFG.tiers || {})[tier] || {};
       const copy = {
-        grow: ["Weekly support", "GROW", "Everything in the $699 program, plus 4 weekly 1-hour sessions with Karim over 30 days and an optional custom AI coach, with accountability standards to keep you on track toward your goal. Tell us your goal and we'll confirm fit."],
+        grow: ["Weekly support", "GROW", "Everything in the 30-Day Sprint, plus 4 weekly 1-hour sessions with Karim over 30 days and an optional custom AI coach, with accountability standards to keep you on track toward your goal. Tell us your goal and we'll confirm fit."],
         platinum: ["Limited to 7 people", "TRANSFORM", "A seat among the 7 founding members: everything in GROW, plus a social concierge, a personalized Google Map of the restaurants, cafés and venues that fit your goal, a 30-day event calendar, members' dinners with Karim, the NYE Resolution Retreat and a direct line to Karim. $7,000. Tell us your goal and we'll confirm fit."],
       }[tier];
       $("#ap-kicker").textContent = copy[0]; $("#ap-title").textContent = copy[1]; $("#ap-body").textContent = copy[2];
@@ -708,9 +708,9 @@
       const picks = [].concat(next || []);
       const tier = picks.includes("High-touch support, start to finish.") ? "platinum" : picks.includes("Weekly sessions to help me carry it out.") ? "grow" : "reset";
       const R = {
-        grow: ["GROW", "$2,499 · 30 days", "Everything in the $699 program, plus your custom GPT, 4 weekly 1-hour sessions with Karim over 30 days, and Accountability Standards.", `<button type="button" class="btn btn-primary" data-open="apply" data-tier="grow" data-loc="checkin_result">Go for GROW</button>`],
+        grow: ["GROW", "$2,499 · 30 days", "Everything in the 30-Day Sprint, plus your custom GPT, 4 weekly 1-hour sessions with Karim over 30 days, and Accountability Standards.", `<button type="button" class="btn btn-primary" data-open="apply" data-tier="grow" data-loc="checkin_result">Go for GROW</button>`],
         platinum: ["TRANSFORM", "$7,000 · 7 founding seats", "Everything in GROW, plus a founding seat in our private members' club: social concierge, personalized Google Map and event calendar, members' dinners, the NYE Resolution Retreat and a direct line to Karim.", `<button type="button" class="btn btn-primary" data-open="apply" data-tier="platinum" data-loc="checkin_result">Apply for TRANSFORM</button>`],
-        reset: ["The Executive Performance Program", `$${fmt(PRICE)} · once`, "Your 90-minute 7-in-1 Assessment, your 360° Life Report within 72 hours, your Transformation Plan and your personalized wellness care team referrals.", `<button type="button" class="btn btn-primary" data-open="checkout" data-loc="checkin_result">Get started — $${fmt(PRICE)}</button>`],
+        reset: ["The 30-Day Unstuck Sprint", `$${fmt(PRICE)} · once`, "Your 90-minute Whole-Life Diagnosis, your Environment Blueprint within 48 hours, 3 weekly Sprint Calls, Hard-Conversation Scripts and the Specialist Fast-Pass.", `<button type="button" class="btn btn-primary" data-open="checkout" data-loc="checkin_result">Get started — $${fmt(PRICE)}</button>`],
       };
       const [name, price, what, btn] = R[tier];
       return `<div class="result-block rec"><h3>Recommended for you</h3><p class="rec-name mono">${name} <span>${price}</span></p><p>${what}</p><div class="cta-row">${btn}</div></div>`;
