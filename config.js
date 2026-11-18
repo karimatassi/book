@@ -67,7 +67,7 @@ window.SE7EN_CONFIG = {
   headlines: [
     { hook: "MD-led coaching for corporate professionals in their 30s",
       h: "Hit the goal you've been putting off, in 30 days. | Without relying on willpower.",
-      sub: "Start the business. Get the promotion. Get back in shape. Find the relationship. Karim Atassi, MD looks at all 7 areas of your life and changes the environment around your goal, so the goal follows." },
+      sub: "Start the business. Get the promotion. Get back in shape. Find the relationship. Karim Atassi, MD looks at your whole life, all 7 areas at once, and helps you build the environment around your goal, so the goal follows." },
     { hook: "Get an MD as your life coach",
       h: "Your doctor treats your health. | This MD uncovers how your social habits are impacting it.",
       sub: "Get an MD-built plan that tells you exactly what to change each week, next. It starts with one 90-minute conversation." },

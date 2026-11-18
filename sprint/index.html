@@ -1,0 +1,118 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>The 30-Day Unstuck Sprint</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Hit the goal you've been putting off, in 30 days, without relying on willpower. With Karim Atassi, MD.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap">
+<style>
+:root{--bg:#F6F1E9;--card:#FFFFFF;--ink:#1F1914;--ink2:#3A3631;--mute:#6E675E;--line:#E3DCD1;--brass:#9A7A4A;--gold:#C9A86A;--soft:#FBF8F3;color-scheme:light}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding-block:28px 64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.brand{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--mute);margin-bottom:34px}
+.brand b{color:var(--ink);letter-spacing:.18em;font-weight:800}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.01em;text-wrap:balance;margin:0}
+h1{font-size:clamp(34px,7vw,52px);line-height:1.08}
+.for{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);font-weight:700;margin:0 0 12px}
+.promise{font-family:Fraunces,Georgia,serif;font-size:clamp(21px,4.2vw,26px);line-height:1.3;color:var(--ink2);margin:14px 0 0}
+.intro{font-size:17px;color:var(--ink2);margin:20px 0 26px;max-width:60ch}
+.intro b{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:999px;background:var(--ink);color:#fff;font:600 16px Figtree,system-ui,sans-serif;padding:16px 30px;text-decoration:none;min-height:52px;cursor:pointer}
+.btn:hover{background:#000}
+.btn:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+section{margin-top:52px}
+h2{font-size:clamp(26px,5vw,34px);line-height:1.15;margin-bottom:18px}
+.stack{display:grid;gap:12px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px 20px 18px;display:grid;grid-template-columns:34px 1fr;gap:4px 14px}
+.item .n{grid-row:span 3;width:34px;height:34px;border-radius:50%;background:var(--soft);border:1px solid var(--line);display:grid;place-items:center;font-weight:700;color:var(--brass);font-size:15px}
+.item h3{font-size:19px;line-height:1.3}
+.item .v{font-size:13.5px;font-weight:700;color:var(--brass);letter-spacing:.04em}
+.item p{margin:4px 0 0;color:var(--ink2);font-size:15.5px;min-width:0}
+.total{margin-top:14px;background:var(--ink);color:#F3EDE3;border-radius:16px;padding:22px;display:grid;gap:6px}
+.total .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.total s{color:#A89F92;font-size:18px}
+.total .price{font-family:Fraunces,Georgia,serif;font-size:40px;color:#fff;line-height:1}
+.total small{color:#A89F92;font-size:13.5px}
+.quotes{display:grid;gap:12px}
+.quote{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;display:grid;grid-template-columns:48px 1fr;gap:14px;align-items:start}
+.quote img{width:48px;height:48px;border-radius:50%;object-fit:cover;background:var(--line)}
+.quote blockquote{margin:0;font-size:16px;color:var(--ink2)}
+.quote cite{display:block;font-style:normal;font-size:13.5px;color:var(--mute);margin-top:8px}
+.quote cite b{color:var(--ink)}
+.guar{display:grid;gap:12px}
+.g{border:1px solid var(--gold);background:var(--soft);border-radius:16px;padding:18px 20px;font-size:16px;color:var(--ink2)}
+.g b{display:block;color:var(--ink);font-size:17px;margin-bottom:4px}
+.bonus{border:1px dashed var(--brass);border-radius:16px;padding:18px 20px;background:#fff;font-size:16px;color:var(--ink2)}
+.bonus b{color:var(--ink)}
+.final{margin-top:52px;background:var(--ink);color:#F3EDE3;border-radius:22px;padding:34px 24px;text-align:left}
+.final h2{color:#fff;margin-bottom:10px}
+.final p{color:#D9D1C4;margin:0 0 22px;font-size:16.5px}
+.final .btn{background:var(--gold);color:var(--ink)}
+.final .btn:hover{background:#E2C792}
+.who{display:flex;gap:12px;align-items:center;margin-top:26px;font-size:14px;color:#A89F92}
+.who img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+.who b{color:#fff;display:block;font-size:15px}
+.fine{font-size:12.5px;color:var(--mute);margin-top:24px;line-height:1.5}
+@media(max-width:480px){.item{padding:18px 16px;grid-template-columns:30px 1fr;gap:4px 12px}.item .n{width:30px;height:30px;font-size:14px}.quote{grid-template-columns:40px 1fr;padding:18px 16px}.quote img{width:40px;height:40px}}
+</style>
+
+<div class="wrap">
+  <div class="brand"><b>SE7EN</b><span>by Karim Atassi, MD</span></div>
+
+  <header>
+    <p class="for">For corporate professionals in their 30s</p>
+    <h1>The 30-Day Unstuck Sprint</h1>
+    <p class="promise">Hit the goal you've been putting off, in 30 days, without relying on willpower.</p>
+    <p class="intro">Start the business. Get the promotion. Get back in shape. Find the relationship. You already know <i>what</i> to do. What's stopping you is the life around the goal: your evenings, your circle, your stress. As a physician, I look at all of it. <b>We change your environment, and the goal follows.</b></p>
+    <a class="btn" href="https://karimatassi.github.io/book/book.html" target="_blank" rel="noopener">Book a free 15-minute call</a>
+  </header>
+
+  <section>
+    <h2>What you get</h2>
+    <div class="stack">
+      <div class="item"><span class="n">1</span><h3>The Whole-Life Diagnosis</h3><span class="v">Value $699</span><p>A 90-minute session with me across all 7 areas of your life. We find the real reason you're stuck, usually somewhere you'd never look. You leave with 3 changes to make that same night.</p></div>
+      <div class="item"><span class="n">2</span><h3>Your Environment Blueprint, in 48 hours</h3><span class="v">Value $466</span><p>A plan that rebuilds the life around your goal, not a to-do list. The people, places and habits working against you, including changes in your social life you never saw, and one measurable target for day 30.</p></div>
+      <div class="item"><span class="n">3</span><h3>3 Weekly Sprint Calls</h3><span class="v">Value $699</span><p>30 minutes each. Review, remove blockers, adjust.</p></div>
+      <div class="item"><span class="n">4</span><h3>The Specialist Fast-Pass</h3><span class="v">Value $350</span><p>When your plan needs a professional (sleep, stress, nutrition, fitness, money), I introduce you to vetted providers and specialists and book your first appointments for you.</p></div>
+      <div class="item"><span class="n">5</span><h3>Hard-Conversation Scripts</h3><span class="v">Value $233</span><p>We write them together: the exact words for the talks you've been avoiding with your manager, your partner, a friend or your family.</p></div>
+      <div class="item"><span class="n">6</span><h3>Your Before-and-After Life Map</h3><span class="v">Included</span><p>You take the Life Assessment on day 1 and again on day 30, and see your radar change.</p></div>
+    </div>
+    <div class="total">
+      <div class="row"><span>Total value</span><s>$2,447</s></div>
+      <div class="row"><span>Your price</span><span class="price">$997 <small>CAD</small></span></div>
+      <small>8 clients a month. Every plan is built by hand.</small>
+    </div>
+  </section>
+
+  <section>
+    <h2>What clients say</h2>
+    <div class="quotes">
+      <div class="quote"><img src="../assets/clients/juliet.jpg" alt=""><div><blockquote>"I went in thinking my problem was dating. Turns out I was just around the same people all the time, mostly from work. Karim had me change where I spend my evenings and honestly my whole social life changed."</blockquote><cite><b>J.H.</b> · VP, Business Development</cite></div></div>
+      <div class="quote"><img src="../assets/clients/nour.jpg" alt=""><div><blockquote>"I was pretty burnt out in sales and kept going back and forth on leaving. Karim helped me figure out what I actually wanted and a plan I could afford."</blockquote><cite><b>N.S.</b> · VP, Sales &amp; Operations</cite></div></div>
+      <div class="quote"><img src="../assets/clients/justin.jpg" alt=""><div><blockquote>"I'd been talking about starting something on the side for years. Karim helped me stop talking and start. It's live now."</blockquote><cite><b>J.P.</b> · VP, Business Development</cite></div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Double guarantee</h2>
+    <div class="guar">
+      <div class="g"><b>A plan you believe in, or your money back.</b>If our first session doesn't give you a plan you believe in, you get a full refund.</div>
+      <div class="g"><b>Hit your target, or I keep going.</b>If you show up to every call, do your weekly actions, and miss your day-30 target, I keep coaching you for free until you hit it.</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="bonus"><b>Fast-start bonus:</b> book within 72 hours of your free call and get a 4th Sprint Call free (value $233).</div>
+  </section>
+
+  <div class="final">
+    <h2>Start with a free 15-minute call.</h2>
+    <p>We talk about your goal and what's in the way. If the Sprint is right for you, you can start within 48 hours.</p>
+    <a class="btn" href="https://karimatassi.github.io/book/book.html" target="_blank" rel="noopener">Book a free 15-minute call</a>
+    <div class="who"><img src="../assets/karim-portrait.jpg" alt=""><div><b>Karim Atassi, MD</b>MD Life Strategist · TEDx speaker · WEF Global Shaper</div></div>
+  </div>
+
+  <p class="fine">The Unstuck Sprint is coaching. It is not medical care or a medical diagnosis. When something needs a healthcare professional, you'll be referred to one.</p>
+</div>

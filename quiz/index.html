@@ -1,0 +1,382 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Social Health Assessment</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="A free assessment by Karim Atassi, MD. See how healthy your social life and environment are across 5 lenses: relationships, confidence, where you live, the rooms you go to, and your lifestyle.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap">
+<style>
+:root{--bg:#F6F1E9;--card:#FFFFFF;--ink:#1F1914;--ink2:#3A3631;--mute:#6E675E;--line:#E3DCD1;--brass:#9A7A4A;--gold:#C9A86A;--soft:#FBF8F3;--low:#B4532F;--mid:#B88A3A;--high:#4F7A57;color-scheme:light}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+.wrap{max-width:680px;margin:0 auto;padding-block:28px 56px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.brand{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--mute);margin-bottom:28px}
+.brand b{color:var(--ink);letter-spacing:.18em;font-weight:800}
+.eb{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);font-weight:700;margin:0 0 10px}
+h1,h2{font-family:Fraunces,Georgia,serif;font-weight:600;letter-spacing:-.01em;text-wrap:balance;margin:0}
+h1{font-size:clamp(30px,6vw,44px);line-height:1.12}
+h2{font-size:clamp(23px,4.6vw,30px);line-height:1.2}
+.sub{font-family:Fraunces,Georgia,serif;font-size:clamp(20px,4vw,24px);color:var(--brass);margin:10px 0 0;line-height:1.3}
+.lede{font-size:17px;color:var(--ink2);margin:14px 0 22px;max-width:56ch}
+.facts{display:flex;flex-wrap:wrap;gap:8px 18px;list-style:none;padding:0;margin:0 0 26px;font-size:14px;color:var(--mute)}
+.facts li::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--gold);margin-right:8px;vertical-align:2px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;background:var(--ink);color:#fff;font:600 16px Figtree,system-ui,sans-serif;padding:15px 28px;cursor:pointer;text-decoration:none;min-height:50px}
+.btn:hover{background:#000}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn.ghost:hover{background:var(--soft)}
+.btn:focus-visible,.opt:focus-visible,.chip:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px 22px}
+.who{display:flex;gap:12px;align-items:center;margin-top:30px;font-size:14px;color:var(--mute)}
+.who img{width:44px;height:44px;border-radius:50%;object-fit:cover;background:var(--line)}
+.who b{color:var(--ink);display:block;font-size:15px}
+/* progress */
+.bar{height:4px;background:var(--line);border-radius:4px;overflow:hidden;margin:4px 0 22px}
+.bar i{display:block;height:100%;width:0;background:var(--brass);transition:width .3s}
+.qhead{display:flex;justify-content:space-between;font-size:13px;color:var(--mute)}
+.qhead b{color:var(--brass);letter-spacing:.1em;text-transform:uppercase;font-size:12px}
+.q{font-family:Fraunces,Georgia,serif;font-size:clamp(22px,4.8vw,28px);line-height:1.25;margin:6px 0 22px;font-weight:500;text-wrap:balance;min-height:2.5em}
+.opts{display:grid;gap:9px}
+.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font:500 16px Figtree,system-ui,sans-serif;color:var(--ink);cursor:pointer;min-height:52px}
+.opt:hover{border-color:var(--gold);background:#fff}
+.opt.sel{border-color:var(--brass);background:#fff;box-shadow:inset 0 0 0 1px var(--brass)}
+.opt span{width:26px;height:26px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;font-size:13px;color:var(--mute);flex:none;background:#fff}
+.opt.sel span{background:var(--brass);border-color:var(--brass);color:#fff}
+.nav{display:flex;justify-content:space-between;align-items:center;margin-top:18px}
+.back{background:none;border:0;color:var(--mute);font:500 15px Figtree,system-ui,sans-serif;cursor:pointer;padding:8px 4px}
+.back:disabled{visibility:hidden}
+.fields{display:grid;gap:12px}
+.fields label{display:grid;gap:6px;font-size:14px;font-weight:600;color:var(--ink2)}
+.fields input{font:16px Figtree,system-ui,sans-serif;padding:13px 14px;border:1px solid var(--line);border-radius:12px;background:var(--soft);color:var(--ink);min-height:50px;width:100%}
+.fields input:focus{outline:2px solid var(--brass);outline-offset:1px;background:#fff}
+.fields input.bad{border-color:var(--low)}
+.cstep{display:grid;gap:4px}
+.cstep .q{display:block;margin:6px 0 14px}
+.cstep input{font:17px Figtree,system-ui,sans-serif;padding:15px 16px;border:1px solid var(--line);border-radius:12px;background:var(--soft);color:var(--ink);min-height:54px;width:100%}
+.cstep input:focus{outline:2px solid var(--brass);outline-offset:1px;background:#fff}
+.cstep input.bad{border-color:var(--low)}
+.cstep textarea{font:17px/1.45 Figtree,system-ui,sans-serif;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--soft);color:var(--ink);width:100%;resize:vertical;min-height:130px}
+.cstep textarea:focus{outline:2px solid var(--brass);outline-offset:1px;background:#fff}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.two label{display:grid;gap:6px;font-size:14px;font-weight:600;color:var(--ink2);min-width:0}
+@media(max-width:420px){.two{grid-template-columns:1fr}}
+.mic-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:10px}
+.mic{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:10px 18px 10px 14px;font:600 15px Figtree,system-ui,sans-serif;color:var(--ink);cursor:pointer;min-height:46px}
+.mic i{width:12px;height:12px;border-radius:50%;background:var(--low);flex:none}
+.mic.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.mic.on i{animation:pulse 1s infinite}
+@keyframes pulse{50%{opacity:.25}}
+.mic-note{font-size:13.5px;color:var(--mute)}
+.skip{background:none;border:0;color:var(--mute);font:500 14.5px Figtree,system-ui,sans-serif;text-decoration:underline;cursor:pointer;padding:10px 0 0;justify-self:start}
+.err{color:var(--low);font-size:14px;margin:10px 0 0}
+.fix{border-top:1px solid var(--line);padding-top:12px;margin-top:4px}
+.fix q{display:block;font-style:italic;color:var(--mute);font-size:14.5px;quotes:none;margin-bottom:4px}
+.fix q::before{content:"You answered “" attr(data-a) "” to: "}
+.chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:9px;margin:4px 0 6px}
+.chip{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:14px 16px;text-align:left;font:500 15.5px Figtree,system-ui,sans-serif;color:var(--ink);cursor:pointer;min-height:52px}
+.chip:hover{border-color:var(--gold);background:#fff}
+/* results */
+.score{display:flex;align-items:flex-end;gap:14px;margin:16px 0 4px}
+.score b{font-family:Fraunces,Georgia,serif;font-size:64px;line-height:.9;font-weight:600}
+.score span{color:var(--mute);font-size:15px;padding-bottom:6px}
+.radar{width:100%;max-width:440px;display:block;margin:10px auto 6px;overflow:visible}
+.radar text{font:600 12.5px Figtree,system-ui,sans-serif;fill:var(--ink2)}
+.radar .val{font-weight:700;fill:var(--brass);font-size:11.5px}
+.legend{display:flex;gap:16px;justify-content:center;font-size:13px;color:var(--mute);flex-wrap:wrap}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+.rows{display:grid;gap:10px;margin:8px 0 0}
+.row{display:grid;grid-template-columns:110px 1fr 44px;align-items:center;gap:12px;font-size:14.5px}
+.row .t{height:8px;background:var(--line);border-radius:8px;overflow:hidden}
+.row .t i{display:block;height:100%;border-radius:8px}
+.row b{text-align:right;font-variant-numeric:tabular-nums}
+.focus{display:grid;gap:14px;margin-top:6px}
+.fx{border:1px solid var(--line);border-radius:16px;padding:20px 20px 18px;background:var(--card)}
+.fx .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--low);border-radius:999px;padding:3px 10px;margin-bottom:10px}
+.fx h3{margin:0 0 6px;font-size:19px}
+.fx p{margin:0 0 10px;color:var(--ink2);font-size:15.5px}
+.fx dl{margin:0;display:grid;gap:8px;font-size:15px}
+.fx dt{font-weight:700;color:var(--brass);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase}
+.fx dd{margin:0 0 4px;color:var(--ink2)}
+.cta{background:var(--ink);color:#F3EDE3;border-radius:20px;padding:30px 24px;margin-top:8px}
+.cta h2{color:#fff}
+.cta p{color:#D9D1C4;margin:12px 0 20px;font-size:16px}
+.cta .btn{background:var(--gold);color:var(--ink)}
+.cta .btn:hover{background:#E2C792}
+.cta-btns{display:flex;flex-wrap:wrap;gap:10px}
+.cta .btn.alt{background:transparent;color:#F3EDE3;border:1px solid #5A5148}
+.cta .btn.alt:hover{background:#2A231D}
+.cta small{display:block;color:#A89F92;margin-top:12px;font-size:13px}
+.locked{display:grid;gap:12px;margin-top:16px}
+.lk{position:relative;border:1px solid var(--line);border-radius:16px;padding:18px 20px;background:var(--card);overflow:hidden}
+.lk .hd{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.lk h3{margin:0;font-size:19px}
+.lk .tag{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;border-radius:999px;padding:3px 10px}
+.lk .bl{filter:blur(6px);user-select:none;pointer-events:none;margin-top:10px;color:var(--ink2);font-size:15px}
+.lk .bl p{margin:0 0 6px}
+.lk .ov{position:absolute;left:0;right:0;bottom:0;top:52px;display:grid;place-items:center}
+.lk .lock{width:42px;height:42px;border-radius:50%;background:var(--ink);display:grid;place-items:center;box-shadow:0 4px 14px rgba(31,25,20,.25)}
+.lk .lock svg{width:18px;height:18px}
+.unlock{margin-top:16px;width:100%}
+.unlock svg{width:16px;height:16px}
+section+section{margin-top:34px}
+.fine{font-size:12.5px;color:var(--mute);margin-top:26px;line-height:1.5}
+.again{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+@media(max-width:480px){.card{padding:22px 16px}.row{grid-template-columns:92px 1fr 38px;gap:9px;font-size:14px}.score b{font-size:54px}}
+</style>
+
+<div class="wrap">
+  <div class="brand"><b>SE7EN</b><span>by Karim Atassi, MD</span></div>
+
+  <!-- START -->
+  <div id="start">
+    <h1>Free MD-led Life Assessment</h1>
+    <p class="sub">See how you live your social life</p>
+    <p class="lede">Being surrounded by people is not the same as being socially healthy. Score your social life and environment through 5 lenses: your relationships, your confidence, where you live, the rooms you go to, and your lifestyle. See your map, your 2 weakest lenses, and what to change first.</p>
+    <button class="btn" id="go">Start the assessment</button>
+    <div class="who"><img src="../assets/karim-portrait.jpg" alt="" onerror="this.remove()"><div><b>Karim Atassi, MD</b>MD Life Strategist · Co-founder of SE7EN</div></div>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="contact" hidden>
+    <form class="card" id="cform" novalidate>
+      <div class="qhead"><b>Last step</b><span id="ccount">1 of 5</span></div>
+      <div class="bar"><i id="cprog" style="width:100%"></i></div>
+      <div class="cstep"><label class="q" for="f-story">Your results are ready. First, in your own words: what's the one thing you most want to change?</label>
+        <textarea id="f-story" name="story" rows="5" placeholder="Type it here, or tap the mic and just talk."></textarea>
+        <div class="mic-row"><button type="button" class="mic" id="mic" hidden><i aria-hidden="true"></i><span>Speak your answer</span></button><span class="mic-note" id="micnote"></span></div>
+        <button type="button" class="skip" id="skip">Skip this question</button></div>
+      <div class="cstep" hidden><p class="q">What's your name?</p><div class="two"><label>First name<input id="f-first" name="first" autocomplete="given-name" required></label><label>Last name<input id="f-last" name="last" autocomplete="family-name" required></label></div></div>
+      <div class="cstep" hidden><label class="q" for="f-email">Where should we send your results?</label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="you@email.com" required></div>
+      <div class="cstep" hidden><label class="q" for="f-phone">What's your phone number?</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+1" required></div>
+      <div class="cstep" hidden><label class="q" for="f-job">What do you do for a living?</label><input id="f-job" name="job" autocomplete="organization-title" placeholder="e.g. VP of Sales, lawyer, founder" required></div>
+      <p class="err" id="cerr" hidden></p>
+      <button class="btn" type="submit" id="cnext" style="width:100%;margin-top:16px">Next</button>
+      <div class="nav"><button class="back" type="button" id="cback">← Back</button></div>
+      <p class="fine" style="margin-top:8px">Your details go only to Karim Atassi, MD. You'll get your results and occasional emails; unsubscribe anytime.</p>
+    </form>
+  </div>
+
+  <!-- QUIZ -->
+  <div id="quiz" hidden>
+    <div class="card">
+      <div class="qhead"><b id="dim"></b><span id="count"></span></div>
+      <div class="bar"><i id="prog"></i></div>
+      <p class="q" id="qtext"></p>
+      <div class="opts" id="opts"></div>
+      <div class="nav"><button class="back" id="back">← Back</button><span class="qhead" id="hint">Tap an answer to continue</span></div>
+    </div>
+  </div>
+
+  <!-- RESULTS -->
+  <div id="results" hidden>
+    <section>
+      <p class="eb">Your Social Health Score</p>
+      <h1 id="rtitle"></h1>
+      <div class="score"><b id="total"></b><span>out of 100</span></div>
+      <p class="lede" id="rlede"></p>
+    </section>
+
+    <section class="card">
+      <svg class="radar" id="radar" viewBox="0 0 440 400" role="img" aria-label="Radar map of your 5 scores"></svg>
+      <div class="legend"><span><i style="background:var(--low)"></i>0–39 needs attention</span><span><i style="background:var(--mid)"></i>40–69 room to grow</span><span><i style="background:var(--high)"></i>70–100 strong</span></div>
+      <div class="rows" id="rows" style="margin-top:20px"></div>
+    </section>
+
+    <section>
+      <p class="eb">Where to start</p>
+      <h2>Your 2 weakest lenses</h2>
+      <div class="focus" id="focus" style="margin-top:16px"></div>
+    </section>
+
+    <section>
+      <p class="eb">The rest of your map</p>
+      <h2>Your other 3 lenses</h2>
+      <div class="locked" id="locked"></div>
+      <a class="btn unlock" href="https://karimatassi.github.io/book/book.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Unlock your full map on a free 15-minute call</a>
+    </section>
+
+    <section class="cta">
+      <p class="eb" style="color:var(--gold)">Your next step</p>
+      <h2 id="ctah">Design the social life you want.</h2>
+      <p id="ctap"></p>
+      <div class="cta-btns"><a class="btn" id="book" href="https://karimatassi.github.io/book/book.html" target="_blank" rel="noopener">Book a free 15-minute call</a><a class="btn" style="background:transparent;color:inherit;border:1px solid currentColor" href="https://karimatassi.github.io/book/social/#plans" target="_blank" rel="noopener">See the plans</a></div>
+      <small>With Karim Atassi, MD.</small>
+    </section>
+
+    <div class="again"><button class="btn ghost" id="copy">Copy my scores</button><button class="btn ghost" id="redo">Retake the assessment</button></div>
+    <p class="fine">This assessment is for self-reflection and coaching. It is not a medical assessment or a diagnosis. If you are in crisis, call or text 9-8-8 (Canada).</p>
+  </div>
+</div>
+
+<script>
+(function(){
+"use strict";
+const $=s=>document.querySelector(s);
+// Where answers are sent once the backend is connected (set to the Apps Script URL on the live site).
+const LEAD_ENDPOINT=window.QUIZ_ENDPOINT||"https://script.google.com/macros/s/AKfycbyIas9uzJcXmro8E8pMTbyov8wJHQS9FOkZAOlL0vJb8TZoZSvEYhzHcIEhXOL4iil6/exec";
+const SCALE=["Never true","Rarely true","Sometimes true","Often true","Always true"];
+// [area, what a low score usually means, who helps, [[statement, how to fix it]]]
+const D=[
+ ["Relationships","Your relationships are running on default. The people who matter get what's left of your week, and the people your goals need aren't in your life yet.",
+  "A coach for relationships, a therapist when old patterns keep repeating, and the people already in your life.",
+  [["I have at least 2 people I could call at 2 a.m.","Pick 2 friends you want to be closer to and set a standing call or dinner every 2 weeks. Closeness comes from how often you meet, not from big moments."],
+   ["The people I see most leave me feeling better, not drained.","List the 10 people you see most and mark each one plus or minus. Each week, give 1 more hour to a plus and 1 less to a minus."],
+   ["I know people who are already where I want to be.","Name 3 people who are living the goal you're chasing. This month, ask one of them for 20 minutes. Most people say yes to a specific, short ask."],
+   ["I'm happy with my love life, or with where it's heading.","Write the 3 things you truly need from a partner, and the pattern that keeps repeating. Talk it through with someone outside the situation who will be honest with you."]]],
+ ["Confidence","You're stuck in your head. Anxiety, overthinking or fear of how you come across keeps you from the people and rooms your goals need.",
+  "A coach for confidence and communication, and a therapist if anxiety gets in the way of daily life.",
+  [["I walk into a room of strangers without dreading it.","Before your next event, decide on one small goal: two conversations, then you can leave. A clear finish line makes the room smaller."],
+   ["I reach out to people without overthinking it.","Reaching out feels heavy when every message is a verdict. Send 3 small messages this week: a link, a memory, a \"thought of you\". Volume makes it lighter."],
+   ["I can be fully myself around new people.","Notice where you edit yourself most. This week, share one opinion or interest you usually keep to yourself. The right people are drawn to the real version."],
+   ["I follow up after meeting someone I'd like to know better.","Within 48 hours of meeting someone, send one line that mentions something they said. Most connections die from no follow-up, not from rejection."]]],
+ ["Where you live","Your geography is working against your goals. Where you live and spend your days decides who you bump into, and right now it isn't the people you want to meet.",
+  "Someone who knows your city's neighbourhoods and communities, and people who already live the life you want.",
+  [["I live near people who are chasing what I'm chasing.","Find out where people with your goal live, work and spend weekends in your city. Even if you don't move, start spending your free hours there."],
+   ["My neighbourhood makes it easy to see people without planning.","Pick one café, gym or park near home and go at the same time each week. Being a regular is how neighbours become friends."],
+   ["The cafés, gyms and spots I go to are where the people I want to meet go.","Swap one weekly spot for one where your kind of people already are: the coworking space, the run club route, the café near their offices."],
+   ["I know where the people I want to meet spend their time.","Write down the kind of person you want to meet, then ask 2 of them where they spend their evenings and weekends. Their answer is your map."]]],
+ ["Rooms you go to","Your calendar isn't putting you in the right rooms. The events, restaurants and places you go to shape who you meet, and they're built for your job, not your goals.",
+  "A coach for routines and follow-through, and someone who knows the right rooms in your city.",
+  [["Every week I'm somewhere I could meet someone new.","Pick one recurring place where the same people show up every week: a club, a class, a court. Familiar faces become friends through repetition."],
+   ["I go to events where I could meet people who match my goals.","Choose 2 events this month built around your goal: an industry talk, a founders' night, a community dinner. Go to both, alone if you have to."],
+   ["The restaurants and bars I go to fit the people I want around me.","Next time you book dinner or drinks, choose a place your future circle would choose. Rooms send signals about who belongs."],
+   ["My work hours leave room for people during the week.","Set a hard stop 2 evenings a week and put a person in that slot before work can claim it. Without a clear end, work fills the evening."]]],
+ ["Lifestyle","Your foundation is running low. How you eat, move, sleep and handle stress decides how much energy you bring to people and to your goals.",
+  "A lifestyle coach for the 6 pillars, a dietitian or trainer when you need one, and your own doctor for anything medical.",
+  [["I eat mostly whole, unprocessed food.","Plan 3 dinners for the week on Sunday. Most poor eating is a planning problem, not a willpower problem."],
+   ["I move my body most days.","Book 3 workouts a week in your calendar like meetings, ideally with someone. Movement with people is easier to keep."],
+   ["I sleep 7 or more hours on most nights.","Set a fixed wake-up time 7 days a week and a screen-off time 1 hour before bed. A steady wake time fixes sleep faster than an early bedtime."],
+   ["I handle stress in ways that actually help me recover.","Pick one daily reset: a 10-minute walk, breathing or prayer, at the same time each day. Recovery needs a slot, not a mood."],
+   ["I spend real time with people I care about every week.","Put one person in your calendar every week for a meal or a walk, with your phone away. Social connection is a pillar of health, not a reward for finishing work."],
+   ["Alcohol, nicotine or other habits don't hold me back.","Track your drinks or habit for 2 weeks without changing anything. Seeing the number is often enough to change it."]]]
+];
+const Q=[];D.forEach((d,i)=>d[3].forEach((s,j)=>Q.push({d:i,j,t:s[0]})));
+let lead={},ans=new Array(Q.length).fill(null),cur=0;
+
+function show(id){["start","contact","quiz","results"].forEach(x=>$("#"+x).hidden=x!==id);window.scrollTo(0,0)}
+$("#go").onclick=()=>{cur=0;render();show("quiz")};
+
+const CF=[["story"],["first","last"],["email"],["phone"],["job"]],CN=CF.length;
+const CMSG={first:"Please enter your first name.",last:"Please enter your last name.",email:"Please enter a valid email.",phone:"Please enter a valid phone number.",job:"Please tell us what you do."};
+let cs=0;
+function cshow(){
+  document.querySelectorAll(".cstep").forEach((el,i)=>el.hidden=i!==cs);
+  $("#ccount").textContent=(cs+1)+" of "+CN;
+  $("#cnext").textContent=cs<CN-1?"Next":"See my results";
+  $("#cerr").hidden=true;
+  if(cs!==0)stopMic();
+  const inp=$("#cform").elements[CF[cs][0]];setTimeout(()=>{try{inp.focus({preventScroll:true})}catch(e){}},50);
+}
+function okField(k,v){return k==="story"?true:k==="email"?/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v):k==="phone"?v.replace(/\D/g,"").length>=7:v.length>0}
+function nextStep(){if(cs<CN-1){cs++;cshow()}else results()}
+$("#cform").addEventListener("submit",e=>{
+  e.preventDefault();
+  const f=e.target;let first=null;
+  CF[cs].forEach(k=>{const el=f.elements[k],v=el.value.trim(),ok=okField(k,v);el.classList.toggle("bad",!ok);if(ok)lead[k]=v;else if(!first)first=k});
+  if(first){$("#cerr").textContent=CMSG[first];$("#cerr").hidden=false;f.elements[first].focus();return}
+  nextStep();
+});
+$("#skip").onclick=()=>{$("#f-story").value="";lead.story="";nextStep()};
+
+/* Voice: Claude dictation inside claude.ai, the browser's own speech recognition on the website. */
+const ta=$("#f-story"),micB=$("#mic"),micN=$("#micnote");
+let dict=null,recog=null,listening=false,base="";
+const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+function micUI(on){listening=on;micB.classList.toggle("on",on);micB.querySelector("span").textContent=on?"Stop":"Speak your answer";micN.textContent=on?"Listening… speak naturally.":""}
+function startBase(){base=ta.value.trim()?ta.value.trim()+" ":""}
+function stopMic(){if(!listening)return;try{dict?dict.stop():recog&&recog.stop()}catch(e){}micUI(false)}
+function useSR(){
+  if(!SR)return false;
+  recog=new SR();recog.continuous=true;recog.interimResults=true;recog.lang=navigator.language||"en-US";
+  recog.onresult=e=>{let s="";for(let i=0;i<e.results.length;i++)s+=e.results[i][0].transcript;ta.value=base+s.trim()};
+  recog.onend=()=>micUI(false);
+  recog.onerror=e=>{micUI(false);micN.textContent=e.error==="not-allowed"||e.error==="service-not-allowed"?"Microphone blocked. You can type instead.":"Couldn't hear that. Try again, or type."};
+  micB.hidden=false;return true;
+}
+micB.onclick=()=>{
+  if(listening){stopMic();return}
+  startBase();
+  if(dict){dict.start().then(()=>micUI(true)).catch(err=>{micUI(false);micN.textContent=err&&err.code==="not_granted"?"Microphone not allowed. You can type instead.":"Voice isn't available right now. You can type instead."});return}
+  if(recog){try{recog.start();micUI(true)}catch(e){micN.textContent="Voice isn't available here. You can type instead."}}
+};
+if(window.claude&&typeof window.claude.use==="function"){
+  window.claude.use("dictation").then(d=>{
+    if(!d){useSR();return}
+    dict=d;micB.hidden=false;
+    d.onPartial(({text})=>{ta.value=base+text});
+    d.onFinal(({text})=>{base+=text.trim()+" ";ta.value=base.trim()});
+    d.onState(({state})=>{if(state==="idle")micUI(false);else if(state==="listening")micUI(true)});
+  }).catch(()=>useSR());
+}else useSR();
+$("#cback").onclick=()=>{if(cs>0){cs--;cshow()}else{cur=Q.length-1;render();show("quiz")}};
+
+function render(){
+  const q=Q[cur];
+  $("#dim").textContent=D[q.d][0];
+  $("#count").textContent=(cur+1)+" of "+Q.length;
+  $("#prog").style.width=(cur/Q.length*100)+"%";
+  $("#qtext").textContent=q.t;
+  $("#opts").innerHTML=SCALE.map((s,i)=>`<button class="opt${ans[cur]===i?" sel":""}" type="button" data-v="${i}"><span>${i+1}</span>${s}</button>`).join("");
+  $("#opts").querySelectorAll(".opt").forEach(b=>b.onclick=()=>pick(+b.dataset.v,b));
+}
+let lock=false;
+function pick(v,b){
+  if(lock)return;lock=true;
+  ans[cur]=v;b.classList.add("sel");
+  setTimeout(()=>{lock=false;if(cur<Q.length-1){cur++;render()}else{cs=0;show("contact");cshow()}},220);
+}
+$("#back").onclick=()=>{if(cur>0){cur--;render()}else show("start")};
+
+const COL={low:"#B4532F",mid:"#B88A3A",high:"#4F7A57"};
+const band=s=>s<40?[COL.low,"Needs attention"]:s<70?[COL.mid,"Room to grow"]:[COL.high,"Strong"];
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c]);
+let scores=[];
+function results(){
+  scores=D.map((d,i)=>{const a=Q.map((q,k)=>q.d===i?ans[k]:null).filter(x=>x!==null);return Math.round(a.reduce((s,x)=>s+x,0)/(a.length*4)*100)});
+  const total=Math.round(scores.reduce((s,x)=>s+x,0)/scores.length);
+  const order=scores.map((s,i)=>i).sort((a,b)=>scores[a]-scores[b]);
+  const lo=order.slice(0,2),hi=order[order.length-1];
+  const nm=lead.first||"";
+  $("#total").textContent=total;
+  $("#rtitle").textContent=(nm?nm+", ":"")+(total<40?"your social life is running on default.":total<70?"parts of your social life are holding the rest back.":"you have a strong social base, with room to design more.");
+  $("#rlede").textContent=`Your strongest lens is ${D[hi][0].toLowerCase()} (${scores[hi]}). Your weakest are ${D[lo[0]][0].toLowerCase()} (${scores[lo[0]]}) and ${D[lo[1]][0].toLowerCase()} (${scores[lo[1]]}). Change these 2 first, and you'll feel it across your whole life.`;
+  drawRadar();
+  $("#rows").innerHTML=D.map((d,i)=>`<div class="row"><span>${d[0]}</span><div class="t"><i style="width:${Math.max(scores[i],3)}%;background:${band(scores[i])[0]}"></i></div><b>${scores[i]}</b></div>`).join("");
+  $("#focus").innerHTML=lo.map(i=>{
+    const d=D[i],[c,l]=band(scores[i]);
+    const items=Q.map((q,k)=>({q,k})).filter(x=>x.q.d===i).sort((a,b)=>ans[a.k]-ans[b.k]).slice(0,2);
+    const fixes=items.map(x=>`<div class="fix"><q data-a="${SCALE[ans[x.k]].toLowerCase()}">${esc(x.q.t)}</q><dd>${d[3][x.q.j][1]}</dd></div>`).join("");
+    return `<div class="fx"><span class="tag" style="background:${c}">${l} · ${scores[i]}</span><h3>${d[0]}</h3><p>${d[1]}</p><dl><dt>How to fix it</dt>${fixes}<dt style="margin-top:6px">Who helps</dt><dd>${d[2]}</dd></dl></div>`}).join("");
+  const LOCK='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
+  $("#locked").innerHTML=order.slice(2).map(i=>{const d=D[i],[c,l]=band(scores[i]);return `<div class="lk"><div class="hd"><h3>${d[0]}</h3><span class="tag" style="background:${c}">${l} · ${scores[i]}</span></div><div class="bl" aria-hidden="true"><p>${d[1]}</p><p><b>How to fix it:</b> ${d[3][0][1]}</p></div><div class="ov"><span class="lock" aria-label="Locked">${LOCK}</span></div></div>`}).join("");
+  $("#ctah").textContent=`Start with ${D[lo[0]][0].toLowerCase()} and ${D[lo[1]][0].toLowerCase()}.`;
+  $("#ctap").textContent=`Book a free 15-minute call with Karim Atassi, MD and bring this map. If it's a fit, your next step is the Assessment ($699): a 90-minute session with Karim and a written report on exactly what to change.`;
+  $("#prog").style.width="100%";
+  const payload={type:"quiz",lens:"social",...lead,total,scores:Object.fromEntries(D.map((d,i)=>[d[0],scores[i]])),answers:Q.map((q,k)=>({area:D[q.d][0],q:q.t,a:ans[k]+1}))};
+  try{localStorage.setItem("se7en-quiz",JSON.stringify({total,scores,t:Date.now()}))}catch(e){}
+  if(LEAD_ENDPOINT){try{fetch(LEAD_ENDPOINT,{method:"POST",body:JSON.stringify(payload),keepalive:true}).catch(()=>{})}catch(e){}}
+  show("results");
+}
+
+function drawRadar(){
+  const cx=220,cy=205,R=140,n=D.length,svg=$("#radar");
+  const pt=(i,r)=>{const a=-Math.PI/2+i*2*Math.PI/n;return [cx+r*Math.cos(a),cy+r*Math.sin(a)]};
+  let h="";
+  [25,50,75,100].forEach(p=>{h+=`<polygon points="${D.map((d,i)=>pt(i,R*p/100).join(",")).join(" ")}" fill="${p===100?"#FBF8F3":"none"}" stroke="#E3DCD1" stroke-width="1"/>`});
+  D.forEach((d,i)=>{const [x,y]=pt(i,R);h+=`<line x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="#E3DCD1"/>`});
+  h+=`<polygon points="${scores.map((s,i)=>pt(i,R*Math.max(s,4)/100).join(",")).join(" ")}" fill="rgba(201,168,106,.32)" stroke="#9A7A4A" stroke-width="2.5" stroke-linejoin="round"/>`;
+  scores.forEach((s,i)=>{const [x,y]=pt(i,R*Math.max(s,4)/100);h+=`<circle cx="${x}" cy="${y}" r="4.5" fill="${band(s)[0]}" stroke="#fff" stroke-width="1.5"/>`});
+  D.forEach((d,i)=>{const [x,y]=pt(i,R+30);const anc=Math.abs(x-cx)<8?"middle":x>cx?"start":"end";const dx=anc==="start"?-6:anc==="end"?6:0;
+    h+=`<text x="${x+dx}" y="${y}" text-anchor="${anc}" dominant-baseline="middle">${d[0]}</text><text class="val" x="${x+dx}" y="${y+15}" text-anchor="${anc}" dominant-baseline="middle">${scores[i]}</text>`});
+  svg.innerHTML=h;
+}
+
+$("#redo").onclick=()=>{ans.fill(null);cur=0;render();show("quiz")};
+$("#copy").onclick=async function(){
+  const txt="My Social Health Score (SE7EN)\n"+D.map((d,i)=>d[0]+": "+scores[i]).join("\n");
+  try{await navigator.clipboard.writeText(txt);this.textContent="Copied"}catch(e){this.textContent="Copy failed"}
+  setTimeout(()=>this.textContent="Copy my scores",1800);
+};
+document.addEventListener("keydown",e=>{if($("#quiz").hidden)return;const k=+e.key;if(k>=1&&k<=5){const b=$("#opts").children[k-1];if(b)pick(k-1,b)}});
+})();
+</script>
