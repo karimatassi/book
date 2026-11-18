@@ -56,7 +56,7 @@ section{padding:104px 0;position:relative}
 .hero .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);min-height:min(calc(100svh - 66px),760px)}
 .hero .copy{align-self:center;padding:56px 56px 64px max(20px,calc((100vw - var(--max))/2 + 20px))}
 .hero .film{position:relative;overflow:hidden;background:#05060a}
-.hero .film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:80% 40%}
+.hero .film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 40%}
 .hero .film::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ob) 0%,rgba(10,11,13,0) 18%),linear-gradient(0deg,rgba(10,11,13,.6),rgba(10,11,13,0) 30%)}
 .hero .film .tagline{position:absolute;right:20px;bottom:18px;z-index:1;font:500 10.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--si)}
 .hero h1{font-size:clamp(40px,4.9vw,72px);letter-spacing:-.05em}
@@ -67,8 +67,8 @@ section{padding:104px 0;position:relative}
 @media(max-width:900px){
  .hero{padding-top:58px}
  .hero .grid{grid-template-columns:minmax(0,1fr);min-height:0}
- .hero .film{order:-1;aspect-ratio:16/10}
- .hero .film video{object-position:72% 35%}
+ .hero .film{order:-1;aspect-ratio:5/4}
+ .hero .film video{object-position:50% 35%}
  .hero .film::after{background:linear-gradient(0deg,var(--ob) 0%,rgba(10,11,13,0) 35%)}
  .hero .copy{padding:22px 20px 52px}
  .hero .ctas .btn{flex:1 1 100%}
@@ -96,13 +96,19 @@ section{padding:104px 0;position:relative}
 .chips span.on{border-color:var(--ox);color:#fff;background:var(--ox)}
 .chips-note{margin-top:14px;font:400 12px var(--mono);color:var(--lab)}
 
-/* stage band */
-.stage{padding:0;background:var(--ob)}
-.stage .frame{position:relative;aspect-ratio:21/9;max-height:78vh;width:100%;overflow:hidden;background:#000}
-.stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 60%}
-.stage .cap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:16px;border-bottom:1px solid var(--ld);font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ti)}
-.stage .cap b{color:var(--iv);font-weight:500}
-@media(max-width:760px){.stage .frame{aspect-ratio:16/10}}
+/* social map */
+.smap{position:relative;max-width:900px;margin:44px auto 0}
+.smap .lines{position:absolute;inset:0;width:100%;height:100%}
+.smap .lines line{stroke:#7A3E3A;stroke-opacity:.45;stroke-width:1.2;stroke-dasharray:3 4;vector-effect:non-scaling-stroke}
+.smap ul{position:relative;list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
+.smap li{background:var(--cr2);border:1px solid var(--lc);border-radius:4px;padding:18px 16px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center}
+.smap li svg{width:28px;height:28px;fill:none;stroke:var(--ox);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin-bottom:4px}
+.smap li b{font-size:17px;font-weight:500;letter-spacing:-.02em;color:var(--ink)}
+.smap li span{font:400 12px/1.4 var(--mono);color:var(--ink2)}
+.smap li.hub{background:var(--ob);border-color:var(--ob);justify-content:center}
+.smap li.hub b{color:var(--iv);font-size:20px}.smap li.hub span{color:var(--gold)}
+.smap .coin svg{width:40px;height:40px;stroke:none;margin:0}
+@media(max-width:700px){.smap .lines{display:none}.smap ul{grid-template-columns:1fr 1fr;gap:10px}.smap li{padding:14px 10px}.smap li.hub{grid-column:1/-1;order:-1;padding:18px}.smap li.hub .coin svg{width:32px;height:32px}.smap li b{font-size:15.5px}}
 /* steps with product mocks */
 .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .step{background:var(--cr2);border:1px solid var(--lc);border-radius:4px;padding:26px 24px 0;display:flex;flex-direction:column;overflow:hidden}
@@ -127,10 +133,10 @@ section{padding:104px 0;position:relative}
 /* pillars with workshop media */
 .pills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 .pc{background:var(--g1);border:1px solid var(--ld);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
-.pc .m{aspect-ratio:3/4;overflow:hidden;background:#000}.pc .m video,.pc .m img{width:100%;height:100%;object-fit:cover;filter:saturate(.9);transition:transform 1.2s ease}.pc:hover .m video,.pc:hover .m img{transform:scale(1.03)}
+.pc .m{aspect-ratio:4/3;overflow:hidden;background:var(--ob);border-bottom:1px solid var(--ld);display:grid;place-items:center;background-image:radial-gradient(rgba(197,206,216,.12) 1px,transparent 1.2px);background-size:16px 16px}.pc .m svg{width:78%;height:auto}.pc .m video,.pc .m img{width:100%;height:100%;object-fit:cover;filter:saturate(.9);transition:transform 1.2s ease}.pc:hover .m video,.pc:hover .m img{transform:scale(1.03)}
 .pc .b{padding:22px 22px 26px}.pc .n{font:500 11px var(--mono);color:var(--gold);letter-spacing:.12em}
 .pc h3{font-size:23px;margin:10px 0 8px}.pc p{color:var(--ti);font-size:15px}
-@media(max-width:940px){.pills{grid-template-columns:minmax(0,1fr)}.pc .m{aspect-ratio:4/5}.pc .b{padding:18px 18px 22px}}
+@media(max-width:940px){.pills{grid-template-columns:minmax(0,1fr)}.pc .m{aspect-ratio:16/9}.pc .b{padding:18px 18px 22px}}
 
 /* who */
 .who{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
@@ -168,6 +174,8 @@ section{padding:104px 0;position:relative}
 .swipe{display:none;text-align:center;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--lab);margin-top:8px}
 @media(max-width:940px){.quotes{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -20px;padding:2px 20px 12px;scrollbar-width:none}.quotes::-webkit-scrollbar{display:none}.q{flex:0 0 82%;scroll-snap-align:center}.swipe{display:block}}
 
+.quotes.wall{display:block;columns:3 300px;column-gap:16px}.wall .q{break-inside:avoid;margin:0 0 16px}
+@media(max-width:940px){.quotes.wall{display:block;overflow:visible;margin:0;padding:0;columns:2 260px}.wall .q{flex:none}}
 /* plans */
 .plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
 .plan{background:var(--g1);border:1px solid var(--ld);border-radius:4px;padding:28px;display:flex;flex-direction:column;position:relative}
@@ -188,7 +196,7 @@ section{padding:104px 0;position:relative}
 .seal{flex:none;width:58px;height:58px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);display:grid;place-items:center;text-align:center;font:500 9.5px/1.25 var(--mono);letter-spacing:.08em;text-transform:uppercase}
 .guar b{display:block;font-size:17px;font-weight:600;margin-bottom:3px;letter-spacing:-.02em}.guar p{color:var(--ti);font-size:14.5px}
 .plan-note{margin-top:14px;text-align:center;font:400 12px var(--mono);color:var(--ti)}.plan-note a{color:var(--si)}
-@media(max-width:980px){.plans{grid-template-columns:minmax(0,1fr);gap:22px}.plan .for{min-height:0}.plan.rec{order:-1}}
+@media(max-width:980px){.plans{grid-template-columns:minmax(0,1fr);gap:22px}.plan .for{min-height:0}}
 @media(max-width:560px){.guar{flex-direction:column;align-items:flex-start}}
 
 /* about */
@@ -232,7 +240,7 @@ body::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;op
 <a class="skip" href="#main">Skip to content</a>
 <header class="nav" id="nav"><div class="wrap">
   <a class="brand" href="#top" aria-label="SE7EN, by Karim Atassi, MD"><span class="wm" aria-hidden="true">SE<svg viewBox="0 0 40 40"><circle class="b" cx="20" cy="20" r="19"/><path class="p" d="M13 8.8L28.6 20L13 31.2"/></svg>EN</span><small>by Karim Atassi, MD</small></a>
-  <nav aria-label="Primary"><a href="#how">How it works</a><a href="#watch">Watch</a><a href="#results">Results</a><a href="#plans">Plans</a><a href="#faq">FAQ</a></nav>
+  <nav aria-label="Primary"><a href="#how">How it works</a><a href="#results">Results</a><a href="#plans">Plans</a><a href="#faq">FAQ</a></nav>
   <a class="btn b-iv" href="../book.html" data-cta="nav">Book a free call</a>
 </div></header>
 
@@ -246,7 +254,7 @@ body::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;op
     <div class="ctas"><a class="btn b-ox" href="#plans" data-cta="hero_plans">See plans <span class="ar" aria-hidden="true">→</span></a><a class="btn b-ln" href="../book.html" data-cta="hero_call">Free 15-min call</a></div>
     <p class="mi">Your score improves, or we keep coaching you free · <a href="../quiz/">Free assessment</a></p>
   </div>
-    <div class="film"><video autoplay muted loop playsinline preload="auto" poster="../assets/media/coach-session.jpg" aria-label="Karim Atassi, MD in a coaching session"><source src="../assets/media/coach-session.mp4" type="video/mp4"></video><span class="tagline">In session with Karim</span></div>
+    <div class="film"><video autoplay muted loop playsinline preload="auto" poster="../assets/media/karim-reel.jpg" aria-label="Karim Atassi, MD on Valuetainment, on the TEDxMcGill stage, and coaching clients"><source src="../assets/media/karim-reel.mp4" type="video/mp4"></video><span class="tagline">Valuetainment · TEDxMcGill · 1:1 sessions</span></div>
   </div>
 </section>
 
@@ -272,15 +280,11 @@ body::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;op
   <div class="wrap rv">
     <p class="k">Why it matters</p>
     <h2>Social connection is a pillar of health. <em>Nobody checks it.</em></h2>
-    <p class="s">It's one of the 6 pillars of lifestyle medicine, the framework behind the American College and American Board of Lifestyle Medicine. It's the most overlooked. It's our focus.</p>
-    <div class="chips" aria-label="The 6 pillars of lifestyle medicine"><span>Nutrition</span><span>Movement</span><span>Sleep</span><span>Stress</span><span class="on">Social connection</span><span>Risky substances</span></div>
+    <p class="s">It's one of the 6 pillars of lifestyle medicine, and the most overlooked. The people around you shape everything below.</p>
+    <div class="smap"><svg class="lines" viewBox="0 0 300 300" preserveAspectRatio="none" aria-hidden="true"><line x1="150" y1="150" x2="50" y2="50"/><line x1="150" y1="150" x2="150" y2="50"/><line x1="150" y1="150" x2="250" y2="50"/><line x1="150" y1="150" x2="50" y2="150"/><line x1="150" y1="150" x2="250" y2="150"/><line x1="150" y1="150" x2="50" y2="250"/><line x1="150" y1="150" x2="150" y2="250"/><line x1="150" y1="150" x2="250" y2="250"/></svg><ul aria-label="What your social life affects"><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="9" r="3.2"/><circle cx="16.5" cy="9" r="3.2"/><path d="M2.5 20c.6-3.6 2.8-5.5 5.5-5.5s4.9 1.9 5.5 5.5M11.5 16c1-1 2.6-1.5 5-1.5 2.7 0 4.9 1.9 5.5 5.5"/></svg><b>Relationships</b><span>Partner, friends, family</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7.5" width="18" height="12" rx="1.5"/><path d="M8.5 7.5V5a1.5 1.5 0 0 1 1.5-1.5h4A1.5 1.5 0 0 1 15.5 5v2.5M3 12.5h18"/></svg><b>Career</b><span>Mentors and the next door</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="4.5"/></svg><b>Confidence</b><span>How you show up in a room</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12h3.5l2-5 3.5 10 2.5-7 1.5 2H21"/></svg><b>Stress &amp; mood</b><span>Who you lean on when it’s hard</span></li><li class="hub" aria-hidden="false"><span class="coin"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="19" fill="#7A3E3A"/><path d="M13 8.8L28.6 20L13 31.2" fill="none" stroke="#F4EDE2" stroke-width="5.2" stroke-miterlimit="12"/></svg></span><b>Your social life</b><span>touches all of it</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><b>Habits</b><span>You eat, drink and move like your circle</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-8-4.6-8-10.4A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 8 2.5c0 5.8-8 10.4-8 10.4z"/></svg><b>Longevity</b><span>Strong ties are linked to a longer life</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z"/><circle cx="12" cy="10" r="2.3"/></svg><b>Environment</b><span>Where you live and spend your evenings</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r=".9" fill="currentColor"/></svg><b>Purpose</b><span>Belonging to something bigger</span></li></ul></div>
   </div>
 </section>
 
-<section class="stage" aria-label="Karim on stage">
-  <div class="frame"><video muted loop playsinline preload="none" poster="../assets/tedx-stage.jpg" data-src="../assets/tedx-stage.mp4" aria-label="Karim Atassi, MD speaking at TEDxMcGill"></video></div>
-  <div class="wrap cap"><span><b>On stage</b> · TEDxMcGill</span><span>Speaker · Global Shaper, World Economic Forum</span></div>
-</section>
 
 <section class="lt2" id="how">
   <div class="wrap">
@@ -307,9 +311,9 @@ body::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;op
   <div class="wrap">
     <div class="hd rv"><p class="k">What we work on</p><h2>Three parts of your life, <em>tuned to your goal.</em></h2></div>
     <div class="pills">
-      <article class="pc rv"><div class="m"><img src="../assets/media/suit-event.jpg" alt="" loading="lazy" style="object-position:62% 30%"></div><div class="b"><p class="n">01</p><h3>Relationships</h3><p>The people your goal needs, and how to keep them.</p></div></article>
-      <article class="pc rv"><div class="m"><video muted loop playsinline preload="none" poster="../assets/media/whiteboard.jpg" data-src="../assets/media/whiteboard.mp4" style="object-position:40% 30%" aria-hidden="true"></video></div><div class="b"><p class="n">02</p><h3>Personal performance</h3><p>Confidence, anxiety, overthinking. Out of your head, into the room.</p></div></article>
-      <article class="pc rv"><div class="m"><video muted loop playsinline preload="none" poster="../assets/media/leading-room.jpg" data-src="../assets/media/leading-room.mp4" style="object-position:50% 22%" aria-hidden="true"></video></div><div class="b"><p class="n">03</p><h3>Environment</h3><p>Where you live, the places you go, and systems that keep you showing up.</p></div></article>
+      <article class="pc rv"><div class="m"><svg viewBox="0 0 200 150" aria-hidden="true"><g fill="none" stroke="#353A41"><circle cx="100" cy="75" r="58"/><circle cx="100" cy="75" r="34"/></g><g stroke="#C5CED8" stroke-width="1"><line x1="100" y1="75" x2="58" y2="40"/><line x1="100" y1="75" x2="148" y2="48"/><line x1="100" y1="75" x2="140" y2="118"/><line x1="100" y1="75" x2="56" y2="112"/><line x1="58" y1="40" x2="148" y2="48" stroke-dasharray="2 4"/><line x1="140" y1="118" x2="56" y2="112" stroke-dasharray="2 4"/></g><g fill="#0A0B0D" stroke="#F1F0EA" stroke-width="1.5"><circle cx="58" cy="40" r="7"/><circle cx="148" cy="48" r="7"/><circle cx="140" cy="118" r="7"/><circle cx="56" cy="112" r="7"/></g><circle cx="100" cy="75" r="11" fill="#C8A55A"/></svg></div><div class="b"><p class="n">01</p><h3>Relationships</h3><p>The people your goal needs, and how to keep them.</p></div></article>
+      <article class="pc rv"><div class="m"><svg viewBox="0 0 200 150" aria-hidden="true"><g stroke="#24282D"><line x1="30" y1="35" x2="170" y2="35"/><line x1="30" y1="60" x2="170" y2="60"/><line x1="30" y1="85" x2="170" y2="85"/><line x1="30" y1="110" x2="170" y2="110"/></g><path d="M30 120 L62 104 L90 110 L118 78 L144 64 L170 30" fill="none" stroke="#F1F0EA" stroke-width="2"/><g fill="#0A0B0D" stroke="#F1F0EA" stroke-width="1.5"><circle cx="62" cy="104" r="4"/><circle cx="90" cy="110" r="4"/><circle cx="118" cy="78" r="4"/><circle cx="144" cy="64" r="4"/></g><circle cx="170" cy="30" r="9" fill="#C8A55A"/><path d="M166 24.5L174.5 30L166 35.5" fill="none" stroke="#0A0B0D" stroke-width="2.4"/></svg></div><div class="b"><p class="n">02</p><h3>Personal performance</h3><p>Confidence, anxiety, overthinking. Out of your head, into the room.</p></div></article>
+      <article class="pc rv"><div class="m"><svg viewBox="0 0 200 150" aria-hidden="true"><g stroke="#24282D"><line x1="40" y1="15" x2="40" y2="135"/><line x1="70" y1="15" x2="70" y2="135"/><line x1="100" y1="15" x2="100" y2="135"/><line x1="130" y1="15" x2="130" y2="135"/><line x1="160" y1="15" x2="160" y2="135"/><line x1="25" y1="30" x2="175" y2="30"/><line x1="25" y1="60" x2="175" y2="60"/><line x1="25" y1="90" x2="175" y2="90"/><line x1="25" y1="120" x2="175" y2="120"/></g><path d="M40 120 C70 115 70 60 100 60 S140 30 160 30" fill="none" stroke="#C5CED8" stroke-dasharray="3 4"/><g fill="#0A0B0D" stroke="#F1F0EA" stroke-width="1.5"><circle cx="40" cy="120" r="5"/><circle cx="100" cy="60" r="5"/></g><path d="M160 46s-12-10-12-20a12 12 0 0 1 24 0c0 10-12 20-12 20z" fill="#C8A55A"/><circle cx="160" cy="26" r="4" fill="#0A0B0D"/></svg></div><div class="b"><p class="n">03</p><h3>Environment</h3><p>Where you live, the places you go, and systems that keep you showing up.</p></div></article>
     </div>
   </div>
 </section>
@@ -322,31 +326,11 @@ body::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;op
   </div>
 </section>
 
-<section class="gr" id="watch">
-  <div class="wrap watch">
-    <div class="rv">
-      <div class="player" id="player"><video id="pv" playsinline preload="none" poster="../assets/media/tedx.jpg"><source src="../assets/media/tedx.mp4" type="video/mp4"></video><button type="button" id="pb"><span class="pl" aria-hidden="true"></span><span id="pl">Watch · TEDxMcGill</span></button></div>
-      <div class="thumbs" role="group" aria-label="Choose a clip">
-        <button type="button" aria-pressed="true" data-v="../assets/media/tedx.mp4" data-p="../assets/media/tedx.jpg" data-l="TEDxMcGill"><img src="../assets/media/tedx.jpg" alt="" loading="lazy"><span>TEDx</span></button>
-        <button type="button" aria-pressed="false" data-v="../assets/media/valuetainment.mp4?v=172" data-p="../assets/media/valuetainment.jpg?v=172" data-l="Valuetainment"><img src="../assets/media/valuetainment.jpg?v=172" alt="" loading="lazy"><span>Valuetainment</span></button>
-      </div>
-    </div>
-    <div class="rv"><p class="k">Watch Karim</p><blockquote>Karim knows how to connect people. A couple of his introductions completely changed where my company went.</blockquote><cite>S.M. · FinTech Entrepreneur</cite></div>
-  </div>
-</section>
 
 <section class="lt" id="results">
   <div class="wrap">
-    <div class="hd c rv"><p class="k">Results</p><h2>100+ people helped.</h2></div>
-    <div class="quotes">
-        <figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>I went in thinking my problem was dating. Turns out I was just around the same people all the time. Karim had me change where I spend my evenings and honestly my whole social life changed.</blockquote><figcaption class="who"><img src="../assets/clients/juliet.jpg" alt="" loading="lazy"><div><b>J.H.</b><span>VP, Business Development</span></div></figcaption></figure>
-        <figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>Moved to Toronto for work and realized all my “friends” were coworkers. The plan was super practical, like which places to go and when. I have a real group now.</blockquote><figcaption class="who"><img src="../assets/clients/lara.jpg" alt="" loading="lazy"><div><b>L.R.</b><span>Consultant</span></div></figcaption></figure>
-        <figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>He picked up on how I communicate when I'm stressed within about 20 minutes. Kind of annoying how right he was. It's helped with my partner, my family, everyone.</blockquote><figcaption class="who"><img src="../assets/clients/andrea.jpg" alt="" loading="lazy"><div><b>A.J.</b><span>Fashion Influencer</span></div></figcaption></figure>
-        <figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>Karim knows how to connect people. A couple of his introductions completely changed where my company went.</blockquote><figcaption class="who"><img src="../assets/clients/sultan.jpg" alt="" loading="lazy"><div><b>S.M.</b><span>FinTech Entrepreneur</span></div></figcaption></figure>
-        <figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>I was pretty burnt out in sales and kept going back and forth on leaving. Karim helped me figure out what I actually wanted and a plan I could afford.</blockquote><figcaption class="who"><img src="../assets/clients/nour.jpg" alt="" loading="lazy"><div><b>N.S.</b><span>VP, Sales &amp; Operations</span></div></figcaption></figure>
-        <figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>Karim helped me take a big idea and actually make it real. He knows how to get the right people in a room. We ended up closing a major institutional partner.</blockquote><figcaption class="who"><img src="../assets/clients/ajamu.jpg" alt="" loading="lazy"><div><b>A.A.</b><span>EdTech Entrepreneur</span></div></figcaption></figure>
-      </div>
-    <p class="swipe" aria-hidden="true">Swipe for more →</p>
+    <div class="hd c rv"><p class="k">Results</p><h2>100+ people helped. <em>In their words.</em></h2></div>
+    <div class="quotes wall"><figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>I went in thinking my problem was dating. Turns out I was just around the same people all the time, mostly from work. Karim had me change where I spend my evenings and honestly my whole social life changed. Wish I'd done it two years ago.</blockquote><figcaption class="who"><img src="../assets/clients/juliet.jpg?v=2" alt="" loading="lazy"><div><b>J.H.</b><span>VP, Business Development</span></div></figcaption></figure><figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>Moved to Toronto for work and realized all my “friends” were coworkers. The plan was super practical, like which places to go and when. I have a real group now.</blockquote><figcaption class="who"><img src="../assets/clients/lara.jpg?v=2" alt="" loading="lazy"><div><b>L.R.</b><span>Consultant</span></div></figcaption></figure><figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>Karim knows how to connect people. A couple of his introductions completely changed where my company went.</blockquote><figcaption class="who"><img src="../assets/clients/sultan.jpg?v=2" alt="" loading="lazy"><div><b>S.M.</b><span>FinTech Entrepreneur</span></div></figcaption></figure><figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>He picked up on how I communicate when I'm stressed within about 20 minutes. Kind of annoying how right he was. It's helped with my partner, my family, everyone.</blockquote><figcaption class="who"><img src="../assets/clients/andrea.jpg?v=2" alt="" loading="lazy"><div><b>A.J.</b><span>Fashion Influencer</span></div></figcaption></figure><figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>As a doctor I'm terrible at taking my own advice. This gave me structure. I'm sleeping more and I actually have my evenings back.</blockquote><figcaption class="who"><img src="../assets/clients/rami.jpg?v=2" alt="" loading="lazy"><div><b>R.M.</b><span>Physician</span></div></figcaption></figure><figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>I was pretty burnt out in sales and kept going back and forth on leaving. Karim didn't push me either way. He helped me figure out what I actually wanted and a plan I could afford. That alone was worth it.</blockquote><figcaption class="who"><img src="../assets/clients/nour.jpg?v=2" alt="" loading="lazy"><div><b>N.S.</b><span>VP, Sales &amp; Operations</span></div></figcaption></figure><figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>I overthink everything. Karim made me pick one thing and put a date on it. That's it. It worked.</blockquote><figcaption class="who"><img src="../assets/clients/abdullatif.jpg?v=2" alt="" loading="lazy"><div><b>A.A.</b><span>Consultant</span></div></figcaption></figure><figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>Karim helped me take a big idea and actually make it real. He knows how to get the right people in a room. We ended up closing a major institutional partner.</blockquote><figcaption class="who"><img src="../assets/clients/ajamu.jpg?v=2" alt="" loading="lazy"><div><b>A.A.</b><span>EdTech Entrepreneur</span></div></figcaption></figure><figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>Short and to the point. He caught two things I'd been avoiding for years. I still have the list on my fridge.</blockquote><figcaption class="who"><img src="../assets/clients/lydia.jpg?v=2" alt="" loading="lazy"><div><b>L.A.</b><span>Dentist</span></div></figcaption></figure><figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>I'd been talking about starting something on the side for years. Karim helped me stop talking and start. It's live now.</blockquote><figcaption class="who"><img src="../assets/clients/justin.jpg?v=2" alt="" loading="lazy"><div><b>J.P.</b><span>VP, Business Development</span></div></figcaption></figure></div>
   </div>
 </section>
 
@@ -398,7 +382,7 @@ body::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;op
             <li><b>Delegate</b><span>G20 Young Entrepreneurs' Alliance</span></li>
             <li><b>Speaker</b><span>TEDxMcGill</span></li>
           </ul>
-      <div class="strip"><img src="../assets/media/studio-bts.jpg" alt="Karim on set at a studio shoot" loading="lazy" style="object-position:70% 55%"><img src="../assets/tedx-stage.jpg" alt="Karim on stage at TEDxMcGill" loading="lazy" style="object-position:45% 60%"></div></div>
+      <div class="strip"><img src="../assets/media/studio-bts.jpg" alt="Karim on set at a studio shoot" loading="lazy" style="object-position:70% 55%"><img src="../assets/media/suit-event.jpg" alt="Karim at a community event" loading="lazy" style="object-position:60% 25%"></div></div>
   </div>
 </section>
 
@@ -440,8 +424,8 @@ body::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;op
   var nav=document.getElementById('nav'),st=document.getElementById('sticky'),hero=document.getElementById('top');
   function onS(){var y=scrollY;nav.classList.toggle('on',y>40);st.classList.toggle('show',y>hero.offsetHeight*.8)}addEventListener('scroll',onS,{passive:true});onS();
   var pv=document.getElementById('pv'),pb=document.getElementById('pb'),pl=document.getElementById('pl'),player=document.getElementById('player');
-  pb.addEventListener('click',function(){pv.controls=true;pv.muted=false;player.classList.add('playing');pv.play().catch(function(){})});
-  document.querySelectorAll('.thumbs button').forEach(function(b){b.addEventListener('click',function(){
+  if(pb)pb.addEventListener('click',function(){pv.controls=true;pv.muted=false;player.classList.add('playing');pv.play().catch(function(){})});
+  if(pv)document.querySelectorAll('.thumbs button').forEach(function(b){b.addEventListener('click',function(){
     document.querySelectorAll('.thumbs button').forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');
     pv.pause();pv.poster=b.dataset.p;pv.src=b.dataset.v;pl.textContent='Watch · '+b.dataset.l;player.classList.add('playing');pv.controls=true;pv.muted=false;pv.play().catch(function(){})})});
 })();
