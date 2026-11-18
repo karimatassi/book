@@ -12,330 +12,236 @@
 <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800&family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,800&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --obsidian:#0A0B0D;--graphite:#121417;--graphite-2:#1A1D21;--line-d:#25292E;--line-d2:#353A41;
-  --ivory:#F1F0EA;--titanium:#8B9097;--silver:#C5CED8;
-  --cream:#F4EDE2;--cream-2:#FBF7F0;--line-c:#E3D9C9;--ink:#15130F;--ink-2:#5E574D;--label:#8A7F70;
-  --ox:#7A3E3A;--ox-2:#934B46;--gold:#C8A55A;
-  --max:1120px;
-  --sans:Geist,Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
-  --mono:"Geist Mono",ui-monospace,"SF Mono",Menlo,monospace;
-  --wm:Archivo,"Arial Black",system-ui,sans-serif;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:64px;-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--obsidian);color:var(--ivory);font:400 15.5px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img,video{max-width:100%;display:block}
-a{color:inherit}
-h1,h2,h3{font-family:var(--sans);font-weight:500;letter-spacing:-.04em;line-height:1.04;margin:0;text-wrap:balance}
-h1 em,h2 em,h3 em{font-style:normal;color:var(--gold)}
-.light h2 em{color:var(--ox)}
-p{margin:0}
-.wrap{max-width:var(--max);margin:0 auto;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
-.skip{position:absolute;left:-999px;top:8px;background:var(--ivory);color:var(--obsidian);padding:8px 12px;z-index:300}.skip:focus{left:12px}
-.eyebrow{display:flex;align-items:center;gap:10px;font:500 11.5px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-.eyebrow::before{content:"";width:8px;height:8px;border:1.5px solid currentColor;border-radius:50%;flex:none}
-.light .eyebrow{color:var(--label)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:2px;font:600 15px var(--sans);letter-spacing:-.01em;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .15s,border-color .15s;white-space:nowrap}
+:root{--ob:#0A0B0D;--g1:#121417;--g2:#1A1D21;--ld:#24282D;--ld2:#353A41;--iv:#F1F0EA;--ti:#8B9097;--si:#C5CED8;
+--cr:#F4EDE2;--cr2:#FBF7F0;--lc:#E3D9C9;--ink:#15130F;--ink2:#5E574D;--lab:#8A7F70;--ox:#7A3E3A;--ox2:#934B46;--gold:#C8A55A;
+--max:1160px;--sans:Geist,Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"Geist Mono",ui-monospace,Menlo,monospace;--wm:Archivo,"Arial Black",system-ui,sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:64px;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ob);color:var(--iv);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{max-width:100%;display:block}a{color:inherit}p{margin:0}
+h1,h2,h3{font-family:var(--sans);font-weight:500;letter-spacing:-.045em;line-height:1.02;margin:0;text-wrap:balance}
+h1 em,h2 em{font-style:normal;color:var(--gold)}.lt h2 em{color:var(--ox)}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.skip{position:absolute;left:-999px;top:8px;background:var(--iv);color:var(--ob);padding:8px 12px;z-index:300}.skip:focus{left:12px}
+.k{display:inline-flex;align-items:center;gap:10px;font:500 11.5px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin:0 0 18px}
+.k::before{content:"";width:7px;height:7px;border:1.5px solid currentColor;border-radius:50%}
+.lt .k{color:var(--lab)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:50px;padding:0 24px;border-radius:2px;font:600 15px var(--sans);letter-spacing:-.01em;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:background .15s,border-color .15s;white-space:nowrap}
 .btn:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
-.btn-dark,.btn-gold{background:var(--ox);color:#fff;border-color:var(--ox)}.btn-dark:hover,.btn-gold:hover{background:var(--ox-2);border-color:var(--ox-2)}
-.btn-line{border-color:var(--line-d2);color:var(--ivory);background:transparent}.btn-line:hover{border-color:var(--titanium);background:var(--graphite-2)}
-.light .btn-line{border-color:#CDBFA8;color:var(--ink)}.light .btn-line:hover{border-color:var(--ink);background:transparent}
-.btn .ar{transition:transform .2s}.btn:hover .ar{transform:translateX(3px)}
-.btn-block{width:100%}
-section{padding:88px 0;position:relative}
-.light{background:var(--cream);color:var(--ink)}
-.sand{background:var(--cream-2);color:var(--ink)}
-.paper{background:var(--graphite);color:var(--ivory)}
-.dark{background:var(--obsidian);color:var(--ivory)}
-.dots::before{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(rgba(197,206,216,.13) 1px,transparent 1.2px);background-size:22px 22px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%)}
-.dots>.wrap{position:relative}
-.head{max-width:640px;margin-bottom:40px}
-.head.c{margin-left:auto;margin-right:auto;text-align:center}
-.head.c .eyebrow{justify-content:center}
-.head h2{font-size:clamp(28px,3.4vw,42px)}
-.head p{margin-top:14px;font-size:16.5px;color:var(--titanium)}
-.light .head p,.sand .head p{color:var(--ink-2)}
-.head p.eyebrow{font-size:11.5px;margin-top:0;color:var(--gold)}
-.light .head p.eyebrow,.sand .head p.eyebrow{color:var(--label)}
+.b-ox{background:var(--ox);color:#fff;border-color:var(--ox)}.b-ox:hover{background:var(--ox2);border-color:var(--ox2)}
+.b-iv{background:var(--iv);color:var(--ob);border-color:var(--iv)}.b-iv:hover{background:#fff}
+.b-ln{border-color:rgba(241,240,234,.4);color:var(--iv)}.b-ln:hover{border-color:var(--iv);background:rgba(255,255,255,.06)}
+.lt .b-ln{border-color:#CDBFA8;color:var(--ink)}.lt .b-ln:hover{border-color:var(--ink);background:transparent}
+.btn .ar{transition:transform .2s}.btn:hover .ar{transform:translateX(3px)}.blk{width:100%}
+section{padding:104px 0;position:relative}
+.lt{background:var(--cr);color:var(--ink)}.lt2{background:var(--cr2);color:var(--ink)}.dk{background:var(--ob)}.gr{background:var(--g1)}
+.hd{max-width:660px;margin-bottom:48px}.hd.c{margin:0 auto 48px;text-align:center}.hd.c .k{justify-content:center}
+.hd h2{font-size:clamp(30px,3.8vw,48px)}.hd p.s{margin-top:16px;font-size:17px;color:var(--ti)}.lt .hd p.s,.lt2 .hd p.s{color:var(--ink2)}
 
-/* wordmark */
-.wm{display:inline-flex;align-items:center;font:800 17px/1 var(--wm);font-stretch:125%;letter-spacing:.02em;color:var(--ivory);text-decoration:none}
-.wm svg{width:1.04em;height:1.04em;margin:0 .1em;flex:none}
-.wm .body{fill:var(--ivory)}.wm .prompt{fill:none;stroke:var(--obsidian);stroke-width:5.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:12}
+.wm{display:inline-flex;align-items:center;font:800 17px/1 var(--wm);font-stretch:125%;letter-spacing:.02em;color:var(--iv);text-decoration:none}
+.wm svg{width:1.04em;height:1.04em;margin:0 .1em;flex:none}.wm .b{fill:var(--iv)}.wm .p{fill:none;stroke:var(--ob);stroke-width:5.2;stroke-miterlimit:12}
 
 /* nav */
-.nav{position:sticky;top:0;z-index:50;background:rgba(10,11,13,.86);backdrop-filter:saturate(1.2) blur(12px);-webkit-backdrop-filter:saturate(1.2) blur(12px);border-bottom:1px solid var(--line-d);padding-top:env(safe-area-inset-top,0px)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:20px}
-.brand{display:flex;flex-direction:column;gap:4px;text-decoration:none}
-.brand small{font:400 10.5px var(--mono);color:var(--titanium);letter-spacing:.02em}
-.nav nav{display:flex;gap:26px;font:400 12.5px var(--mono);letter-spacing:.02em}
-.nav nav a{text-decoration:none;color:var(--titanium)}.nav nav a:hover{color:var(--ivory)}
-.nav .btn{min-height:38px;padding:0 16px;font-size:13.5px;background:var(--ivory);color:var(--obsidian);border-color:var(--ivory)}
-.nav .btn:hover{background:#fff}
-@media(max-width:940px){.nav nav{display:none}}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;padding-top:env(safe-area-inset-top,0px);transition:background .25s,border-color .25s;border-bottom:1px solid transparent}
+.nav.on{background:rgba(10,11,13,.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom-color:var(--ld)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:66px;gap:20px}
+.brand{display:flex;flex-direction:column;gap:5px;text-decoration:none}.brand small{font:400 10.5px var(--mono);color:var(--si);opacity:.8}
+.nav nav{display:flex;gap:28px;font-size:14px}.nav nav a{text-decoration:none;color:var(--si)}.nav nav a:hover{color:#fff}
+.nav .btn{min-height:40px;padding:0 18px;font-size:14px}
+@media(max-width:940px){.nav nav{display:none}.nav .wrap{height:58px}}
 
-/* hero */
-.hero{padding:64px 0 80px;overflow:hidden}
-.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
-.hero h1{font-size:clamp(34px,4.5vw,56px)}
-.hero .sub{font-size:17.5px;color:#D2D4D0;margin-top:20px;max-width:40ch;line-height:1.5}
-.hero .sub b{color:var(--ivory);font-weight:600}
-.hero .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
-.hero .micro{margin-top:16px;font:400 12px/1.6 var(--mono);color:var(--titanium)}
-.hero .micro a{color:var(--silver);text-underline-offset:3px}
-.proof{display:flex;align-items:center;gap:12px;margin-top:28px;padding-top:22px;border-top:1px solid var(--line-d)}
-.faces{display:flex}
-.faces img{width:34px;height:34px;border-radius:50%;object-fit:cover;border:2px solid var(--obsidian);margin-left:-9px;filter:grayscale(.2)}
-.faces img:first-child{margin-left:0}
-.proof p{font-size:13px;color:var(--titanium);line-height:1.4}
-.proof b{color:var(--ivory);font-weight:600}
-.collage{position:relative;padding:0 0 34px 34px}
-.arch{position:relative;border-radius:2px;overflow:hidden;aspect-ratio:4/5;background:var(--graphite);border:1px solid var(--line-d2)}
-.arch video{width:100%;height:100%;object-fit:cover}
-.arch::after{content:"REC · STAGE";position:absolute;left:12px;top:12px;font:500 10.5px var(--mono);letter-spacing:.12em;color:var(--ivory);background:rgba(10,11,13,.6);padding:5px 8px;border-radius:2px}
-.polaroid{margin:0;position:absolute;left:0;bottom:0;width:42%;background:var(--cream);padding:6px 6px 26px;border-radius:2px;box-shadow:0 20px 40px -14px rgba(0,0,0,.7)}
-.polaroid img{aspect-ratio:1/1;object-fit:cover}
-.polaroid span{position:absolute;left:0;right:0;bottom:7px;text-align:center;font:500 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--label)}
-.badge-float{position:absolute;right:-8px;bottom:70px;background:var(--ivory);color:var(--obsidian);border-radius:2px;padding:10px 14px;font:400 11px/1.4 var(--mono);letter-spacing:.04em;box-shadow:0 16px 30px -10px rgba(0,0,0,.6)}
-.badge-float b{display:block;font:600 14px var(--sans);letter-spacing:-.02em}
-@media(max-width:940px){
-  .hero{padding:32px 0 64px}
-  .hero .wrap{grid-template-columns:minmax(0,1fr);gap:40px}
-  .collage{padding:0 0 26px 22px;max-width:460px;margin:0 auto;width:100%}
-  .arch{aspect-ratio:4/4.2}
-  .badge-float{right:0;bottom:56px}
+/* hero: full-bleed film */
+.hero{position:relative;min-height:min(100svh,900px);display:flex;align-items:flex-end;padding:0 0 64px;overflow:hidden;background:#000}
+.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:28% 30%}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,0) 20%,rgba(0,0,0,.55) 52%,rgba(0,0,0,.85) 100%),linear-gradient(0deg,rgba(0,0,0,.75),rgba(0,0,0,0) 40%)}
+.hero .wrap{position:relative;z-index:1;width:100%;display:flex;justify-content:flex-end}
+.hero .copy{max-width:560px}
+.hero h1{font-size:clamp(38px,5vw,64px)}
+.hero .sub{margin-top:20px;font-size:18.5px;line-height:1.5;color:#DADBD6;max-width:40ch}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.hero .mi{margin-top:16px;font:400 12px var(--mono);color:var(--si);opacity:.85}
+.hero .mi a{color:#fff}
+@media(max-width:860px){
+ .hero{min-height:0;display:block;padding:0;background:var(--ob)}
+ .hero video{position:relative;height:auto;aspect-ratio:4/3.4;object-position:30% 30%}
+ .hero::after{inset:0 0 auto 0;height:calc((100vw)*.85);background:linear-gradient(0deg,var(--ob) 2%,rgba(10,11,13,0) 45%),linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,0) 25%)}
+ .hero .wrap{margin-top:-64px;padding-bottom:48px;justify-content:flex-start}
+ .hero .ctas .btn{flex:1 1 100%}
 }
 
-/* press */
-.press{padding:26px 0;background:var(--obsidian);border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d)}
-.press .wrap{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:16px 40px}
-.press p{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--titanium)}
-.press img{height:var(--h);width:auto;filter:grayscale(1) brightness(0) invert(1);opacity:.6}
-.press img.inv{filter:grayscale(1) brightness(0) invert(1);opacity:.6}
+/* stat strip */
+.stats{border-top:1px solid var(--ld);border-bottom:1px solid var(--ld);background:var(--ob)}
+.stats ul{list-style:none;margin:0 auto;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+.stats li{padding:26px 22px;border-right:1px solid var(--ld)}.stats li:last-child{border-right:0}
+.stats b{display:block;font-size:22px;font-weight:500;letter-spacing:-.03em}
+.stats span{font:400 11.5px var(--mono);color:var(--ti);letter-spacing:.04em}
+@media(max-width:760px){.stats ul{grid-template-columns:1fr 1fr}.stats li:nth-child(2){border-right:0}.stats li:nth-child(-n+2){border-bottom:1px solid var(--ld)}.stats li{padding:20px 18px}.stats b{font-size:19px}}
+.press{padding:28px 0;background:var(--ob)}
+.press .wrap{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:16px 42px}
+.press p{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ti)}
+.press img{height:var(--h);width:auto;filter:grayscale(1) brightness(0) invert(1);opacity:.55}
 @media(max-width:640px){.press .wrap{gap:14px 26px}.press p{width:100%;text-align:center}.press img{transform:scale(.85)}}
 
-/* timeline (on cream) */
-.timeline{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line-c);background:var(--cream-2)}
-.tl{padding:28px;position:relative;border-right:1px solid var(--line-c)}
-.tl:last-child{border-right:0}
-.tl .when{font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ox)}
-.tl h3{font-size:22px;margin:12px 0 8px;color:var(--ink)}
-.tl p{color:var(--ink-2);font-size:15px}
-.tl .dot{position:absolute;top:26px;right:26px;width:26px;height:26px;border-radius:50%;border:1px solid var(--line-c);display:grid;place-items:center;font:500 11px var(--mono);color:var(--label)}
-@media(max-width:860px){.timeline{grid-template-columns:minmax(0,1fr)}.tl{border-right:0;border-bottom:1px solid var(--line-c)}.tl:last-child{border-bottom:0}}
+/* statement */
+.state{text-align:center}
+.state h2{font-size:clamp(30px,4.4vw,56px);max-width:18ch;margin:0 auto}
+.state p.s{margin:20px auto 0;font-size:18px;color:var(--ink2);max-width:52ch}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:30px}
+.chips span{border:1px solid #D6C9B4;border-radius:2px;padding:8px 13px;font:500 11.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+.chips span.on{border-color:var(--ox);color:#fff;background:var(--ox)}
+.chips-note{margin-top:14px;font:400 12px var(--mono);color:var(--lab)}
+
+/* steps with product mocks */
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.step{background:var(--cr2);border:1px solid var(--lc);border-radius:4px;padding:26px 24px 0;display:flex;flex-direction:column;overflow:hidden}
+.step .n{font:500 12px var(--mono);color:var(--ox);letter-spacing:.1em}
+.step h3{font-size:24px;margin:12px 0 8px;color:var(--ink)}
+.step p{color:var(--ink2);font-size:15.5px}
+.mock{margin-top:auto;padding-top:24px}
+.mock .scr{background:#fff;border:1px solid var(--lc);border-bottom:0;border-radius:6px 6px 0 0;padding:16px;box-shadow:0 -8px 30px -18px rgba(21,19,15,.25);min-height:190px}
+.mk{font:500 7.5px var(--mono);letter-spacing:.08em;fill:#8A7F70}.mk.ox{fill:#7A3E3A}
+.rp-t{display:flex;justify-content:space-between;font:500 9.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--lab);border-bottom:1px solid #EEE6D8;padding-bottom:8px;margin-bottom:10px}
+.rp-k{font:500 9.5px var(--mono);letter-spacing:.1em;color:var(--ox);text-transform:uppercase;margin:10px 0 6px}
+.rp-l{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;line-height:1.35;color:var(--ink);padding:6px 0;border-bottom:1px solid #F3EDE3}
+.rp-l i{flex:none;font:500 9.5px var(--mono);color:var(--lab);font-style:normal;margin-top:2px}
+.cal{display:grid;gap:7px}
+.ev{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:center;border:1px solid #EEE6D8;border-radius:4px;padding:8px 10px}
+.ev .d{font:500 9.5px/1.2 var(--mono);color:var(--lab);text-transform:uppercase;text-align:center}.ev .d b{display:block;font:500 16px var(--sans);color:var(--ink);letter-spacing:-.03em}
+.ev .t{font-size:12.5px;line-height:1.3;color:var(--ink)}.ev .t span{display:block;font:400 9.5px var(--mono);color:var(--lab)}
+.ev .tag{font:500 9px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--ox);padding:3px 6px;border-radius:2px}
+.ev .tag.g{background:transparent;color:var(--lab);border:1px solid #E3D9C9}
+@media(max-width:940px){.steps{grid-template-columns:minmax(0,1fr)}}
+
+/* pillars with workshop media */
+.pills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pc{background:var(--g1);border:1px solid var(--ld);border-radius:4px;overflow:hidden;display:flex;flex-direction:column}
+.pc .m{aspect-ratio:4/3;overflow:hidden;background:#000}.pc .m video,.pc .m img{width:100%;height:100%;object-fit:cover;filter:saturate(.85)}
+.pc .b{padding:22px 22px 26px}.pc .n{font:500 11px var(--mono);color:var(--gold);letter-spacing:.12em}
+.pc h3{font-size:23px;margin:10px 0 8px}.pc p{color:var(--ti);font-size:15px}
+@media(max-width:940px){.pills{grid-template-columns:minmax(0,1fr)}.pc{display:grid;grid-template-columns:40% 1fr}.pc .m{aspect-ratio:auto;height:100%}.pc .b{padding:18px}.pc h3{font-size:19px}.pc p{font-size:14px}}
 
 /* who */
-.fitwrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:52px;align-items:center}
-.fitphoto{margin:0;border-radius:2px;overflow:hidden;aspect-ratio:4/5;position:relative;border:1px solid var(--line-c)}
-.fitphoto img{width:100%;height:100%;object-fit:cover}
-.fitphoto figcaption{position:absolute;left:10px;bottom:10px;background:rgba(10,11,13,.75);color:var(--ivory);border-radius:2px;padding:6px 9px;font:500 10.5px var(--mono);letter-spacing:.08em;text-transform:uppercase}
-.fit{list-style:none;padding:0;margin:0;border-top:1px solid var(--line-c)}
-.fit li{display:flex;gap:14px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line-c);font-size:17px;color:var(--ink);letter-spacing:-.01em}
-.fit li::before{content:"“";font:600 22px/1 var(--sans);color:var(--ox);flex:none;width:12px}
-@media(max-width:860px){.fitwrap{grid-template-columns:minmax(0,1fr);gap:28px}.fitphoto{aspect-ratio:16/10}}
+.who{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.who svg{width:100%;height:auto}
+.fk{font:500 10.5px var(--mono);letter-spacing:.12em;fill:#8A7F70}.fk.ox{fill:#7A3E3A}
+.fit{list-style:none;padding:0;margin:0;border-top:1px solid var(--lc)}
+.fit li{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--lc);font-size:17.5px;letter-spacing:-.015em;color:var(--ink)}
+.fit li::before{content:"“";font:600 22px/1 var(--sans);color:var(--ox);width:12px;flex:none}
+@media(max-width:860px){.who{grid-template-columns:minmax(0,1fr);gap:32px}.who figure{order:2}}
 
-/* approach */
-.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line-d)}
-.pillar{padding:30px;display:flex;flex-direction:column;gap:10px;border-right:1px solid var(--line-d);background:var(--graphite)}
-.pillar:last-child{border-right:0}
-.pillar .ic{width:40px;height:40px;border-radius:50%;border:1px solid var(--line-d2);display:grid;place-items:center}
-.pillar .ic svg{width:20px;height:20px;stroke:var(--gold);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
-.pillar h3{font-size:22px;margin-top:6px}
-.pillar p{color:var(--titanium);font-size:15px}
-.why{margin-top:20px;display:grid;grid-template-columns:1.1fr 1fr;gap:32px;align-items:center;background:var(--cream);color:var(--ink);border-radius:2px;padding:34px}
-.why h3{font-size:26px;margin-bottom:10px}
-.why h3 em{color:var(--ox)}
-.why p{color:var(--ink-2);font-size:15px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips span{border:1px solid #D6C9B4;border-radius:2px;padding:7px 12px;font:500 11.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
-.chips span.on{border-color:var(--ox);color:#fff;background:var(--ox)}
-@media(max-width:940px){.pillars{grid-template-columns:minmax(0,1fr)}.pillar{border-right:0;border-bottom:1px solid var(--line-d)}.pillar:last-child{border-bottom:0}.why{grid-template-columns:minmax(0,1fr);padding:26px 22px}}
+/* watch */
+.watch{display:grid;grid-template-columns:1.35fr 1fr;gap:48px;align-items:center}
+.player{position:relative;aspect-ratio:16/9;border-radius:4px;overflow:hidden;background:#000;border:1px solid var(--ld2)}
+.player video{width:100%;height:100%;object-fit:cover}
+.player button{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-start;gap:12px;padding:20px;background:linear-gradient(0deg,rgba(0,0,0,.7),rgba(0,0,0,0) 50%);border:0;color:#fff;cursor:pointer;font:500 13px var(--mono);letter-spacing:.08em;text-transform:uppercase;text-align:left}
+.player button .pl{width:52px;height:52px;border-radius:50%;background:var(--iv);display:grid;place-items:center;flex:none}
+.player button .pl::before{content:"";border-left:14px solid var(--ob);border-top:9px solid transparent;border-bottom:9px solid transparent;margin-left:4px}
+.player.playing button{display:none}
+.thumbs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:10px}
+.thumbs button{position:relative;padding:0;border:1px solid var(--ld);border-radius:3px;overflow:hidden;background:#000;cursor:pointer;aspect-ratio:16/10}
+.thumbs button img{width:100%;height:100%;object-fit:cover;opacity:.7}.thumbs button[aria-pressed="true"]{border-color:var(--gold)}.thumbs button[aria-pressed="true"] img{opacity:1}
+.thumbs button span{position:absolute;left:6px;bottom:6px;font:500 9.5px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.6);padding:3px 6px;border-radius:2px}
+.watch blockquote{margin:0;font-size:clamp(22px,2.4vw,30px);line-height:1.25;letter-spacing:-.03em;font-weight:400}
+.watch blockquote::before{content:"“";display:block;font-size:54px;line-height:.6;color:var(--gold);margin-bottom:14px}
+.watch cite{display:block;margin-top:18px;font:400 12px var(--mono);font-style:normal;color:var(--ti);letter-spacing:.04em}
+@media(max-width:940px){.watch{grid-template-columns:minmax(0,1fr);gap:32px}}
 
-/* how */
-.howwrap{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
-.howphoto{border-radius:2px;overflow:hidden;aspect-ratio:4/5;border:1px solid var(--line-d2)}
-.howphoto img{width:100%;height:100%;object-fit:cover}
-.how{list-style:none;padding:0;margin:0;position:relative}
-.how li{display:grid;grid-template-columns:44px 1fr;gap:4px 16px;padding:20px 0;position:relative}
-.how li::before{content:"";position:absolute;left:13px;top:50px;bottom:-14px;width:1px;background:var(--line-d2)}
-.how li:last-child::before{display:none}
-.how .n{grid-row:span 2;width:28px;height:28px;border-radius:50%;background:var(--ivory);color:var(--obsidian);display:grid;place-items:center;font:500 12px var(--mono)}
-.how h3{font-size:21px}
-.how p{color:var(--titanium);font-size:15px}
-@media(max-width:860px){.howwrap{grid-template-columns:minmax(0,1fr);gap:28px}.howphoto{aspect-ratio:16/10;order:2}}
-
-/* results (cream) */
+/* results */
 .quotes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.q{margin:0;background:var(--cream-2);border:1px solid var(--line-c);border-radius:2px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.q{margin:0;background:var(--cr2);border:1px solid var(--lc);border-radius:4px;padding:24px;display:flex;flex-direction:column;gap:14px}
 .q .mark{font:600 34px/.7 var(--sans);color:var(--ox);height:16px}
 .q blockquote{margin:0;font-size:16px;line-height:1.55;color:var(--ink);letter-spacing:-.01em}
-.q .who{display:flex;gap:10px;align-items:center;margin-top:auto;padding-top:14px;border-top:1px solid var(--line-c)}
-.q .who img{width:38px;height:38px;border-radius:50%;object-fit:cover}
-.q .who b{display:block;font-size:14px;color:var(--ink)}
-.q .who span{font:400 11px var(--mono);color:var(--label);letter-spacing:.02em}
-@media(max-width:940px){
-  .quotes{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 calc(-1 * max(18px,env(safe-area-inset-left,0px)));padding:2px max(18px,env(safe-area-inset-left,0px)) 12px;scrollbar-width:none}
-  .quotes::-webkit-scrollbar{display:none}
-  .q{flex:0 0 82%;scroll-snap-align:center}
-}
-.swipe{display:none;text-align:center;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--label);margin-top:6px}
-@media(max-width:940px){.swipe{display:block}}
+.q .who{display:flex;gap:10px;align-items:center;margin-top:auto;padding-top:14px;border-top:1px solid var(--lc)}
+.q .who img{width:40px;height:40px;border-radius:50%;object-fit:cover}.q .who b{display:block;font-size:14px;color:var(--ink)}.q .who span{font:400 11px var(--mono);color:var(--lab)}
+.swipe{display:none;text-align:center;font:500 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--lab);margin-top:8px}
+@media(max-width:940px){.quotes{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 -20px;padding:2px 20px 12px;scrollbar-width:none}.quotes::-webkit-scrollbar{display:none}.q{flex:0 0 82%;scroll-snap-align:center}.swipe{display:block}}
 
-/* plans (dark) */
+/* plans */
 .plans{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:stretch}
-.plan{background:var(--graphite);border:1px solid var(--line-d);border-radius:2px;padding:28px;display:flex;flex-direction:column;position:relative}
-.plan .name{font:500 11.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--titanium)}
-.plan .for{margin-top:8px;font-size:16px;line-height:1.4;color:var(--silver);min-height:46px}
-.plan .price{font:500 44px/1 var(--sans);margin:20px 0 6px;letter-spacing:-.05em}
-.plan .price small{font:400 12px var(--mono);color:var(--titanium);margin-left:6px;letter-spacing:.04em}
-.plan .terms{font:400 12px var(--mono);color:var(--titanium)}
+.plan{background:var(--g1);border:1px solid var(--ld);border-radius:4px;padding:28px;display:flex;flex-direction:column;position:relative}
+.plan .name{font:500 11.5px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ti)}
+.plan .for{margin-top:8px;font-size:16px;line-height:1.4;color:var(--si);min-height:46px}
+.plan .price{font:500 46px/1 var(--sans);margin:20px 0 6px;letter-spacing:-.05em}.plan .price small{font:400 12px var(--mono);color:var(--ti);margin-left:6px;letter-spacing:.04em}
+.plan .terms{font:400 12px var(--mono);color:var(--ti)}
 .plan ul{list-style:none;padding:0;margin:20px 0 26px;display:grid;gap:11px}
-.plan li{display:flex;gap:10px;font-size:15px;line-height:1.45;color:#D2D4D0}
-.plan li::before{content:"";flex:none;width:6px;height:6px;margin-top:8px;border-radius:50%;background:var(--gold)}
-.plan .btn{margin-top:auto}
-.plan .inc{font:500 10.5px var(--mono);color:var(--gold);letter-spacing:.12em;text-transform:uppercase;margin-top:22px}
-.plan .inc+ul{margin-top:10px}
+.plan li{display:flex;gap:10px;font-size:15px;line-height:1.45;color:#D2D4D0}.plan li::before{content:"";flex:none;width:6px;height:6px;margin-top:8px;border-radius:50%;background:var(--gold)}
+.plan .btn{margin-top:auto}.plan .inc{font:500 10.5px var(--mono);color:var(--gold);letter-spacing:.12em;text-transform:uppercase;margin-top:22px}.plan .inc+ul{margin-top:10px}
 .plan.rec{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold) inset}
-.plan .tag{position:absolute;top:-11px;left:28px;background:var(--gold);color:var(--obsidian);font:600 10.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;border-radius:2px;padding:4px 9px;white-space:nowrap}
-.plan.top{background:var(--cream);color:var(--ink);border-color:var(--cream)}
-.plan.top .name,.plan.top .terms,.plan.top .price small{color:var(--label)}
-.plan.top .for,.plan.top li{color:var(--ink-2)}
-.plan.top .inc{color:var(--ox)}
-.plan.top li::before{background:var(--ox)}
-.plan.top .btn-gold{background:var(--obsidian);border-color:var(--obsidian)}
-.plan .btn-line{border-color:var(--line-d2)}
-.guar{margin:28px auto 0;max-width:780px;display:flex;gap:18px;align-items:center;border:1px solid var(--line-d2);border-radius:2px;padding:20px 22px}
+.plan .tag{position:absolute;top:-11px;left:28px;background:var(--gold);color:var(--ob);font:600 10.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;border-radius:2px;padding:4px 9px}
+.plan.top{background:var(--cr);color:var(--ink);border-color:var(--cr)}.plan.top .name,.plan.top .terms,.plan.top .price small{color:var(--lab)}.plan.top .for,.plan.top li{color:var(--ink2)}.plan.top .inc{color:var(--ox)}.plan.top li::before{background:var(--ox)}
+.plan .btn-dark,.plan .btn-gold{background:var(--ox);color:#fff;border-color:var(--ox)}.plan .btn-dark:hover,.plan .btn-gold:hover{background:var(--ox2)}
+.plan.top .btn-gold{background:var(--ob);border-color:var(--ob)}
+.plan .btn-line{border-color:var(--ld2);color:var(--iv)}.plan .btn-line:hover{border-color:var(--ti)}.btn-block{width:100%}
+.guar{margin:28px auto 0;max-width:780px;display:flex;gap:18px;align-items:center;border:1px solid var(--ld2);border-radius:4px;padding:20px 22px}
 .seal{flex:none;width:58px;height:58px;border-radius:50%;border:1px solid var(--gold);color:var(--gold);display:grid;place-items:center;text-align:center;font:500 9.5px/1.25 var(--mono);letter-spacing:.08em;text-transform:uppercase}
-.guar b{display:block;font-size:17px;font-weight:600;margin-bottom:3px;letter-spacing:-.02em}
-.guar p{color:var(--titanium);font-size:14.5px}
-.plan-note{margin-top:14px;text-align:center;font:400 12px var(--mono);color:var(--titanium)}
-.plan-note a{color:var(--silver)}
+.guar b{display:block;font-size:17px;font-weight:600;margin-bottom:3px;letter-spacing:-.02em}.guar p{color:var(--ti);font-size:14.5px}
+.plan-note{margin-top:14px;text-align:center;font:400 12px var(--mono);color:var(--ti)}.plan-note a{color:var(--si)}
 @media(max-width:980px){.plans{grid-template-columns:minmax(0,1fr);gap:22px}.plan .for{min-height:0}.plan.rec{order:-1}}
 @media(max-width:560px){.guar{flex-direction:column;align-items:flex-start}}
 
-/* karim (cream) */
-.karim .top{display:grid;grid-template-columns:.8fr 1.2fr;gap:56px;align-items:center}
-.karim .photo{border-radius:2px;overflow:hidden;aspect-ratio:4/5;background:#e9e1d3;border:1px solid var(--line-c)}
-.karim .photo img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
-.karim h2{font-size:clamp(28px,3.4vw,42px);color:var(--ink)}
-.karim .bio{margin-top:18px;font-size:16.5px;color:var(--ink-2);max-width:56ch}
-.creds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 26px;margin:26px 0 0;padding:0;list-style:none}
-.creds li{border-top:1px solid var(--line-c);padding-top:10px}
-.creds b{display:block;color:var(--ink);font-weight:600;font-size:15px;letter-spacing:-.01em}
-.creds span{font:400 11.5px var(--mono);color:var(--label)}
-.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:52px}
-.gallery figure{margin:0;border-radius:2px;overflow:hidden;background:var(--obsidian);position:relative}
-.gallery img,.gallery video{width:100%;aspect-ratio:4/5;object-fit:cover}
-.gallery figcaption{position:absolute;left:8px;bottom:8px;font:500 10.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ivory);background:rgba(10,11,13,.75);border-radius:2px;padding:5px 8px}
-.gallery figcaption b{font-weight:600;margin-right:6px}
-@media(max-width:940px){.karim .top{grid-template-columns:minmax(0,1fr);gap:30px}.karim .photo{max-width:340px;aspect-ratio:1/1}
-  .gallery{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:10px;margin:40px calc(-1 * max(18px,env(safe-area-inset-left,0px))) 0;padding:0 max(18px,env(safe-area-inset-left,0px)) 6px;scrollbar-width:none}
-  .gallery::-webkit-scrollbar{display:none}.gallery figure{flex:0 0 58%;scroll-snap-align:start}}
+/* about */
+.about{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
+.about .ph{position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:#000}
+.about .ph img{width:100%;height:100%;object-fit:cover;object-position:center 25%}
+.about .ph figcaption{position:absolute;left:12px;bottom:12px;font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--iv);background:rgba(10,11,13,.7);padding:6px 9px;border-radius:2px}
+.about h2{font-size:clamp(30px,3.6vw,46px);color:var(--ink)}
+.about .bio{margin-top:18px;font-size:17px;color:var(--ink2);max-width:56ch}
+.creds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 26px;margin:28px 0 0;padding:0;list-style:none}
+.creds li{border-top:1px solid var(--lc);padding-top:10px}.creds b{display:block;color:var(--ink);font-weight:600;font-size:15px}.creds span{font:400 11.5px var(--mono);color:var(--lab)}
+.strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:28px}
+.strip img{aspect-ratio:1/1;object-fit:cover;border-radius:3px}
+@media(max-width:900px){.about{grid-template-columns:minmax(0,1fr);gap:32px}.about .ph{aspect-ratio:4/4.2}}
 
-/* faq (dark) */
-.faq{max-width:760px;margin:0 auto;border-top:1px solid var(--line-d)}
-.faq details{border-bottom:1px solid var(--line-d)}
-.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-size:17px;font-weight:500;letter-spacing:-.02em}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";flex:none;font:400 18px var(--mono);color:var(--gold);transition:transform .2s}
-.faq details[open] summary::after{transform:rotate(45deg)}
-.faq details p{padding:0 0 18px;color:var(--titanium);font-size:15.5px;max-width:64ch}
-.faq details a{color:var(--silver)}
+/* faq */
+.faq{max-width:760px;margin:0 auto;border-top:1px solid var(--ld)}.faq details{border-bottom:1px solid var(--ld)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:19px 0;font-size:17.5px;font-weight:500;letter-spacing:-.02em}
+.faq summary::-webkit-details-marker{display:none}.faq summary::after{content:"+";flex:none;font:400 20px var(--mono);color:var(--gold);transition:transform .2s}
+.faq details[open] summary::after{transform:rotate(45deg)}.faq details p{padding:0 0 18px;color:var(--ti);font-size:15.5px;max-width:64ch}.faq details a{color:var(--si)}
 
 /* final */
-.final{position:relative;overflow:hidden;text-align:center;padding:100px 0;color:var(--ivory);background:var(--obsidian)}
-.final .bg{position:absolute;inset:0;background:url("../assets/media/ws-pods.jpg") center 30%/cover;opacity:.22;filter:grayscale(.6)}
-.final::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,11,13,.5),rgba(10,11,13,.95))}
-.final .wrap{position:relative;z-index:1}
-.final h2{font-size:clamp(30px,4vw,48px)}
-.final p{margin:16px auto 0;color:#D2D4D0;font-size:17px;max-width:44ch}
-.final .ctas{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:28px}
-
-footer{background:var(--obsidian);color:var(--titanium);font-size:13px;padding:40px 0 calc(36px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line-d)}
-footer .wrap{display:grid;gap:14px}
-footer b{color:var(--ivory)}
-footer a{color:var(--silver)}
-
-.sticky{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:60;display:flex;gap:12px;align-items:center;justify-content:space-between;background:var(--graphite-2);border:1px solid var(--line-d2);border-radius:2px;padding:7px 7px 7px 16px;color:var(--ivory);font:500 12px var(--mono);letter-spacing:.04em;box-shadow:0 18px 40px -12px rgba(0,0,0,.7);transform:translateY(140%);transition:transform .3s}
-.sticky.show{transform:none}
-.sticky .btn{min-height:42px;padding:0 18px;font-size:14px}
-@media(min-width:941px){.sticky{display:none}}
-@media(max-width:940px){footer{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}}
-
-@media(max-width:640px){
-  body{font-size:15px}
-  section{padding:60px 0}
-  .head{margin-bottom:28px}
-  .hero .ctas .btn{flex:1 1 100%}
-  .hero .sub{font-size:16.5px}
-  .tl,.pillar,.plan{padding:24px 20px}
-}
-.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
-.reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.btn,.sticky{transition:none}}
-
-/* brand symbols */
-.fl{font:500 10px "Geist Mono",ui-monospace,monospace;letter-spacing:.12em;fill:#C5CED8}
-.fl.dim{fill:#8B9097}.fl.gold{fill:#C8A55A}
-.fk{font:500 10.5px "Geist Mono",ui-monospace,monospace;letter-spacing:.12em;fill:#8A7F70}.fk.ox{fill:#7A3E3A}
-.sym-hero svg,.sym-fit svg,.sym-how svg{width:100%;height:auto;display:block}
-.sym-hero{max-width:500px;width:100%;justify-self:end}
-.sym-fit,.sym-how{margin:0}
-.orb{animation:spin 140s linear infinite}.orb.r2{animation-duration:200s;animation-direction:reverse}.orb.r3{animation-duration:280s}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media(prefers-reduced-motion:reduce){.orb{animation:none}}
-@media(max-width:940px){.sym-hero{justify-self:center;max-width:440px}}
-@media(max-width:860px){.sym-how{order:2}}
-.final::before{-webkit-mask-image:radial-gradient(circle at 50% 50%,#000,transparent 70%);mask-image:radial-gradient(circle at 50% 50%,#000,transparent 70%)}
-.final::after{display:none}
-
-.sym-hero{position:relative;aspect-ratio:480/500;overflow:hidden;background:#0A0B0D}
-.sym-hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:68% 30%;filter:grayscale(.35) contrast(1.05) brightness(.85)}
-.sym-hero .shade{position:absolute;inset:0;background:radial-gradient(ellipse at 60% 40%,rgba(10,11,13,0) 30%,rgba(10,11,13,.75) 95%),linear-gradient(180deg,rgba(10,11,13,.35),rgba(10,11,13,0) 25%,rgba(10,11,13,0) 70%,rgba(10,11,13,.85))}
-.sym-hero svg{position:relative}
+.final{position:relative;overflow:hidden;text-align:center;padding:140px 0;background:#000}
+.final video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
+.final::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,.2),rgba(0,0,0,.8))}
+.final .wrap{position:relative;z-index:1}.final h2{font-size:clamp(32px,4.6vw,58px)}
+.final p{margin:16px auto 0;color:#DADBD6;font-size:18px;max-width:44ch}.final .ctas{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:30px}
+footer{background:var(--ob);color:var(--ti);font-size:13px;padding:44px 0 calc(40px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--ld)}
+footer .wrap{display:grid;gap:14px}footer b{color:var(--iv)}footer a{color:var(--si)}
+.sticky{position:fixed;left:10px;right:10px;bottom:calc(10px + env(safe-area-inset-bottom,0px));z-index:60;display:flex;gap:12px;align-items:center;justify-content:space-between;background:var(--g2);border:1px solid var(--ld2);border-radius:4px;padding:7px 7px 7px 16px;font:500 12px var(--mono);letter-spacing:.04em;box-shadow:0 18px 40px -12px rgba(0,0,0,.7);transform:translateY(140%);transition:transform .3s}
+.sticky.show{transform:none}.sticky .btn{min-height:42px;padding:0 18px;font-size:14px}
+@media(min-width:941px){.sticky{display:none}}@media(max-width:940px){footer{padding-bottom:calc(100px + env(safe-area-inset-bottom,0px))}}
+@media(max-width:640px){body{font-size:15.5px}section{padding:68px 0}.hd,.hd.c{margin-bottom:32px}.plan{padding:24px 20px}.final{padding:96px 0}}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-
-<header class="nav" id="nav">
-  <div class="wrap">
-    <a class="brand" href="#top" aria-label="SE7EN, by Karim Atassi, MD">
-      <span class="wm" aria-hidden="true">SE<svg viewBox="0 0 40 40"><circle class="body" cx="20" cy="20" r="19"/><path class="prompt" d="M13 8.8L28.6 20L13 31.2"/></svg>EN</span>
-      <small>by Karim Atassi, MD</small>
-    </a>
-    <nav aria-label="Primary"><a href="#approach">Approach</a><a href="#how">How it works</a><a href="#results">Results</a><a href="#plans">Plans</a><a href="#faq">FAQ</a></nav>
-    <a class="btn btn-dark" href="../book.html" data-cta="nav">Book a free call</a>
-  </div>
-</header>
+<header class="nav" id="nav"><div class="wrap">
+  <a class="brand" href="#top" aria-label="SE7EN, by Karim Atassi, MD"><span class="wm" aria-hidden="true">SE<svg viewBox="0 0 40 40"><circle class="b" cx="20" cy="20" r="19"/><path class="p" d="M13 8.8L28.6 20L13 31.2"/></svg>EN</span><small>by Karim Atassi, MD</small></a>
+  <nav aria-label="Primary"><a href="#how">How it works</a><a href="#watch">Watch</a><a href="#results">Results</a><a href="#plans">Plans</a><a href="#faq">FAQ</a></nav>
+  <a class="btn b-iv" href="../book.html" data-cta="nav">Book a free call</a>
+</div></header>
 
 <main id="main">
-  <!-- HERO -->
-  <section class="hero dark dots" id="top">
-    <div class="wrap">
-      <div>
-        <p class="eyebrow">MD-led lifestyle &amp; social health coaching</p>
-        <h1>When's the last time a doctor asked about your <em>social life?</em></h1>
-        <p class="sub">Transform it in 30 days: <b>new people, new places,</b> and the confidence to go with them.</p>
-        <div class="ctas">
-          <a class="btn btn-dark" href="#plans" data-cta="hero_plans">See plans <span class="ar" aria-hidden="true">→</span></a>
-          <a class="btn btn-line" href="../book.html" data-cta="hero_call">Free 15-min call</a>
-        </div>
-        <p class="micro">Your score improves, or we keep coaching you free · <a href="../quiz/">Take the free assessment</a></p>
-        <div class="proof">
-          <div class="faces" aria-hidden="true"><img src="../assets/clients/juliet.jpg" alt=""><img src="../assets/clients/lara.jpg" alt=""><img src="../assets/clients/sultan.jpg" alt=""><img src="../assets/clients/nour.jpg" alt=""></div>
-          <p><b>100+ people helped</b><br>TEDx speaker · WEF Global Shaper</p>
-        </div>
-      </div>
-      <div class="sym-hero reveal"><video autoplay muted loop playsinline preload="metadata" poster="../assets/hero-right-poster.jpg" aria-hidden="true"><source src="../assets/hero-right.mp4" type="video/mp4"></video><span class="shade" aria-hidden="true"></span><svg class="field" viewBox="0 0 480 500" role="img" aria-labelledby="fieldT"><title id="fieldT">Your social field: you at the centre, then personal performance, relationships and environment in rings around you</title><defs><radialGradient id="glow" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#C8A55A" stop-opacity=".22"/><stop offset="1" stop-color="#C8A55A" stop-opacity="0"/></radialGradient></defs><rect x="0.5" y="0.5" width="479" height="499" fill="none" stroke="#25292E"/><path d="M14 0V0M0 14" stroke="#C8A55A"/><path d="M0 0h14M0 0v14" stroke="#C8A55A" stroke-width="2"/><path d="M466 0V0M480 14" stroke="#C8A55A"/><path d="M480 0h-14M480 0v14" stroke="#C8A55A" stroke-width="2"/><path d="M14 500V500M0 486" stroke="#C8A55A"/><path d="M0 500h14M0 500v-14" stroke="#C8A55A" stroke-width="2"/><path d="M466 500V500M480 486" stroke="#C8A55A"/><path d="M480 500h-14M480 500v-14" stroke="#C8A55A" stroke-width="2"/><text x="18" y="30" class="fl">FIG. 01 · THE SOCIAL FIELD</text><text x="462" y="30" class="fl" text-anchor="end">SE7EN</text><line x1="240.0" y1="210.0" x2="240.0" y2="38.0" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="250.4" y1="211.4" x2="291.8" y2="56.8" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="260.0" y1="215.4" x2="346.0" y2="66.4" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="268.3" y1="221.7" x2="381.4" y2="108.6" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="274.6" y1="230.0" x2="423.6" y2="144.0" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="278.6" y1="239.6" x2="433.2" y2="198.2" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="280.0" y1="250.0" x2="452.0" y2="250.0" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="278.6" y1="260.4" x2="433.2" y2="301.8" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="274.6" y1="270.0" x2="423.6" y2="356.0" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="268.3" y1="278.3" x2="381.4" y2="391.4" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="260.0" y1="284.6" x2="346.0" y2="433.6" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="250.4" y1="288.6" x2="291.8" y2="443.2" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="240.0" y1="290.0" x2="240.0" y2="462.0" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="229.6" y1="288.6" x2="188.2" y2="443.2" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="220.0" y1="284.6" x2="134.0" y2="433.6" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="211.7" y1="278.3" x2="98.6" y2="391.4" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="205.4" y1="270.0" x2="56.4" y2="356.0" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="201.4" y1="260.4" x2="46.8" y2="301.8" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="200.0" y1="250.0" x2="28.0" y2="250.0" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="201.4" y1="239.6" x2="46.8" y2="198.2" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="205.4" y1="230.0" x2="56.4" y2="144.0" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="211.7" y1="221.7" x2="98.6" y2="108.6" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="220.0" y1="215.4" x2="134.0" y2="66.4" stroke="#F1F0EA" stroke-opacity=".07"/><line x1="229.6" y1="211.4" x2="188.2" y2="56.8" stroke="#F1F0EA" stroke-opacity=".07"/><circle cx="240" cy="250" r="72" fill="none" stroke="#353A41" stroke-dasharray="none"/><circle cx="240" cy="250" r="136" fill="none" stroke="#353A41" stroke-dasharray="none"/><circle cx="240" cy="250" r="200" fill="none" stroke="#353A41" stroke-dasharray="2 5"/><g class="orb r1" style="transform-origin:240px 250px"><circle cx="240.0" cy="178.0" r="4.5" fill="#C8A55A" stroke="#C8A55A" stroke-width="1.2"/><circle cx="308.5" cy="227.8" r="3" fill="#0A0B0D" stroke="#8B9097" stroke-width="1.2"/><circle cx="282.3" cy="308.2" r="3" fill="#0A0B0D" stroke="#8B9097" stroke-width="1.2"/><circle cx="197.7" cy="308.2" r="4.5" fill="#C8A55A" stroke="#C8A55A" stroke-width="1.2"/><circle cx="171.5" cy="227.8" r="3" fill="#0A0B0D" stroke="#8B9097" stroke-width="1.2"/></g><g class="orb r2" style="transform-origin:240px 250px"><circle cx="286.5" cy="122.2" r="4.5" fill="#C8A55A" stroke="#C8A55A" stroke-width="1.2"/><circle cx="357.8" cy="182.0" r="3" fill="#0A0B0D" stroke="#8B9097" stroke-width="1.2"/><circle cx="373.9" cy="273.6" r="3" fill="#0A0B0D" stroke="#8B9097" stroke-width="1.2"/><circle cx="327.4" cy="354.2" r="4.5" fill="#C8A55A" stroke="#C8A55A" stroke-width="1.2"/><circle cx="240.0" cy="386.0" r="3" fill="#0A0B0D" stroke="#8B9097" stroke-width="1.2"/><circle cx="152.6" cy="354.2" r="3" fill="#0A0B0D" stroke="#8B9097" stroke-width="1.2"/><circle cx="106.1" cy="273.6" r="4.5" fill="#C8A55A" stroke="#C8A55A" stroke-width="1.2"/><circle cx="122.2" cy="182.0" r="3" fill="#0A0B0D" stroke="#8B9097" stroke-width="1.2"/><circle cx="193.5" cy="122.2" r="3" fill="#0A0B0D" stroke="#8B9097" stroke-width="1.2"/></g><g class="orb r3" style="transform-origin:240px 250px"><circle cx="267.8" cy="51.9" r="4.5" fill="#C8A55A" stroke="#C8A55A" stroke-width="1.2"/><circle cx="356.7" cy="87.6" r="3" fill="#0A0B0D" stroke="#8B9097" stroke-width="1.2"/><circle cx="418.8" cy="160.4" r="3" fill="#0A0B0D" stroke="#8B9097" stroke-width="1.2"/><circle cx="440.0" cy="253.8" r="4.5" fill="#C8A55A" stroke="#C8A55A" stroke-width="1.2"/><circle cx="415.3" cy="346.3" r="3" fill="#0A0B0D" stroke="#8B9097" stroke-width="1.2"/><circle cx="350.5" cy="416.7" r="3" fill="#0A0B0D" stroke="#8B9097" stroke-width="1.2"/><circle cx="260.4" cy="449.0" r="4.5" fill="#C8A55A" stroke="#C8A55A" stroke-width="1.2"/><circle cx="165.6" cy="435.6" r="3" fill="#0A0B0D" stroke="#8B9097" stroke-width="1.2"/><circle cx="87.8" cy="379.8" r="3" fill="#0A0B0D" stroke="#8B9097" stroke-width="1.2"/><circle cx="44.9" cy="294.2" r="4.5" fill="#C8A55A" stroke="#C8A55A" stroke-width="1.2"/><circle cx="46.7" cy="198.5" r="3" fill="#0A0B0D" stroke="#8B9097" stroke-width="1.2"/><circle cx="92.8" cy="114.6" r="3" fill="#0A0B0D" stroke="#8B9097" stroke-width="1.2"/><circle cx="172.6" cy="61.7" r="4.5" fill="#C8A55A" stroke="#C8A55A" stroke-width="1.2"/></g><line x1="240" y1="250" x2="240.0" y2="178.0" stroke="#C8A55A" stroke-opacity=".35" stroke-dasharray="1 3"/><line x1="240" y1="250" x2="286.5" y2="122.2" stroke="#C8A55A" stroke-opacity=".35" stroke-dasharray="1 3"/><line x1="240" y1="250" x2="267.8" y2="51.9" stroke="#C8A55A" stroke-opacity=".35" stroke-dasharray="1 3"/><line x1="240" y1="250" x2="373.9" y2="273.6" stroke="#C8A55A" stroke-opacity=".35" stroke-dasharray="1 3"/><line x1="240" y1="250" x2="282.3" y2="308.2" stroke="#C8A55A" stroke-opacity=".35" stroke-dasharray="1 3"/><line x1="240" y1="250" x2="351.8" y2="415.8" stroke="#C8A55A" stroke-opacity=".35" stroke-dasharray="1 3"/><line x1="240" y1="250" x2="106.1" y2="273.6" stroke="#C8A55A" stroke-opacity=".35" stroke-dasharray="1 3"/><line x1="240" y1="250" x2="45.9" y2="201.6" stroke="#C8A55A" stroke-opacity=".35" stroke-dasharray="1 3"/><text x="246" y="172" class="fl dim">01 · PERFORMANCE</text><text x="246" y="108" class="fl dim">02 · RELATIONSHIPS</text><text x="246" y="44" class="fl dim">03 · ENVIRONMENT</text><circle cx="240" cy="250" r="30" fill="none" stroke="#C8A55A" stroke-opacity=".5"><animate attributeName="r" values="26;38;26" dur="5s" repeatCount="indefinite"/><animate attributeName="stroke-opacity" values=".55;0;.55" dur="5s" repeatCount="indefinite"/></circle><text x="18" y="470" class="fl">KARIM ATASSI, MD</text><text x="18" y="486" class="fl dim">MCGILL MD · MCMASTER FAMILY MEDICINE</text><text x="462" y="486" class="fl dim" text-anchor="end">TEDx · WEF</text></svg></div>
-    </div>
-  </section>
+<section class="hero" id="top">
+  <video autoplay muted loop playsinline preload="auto" poster="../assets/stage-reel-poster.jpg" aria-label="Karim Atassi, MD speaking on stage"><source src="../assets/stage-reel.mp4" type="video/mp4"></video>
+  <div class="wrap"><div class="copy">
+    <p class="k">MD-led lifestyle &amp; social health coaching</p>
+    <h1>When's the last time a doctor asked about your <em>social life?</em></h1>
+    <p class="sub">Transform it in 30 days: new people, new places, and the confidence to go with them.</p>
+    <div class="ctas"><a class="btn b-ox" href="#plans" data-cta="hero_plans">See plans <span class="ar" aria-hidden="true">→</span></a><a class="btn b-ln" href="../book.html" data-cta="hero_call">Free 15-min call</a></div>
+    <p class="mi">Your score improves, or we keep coaching you free · <a href="../quiz/">Free assessment</a></p>
+  </div></div>
+</section>
 
-  <!-- PRESS -->
-  <div class="press" role="region" aria-label="As seen on">
+<div class="stats" role="region" aria-label="At a glance"><div class="wrap" style="padding:0"><ul>
+  <li><b>MD</b><span>McGill · McMaster</span></li>
+  <li><b>100+</b><span>people helped</span></li>
+  <li><b>TEDx · WEF</b><span>Speaker · Global Shaper</span></li>
+  <li><b>30 days</b><span>to a new social life</span></li>
+</ul></div></div>
+<div class="press" role="region" aria-label="As seen on">
     <div class="wrap">
       <p>As seen on</p>
       <img src="../assets/press/cbc.svg" alt="CBC" style="--h:30px">
@@ -347,71 +253,73 @@ footer a{color:var(--silver)}
     </div>
   </div>
 
-  <!-- WHAT CHANGES -->
-  <section class="light">
-    <div class="wrap">
-      <div class="head reveal"><p class="eyebrow">What changes</p><h2>Clear in a day. <em>Different in 30.</em></h2></div>
-      <div class="timeline">
-        <div class="tl reveal"><span class="dot">1</span><p class="when">Day 1</p><h3>See what's holding you back</h3><p>One 90-minute session across all 7 areas of your life.</p></div>
-        <div class="tl reveal"><span class="dot">2</span><p class="when">Your plan</p><h3>Know exactly what to change</h3><p>Who to meet, where to go, and what to work on.</p></div>
-        <div class="tl reveal"><span class="dot">3</span><p class="when">Day 30</p><h3>New people, new places</h3><p>And the confidence to keep them in your life.</p></div>
+<section class="lt state">
+  <div class="wrap rv">
+    <p class="k">Why it matters</p>
+    <h2>Social connection is a pillar of health. <em>Nobody checks it.</em></h2>
+    <p class="s">It's one of the 6 pillars of lifestyle medicine, the framework behind the American College and American Board of Lifestyle Medicine. It's the most overlooked. It's our focus.</p>
+    <div class="chips" aria-label="The 6 pillars of lifestyle medicine"><span>Nutrition</span><span>Movement</span><span>Sleep</span><span>Stress</span><span class="on">Social connection</span><span>Risky substances</span></div>
+  </div>
+</section>
+
+<section class="lt2" id="how">
+  <div class="wrap">
+    <div class="hd c rv"><p class="k">How it works</p><h2>Clear in a day. <em>Different in 30.</em></h2></div>
+    <div class="steps">
+      <article class="step rv"><p class="n">01 · DAY 1</p><h3>Assess</h3><p>90 minutes with Karim across all 7 areas of your life.</p>
+        <div class="mock"><div class="scr"><svg viewBox="0 0 220 184" aria-hidden="true"><polygon points="110.0,68.2 128.6,77.2 133.2,97.3 120.3,113.4 99.7,113.4 86.8,97.3 91.4,77.2" fill="none" stroke="#E3D9C9"/><polygon points="110.0,44.5 147.2,62.4 156.3,102.6 130.6,134.8 89.4,134.8 63.7,102.6 72.8,62.4" fill="none" stroke="#E3D9C9"/><polygon points="110.0,20.0 166.3,47.1 180.2,108.0 141.2,156.9 78.8,156.9 39.8,108.0 53.7,47.1" fill="none" stroke="#E3D9C9"/><polygon points="110.0,41.6 150.5,59.7 170.4,105.8 135.0,143.9 88.8,136.1 60.9,103.2 68.3,58.8" fill="#7A3E3A" fill-opacity=".1" stroke="#7A3E3A" stroke-width="1.4"/><polygon points="110.0,47.4 137.0,70.5 131.1,96.8 134.4,142.6 89.4,134.8 80.5,98.7 81.9,69.6" fill="none" stroke="#8A7F70" stroke-dasharray="2 3"/><text x="110" y="9" text-anchor="middle" class="mk">BODY</text><text x="177" y="41" text-anchor="start" class="mk">MIND</text><text x="194" y="114" text-anchor="start" class="mk ox">PEOPLE</text><text x="147" y="172" text-anchor="start" class="mk">WORK</text><text x="73" y="172" text-anchor="end" class="mk">MONEY</text><text x="26" y="114" text-anchor="end" class="mk">GROWTH</text><text x="43" y="41" text-anchor="end" class="mk">PURPOSE</text></svg></div></div></article>
+      <article class="step rv"><p class="n">02 · YOUR PLAN</p><h3>Your report</h3><p>Exactly what to change: who to meet, where to go, what to work on.</p>
+        <div class="mock"><div class="scr"><div class="rp-t"><span>Sample report</span><span>SE7EN</span></div><p class="rp-k">Key findings</p>
+          <div class="rp-l"><i>01</i>Most of your evenings are spent with the same 4 people.</div>
+          <div class="rp-l"><i>02</i>Your goal needs rooms you're not in yet.</div>
+          <div class="rp-l"><i>03</i>Overthinking stops you starting conversations.</div></div></div></article>
+      <article class="step rv"><p class="n">03 · DAY 30</p><h3>Change</h3><p>Check-ups, coaching and systems that put you in the right rooms.</p>
+        <div class="mock"><div class="scr"><div class="rp-t"><span>Sample week</span><span>Event system</span></div><div class="cal">
+          <div class="ev"><p class="d">Tue<b>18</b></p><p class="t">Founders' breakfast<span>King West · 8:00</span></p><span class="tag">Go</span></div>
+          <div class="ev"><p class="d">Thu<b>20</b></p><p class="t">Run club + coffee<span>Trinity Bellwoods · 7:00</span></p><span class="tag">Go</span></div>
+          <div class="ev"><p class="d">Sat<b>22</b></p><p class="t">Gallery opening<span>Ossington · 7:30</span></p><span class="tag g">Maybe</span></div>
+        </div></div></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="dk" id="approach">
+  <div class="wrap">
+    <div class="hd rv"><p class="k">What we work on</p><h2>Three parts of your life, <em>tuned to your goal.</em></h2></div>
+    <div class="pills">
+      <article class="pc rv"><div class="m"><video muted loop playsinline preload="none" poster="../assets/media/ws-table.jpg" data-src="../assets/media/ws-table.mp4" aria-hidden="true"></video></div><div class="b"><p class="n">01</p><h3>Relationships</h3><p>The people your goal needs, and how to keep them.</p></div></article>
+      <article class="pc rv"><div class="m"><video muted loop playsinline preload="none" poster="../assets/media/ws-board.jpg" data-src="../assets/media/ws-board.mp4" aria-hidden="true"></video></div><div class="b"><p class="n">02</p><h3>Personal performance</h3><p>Confidence, anxiety, overthinking. Out of your head, into the room.</p></div></article>
+      <article class="pc rv"><div class="m"><video muted loop playsinline preload="none" poster="../assets/media/ws-pods.jpg" data-src="../assets/media/ws-pods.mp4" aria-hidden="true"></video></div><div class="b"><p class="n">03</p><h3>Environment</h3><p>Where you live, the places you go, and systems that keep you showing up.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="lt">
+  <div class="wrap who">
+    <figure class="rv" style="margin:0"><svg class="loop" viewBox="0 0 460 300" role="img" aria-labelledby="loopT"><title id="loopT">Today: the same small circle. Day 30: an open network around your goal.</title><rect x=".5" y=".5" width="459" height="299" fill="#FBF7F0" stroke="#E3D9C9"/><line x1="230" y1="20" x2="230" y2="280" stroke="#E3D9C9"/><text x="20" y="32" class="fk">TODAY</text><text x="250" y="32" class="fk ox">DAY 30</text><line x1="115.0" y1="119.0" x2="154.8" y2="142.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="115.0" y1="119.0" x2="154.8" y2="188.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="115.0" y1="119.0" x2="115.0" y2="211.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="115.0" y1="119.0" x2="75.2" y2="188.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="115.0" y1="119.0" x2="75.2" y2="142.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="154.8" y1="142.0" x2="154.8" y2="188.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="154.8" y1="142.0" x2="115.0" y2="211.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="154.8" y1="142.0" x2="75.2" y2="188.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="154.8" y1="142.0" x2="75.2" y2="142.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="154.8" y1="188.0" x2="115.0" y2="211.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="154.8" y1="188.0" x2="75.2" y2="188.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="154.8" y1="188.0" x2="75.2" y2="142.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="115.0" y1="211.0" x2="75.2" y2="188.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="115.0" y1="211.0" x2="75.2" y2="142.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="75.2" y1="188.0" x2="75.2" y2="142.0" stroke="#CDBFA8" stroke-width=".8"/><circle cx="115" cy="165" r="62" fill="none" stroke="#15130F" stroke-width="1.2"/><circle cx="115.0" cy="119.0" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="154.8" cy="142.0" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="154.8" cy="188.0" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="115.0" cy="211.0" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="75.2" cy="188.0" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="75.2" cy="142.0" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="115" cy="165" r="7" fill="#15130F"/><text x="115" y="262" class="fk" text-anchor="middle">SAME 6 PEOPLE</text><line x1="345" y1="165" x2="352.6" y2="121.7" stroke="#CDBFA8" stroke-width=".9" stroke-dasharray="none"/><line x1="345" y1="165" x2="388.6" y2="158.9" stroke="#CDBFA8" stroke-width=".9" stroke-dasharray="none"/><line x1="345" y1="165" x2="364.3" y2="204.5" stroke="#CDBFA8" stroke-width=".9" stroke-dasharray="none"/><line x1="345" y1="165" x2="313.3" y2="195.6" stroke="#CDBFA8" stroke-width=".9" stroke-dasharray="none"/><line x1="345" y1="165" x2="306.2" y2="144.3" stroke="#CDBFA8" stroke-width=".9" stroke-dasharray="none"/><line x1="345" y1="165" x2="387.0" y2="92.3" stroke="#7A3E3A" stroke-width=".9" stroke-dasharray="2 3"/><line x1="345" y1="165" x2="426.1" y2="143.3" stroke="#7A3E3A" stroke-width=".9" stroke-dasharray="2 3"/><line x1="345" y1="165" x2="417.7" y2="207.0" stroke="#7A3E3A" stroke-width=".9" stroke-dasharray="2 3"/><line x1="345" y1="165" x2="366.7" y2="246.1" stroke="#7A3E3A" stroke-width=".9" stroke-dasharray="2 3"/><line x1="345" y1="165" x2="303.0" y2="237.7" stroke="#7A3E3A" stroke-width=".9" stroke-dasharray="2 3"/><line x1="345" y1="165" x2="263.9" y2="186.7" stroke="#7A3E3A" stroke-width=".9" stroke-dasharray="2 3"/><line x1="345" y1="165" x2="272.3" y2="123.0" stroke="#7A3E3A" stroke-width=".9" stroke-dasharray="2 3"/><line x1="345" y1="165" x2="323.3" y2="83.9" stroke="#7A3E3A" stroke-width=".9" stroke-dasharray="2 3"/><circle cx="352.6" cy="121.7" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="388.6" cy="158.9" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="364.3" cy="204.5" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="313.3" cy="195.6" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="306.2" cy="144.3" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="387.0" cy="92.3" r="4.5" fill="#7A3E3A" stroke="#7A3E3A" stroke-width="1.2"/><circle cx="426.1" cy="143.3" r="4.5" fill="#7A3E3A" stroke="#7A3E3A" stroke-width="1.2"/><circle cx="417.7" cy="207.0" r="4.5" fill="#7A3E3A" stroke="#7A3E3A" stroke-width="1.2"/><circle cx="366.7" cy="246.1" r="4.5" fill="#7A3E3A" stroke="#7A3E3A" stroke-width="1.2"/><circle cx="303.0" cy="237.7" r="4.5" fill="#7A3E3A" stroke="#7A3E3A" stroke-width="1.2"/><circle cx="263.9" cy="186.7" r="4.5" fill="#7A3E3A" stroke="#7A3E3A" stroke-width="1.2"/><circle cx="272.3" cy="123.0" r="4.5" fill="#7A3E3A" stroke="#7A3E3A" stroke-width="1.2"/><circle cx="323.3" cy="83.9" r="4.5" fill="#7A3E3A" stroke="#7A3E3A" stroke-width="1.2"/><g transform="translate(334 154) scale(.55)"><circle cx="20" cy="20" r="19" fill="#15130F"/><path d="M13 8.8L28.6 20L13 31.2" fill="none" stroke="#FBF7F0" stroke-width="5.2" stroke-miterlimit="12"/></g><text x="345" y="262" class="fk ox" text-anchor="middle">NEW PEOPLE · NEW PLACES</text></svg></figure>
+    <div class="rv"><p class="k">Who it's for</p><h2 style="font-size:clamp(30px,3.6vw,44px);margin-bottom:26px">Ambitious, and your social life <em>hasn't kept up.</em></h2>
+      <ul class="fit"><li>You want a partner, but keep meeting the same people.</li><li>Most of your friends are coworkers.</li><li>You don't know the people who could open your next door.</li><li>You overthink in rooms full of strangers.</li><li>You've outgrown the circle around you.</li></ul></div>
+  </div>
+</section>
+
+<section class="gr" id="watch">
+  <div class="wrap watch">
+    <div class="rv">
+      <div class="player" id="player"><video id="pv" playsinline preload="none" poster="../assets/media/tedx.jpg"><source src="../assets/media/tedx.mp4" type="video/mp4"></video><button type="button" id="pb"><span class="pl" aria-hidden="true"></span><span id="pl">Watch · TEDxMcGill</span></button></div>
+      <div class="thumbs" role="group" aria-label="Choose a clip">
+        <button type="button" aria-pressed="true" data-v="../assets/media/tedx.mp4" data-p="../assets/media/tedx.jpg" data-l="TEDxMcGill"><img src="../assets/media/tedx.jpg" alt="" loading="lazy"><span>TEDx</span></button>
+        <button type="button" aria-pressed="false" data-v="../assets/media/valuetainment.mp4?v=172" data-p="../assets/media/valuetainment.jpg?v=172" data-l="Valuetainment"><img src="../assets/media/valuetainment.jpg?v=172" alt="" loading="lazy"><span>Valuetainment</span></button>
+        <button type="button" aria-pressed="false" data-v="../assets/media/ws-screen.mp4" data-p="../assets/media/ws-screen.jpg" data-l="Workshop"><img src="../assets/media/ws-screen.jpg" alt="" loading="lazy"><span>Workshop</span></button>
       </div>
     </div>
-  </section>
+    <div class="rv"><p class="k">Watch Karim</p><blockquote>Karim knows how to connect people. A couple of his introductions completely changed where my company went.</blockquote><cite>S.M. · FinTech Entrepreneur</cite></div>
+  </div>
+</section>
 
-  <!-- WHO IT'S FOR -->
-  <section class="sand">
-    <div class="wrap fitwrap">
-      <figure class="sym-fit reveal"><svg class="loop" viewBox="0 0 460 300" role="img" aria-labelledby="loopT"><title id="loopT">Today: the same small circle. Day 30: an open network around your goal.</title><rect x=".5" y=".5" width="459" height="299" fill="#FBF7F0" stroke="#E3D9C9"/><line x1="230" y1="20" x2="230" y2="280" stroke="#E3D9C9"/><text x="20" y="32" class="fk">TODAY</text><text x="250" y="32" class="fk ox">DAY 30</text><line x1="115.0" y1="119.0" x2="154.8" y2="142.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="115.0" y1="119.0" x2="154.8" y2="188.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="115.0" y1="119.0" x2="115.0" y2="211.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="115.0" y1="119.0" x2="75.2" y2="188.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="115.0" y1="119.0" x2="75.2" y2="142.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="154.8" y1="142.0" x2="154.8" y2="188.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="154.8" y1="142.0" x2="115.0" y2="211.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="154.8" y1="142.0" x2="75.2" y2="188.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="154.8" y1="142.0" x2="75.2" y2="142.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="154.8" y1="188.0" x2="115.0" y2="211.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="154.8" y1="188.0" x2="75.2" y2="188.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="154.8" y1="188.0" x2="75.2" y2="142.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="115.0" y1="211.0" x2="75.2" y2="188.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="115.0" y1="211.0" x2="75.2" y2="142.0" stroke="#CDBFA8" stroke-width=".8"/><line x1="75.2" y1="188.0" x2="75.2" y2="142.0" stroke="#CDBFA8" stroke-width=".8"/><circle cx="115" cy="165" r="62" fill="none" stroke="#15130F" stroke-width="1.2"/><circle cx="115.0" cy="119.0" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="154.8" cy="142.0" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="154.8" cy="188.0" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="115.0" cy="211.0" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="75.2" cy="188.0" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="75.2" cy="142.0" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="115" cy="165" r="7" fill="#15130F"/><text x="115" y="262" class="fk" text-anchor="middle">SAME 6 PEOPLE</text><line x1="345" y1="165" x2="352.6" y2="121.7" stroke="#CDBFA8" stroke-width=".9" stroke-dasharray="none"/><line x1="345" y1="165" x2="388.6" y2="158.9" stroke="#CDBFA8" stroke-width=".9" stroke-dasharray="none"/><line x1="345" y1="165" x2="364.3" y2="204.5" stroke="#CDBFA8" stroke-width=".9" stroke-dasharray="none"/><line x1="345" y1="165" x2="313.3" y2="195.6" stroke="#CDBFA8" stroke-width=".9" stroke-dasharray="none"/><line x1="345" y1="165" x2="306.2" y2="144.3" stroke="#CDBFA8" stroke-width=".9" stroke-dasharray="none"/><line x1="345" y1="165" x2="387.0" y2="92.3" stroke="#7A3E3A" stroke-width=".9" stroke-dasharray="2 3"/><line x1="345" y1="165" x2="426.1" y2="143.3" stroke="#7A3E3A" stroke-width=".9" stroke-dasharray="2 3"/><line x1="345" y1="165" x2="417.7" y2="207.0" stroke="#7A3E3A" stroke-width=".9" stroke-dasharray="2 3"/><line x1="345" y1="165" x2="366.7" y2="246.1" stroke="#7A3E3A" stroke-width=".9" stroke-dasharray="2 3"/><line x1="345" y1="165" x2="303.0" y2="237.7" stroke="#7A3E3A" stroke-width=".9" stroke-dasharray="2 3"/><line x1="345" y1="165" x2="263.9" y2="186.7" stroke="#7A3E3A" stroke-width=".9" stroke-dasharray="2 3"/><line x1="345" y1="165" x2="272.3" y2="123.0" stroke="#7A3E3A" stroke-width=".9" stroke-dasharray="2 3"/><line x1="345" y1="165" x2="323.3" y2="83.9" stroke="#7A3E3A" stroke-width=".9" stroke-dasharray="2 3"/><circle cx="352.6" cy="121.7" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="388.6" cy="158.9" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="364.3" cy="204.5" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="313.3" cy="195.6" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="306.2" cy="144.3" r="4" fill="#FBF7F0" stroke="#5E574D" stroke-width="1.2"/><circle cx="387.0" cy="92.3" r="4.5" fill="#7A3E3A" stroke="#7A3E3A" stroke-width="1.2"/><circle cx="426.1" cy="143.3" r="4.5" fill="#7A3E3A" stroke="#7A3E3A" stroke-width="1.2"/><circle cx="417.7" cy="207.0" r="4.5" fill="#7A3E3A" stroke="#7A3E3A" stroke-width="1.2"/><circle cx="366.7" cy="246.1" r="4.5" fill="#7A3E3A" stroke="#7A3E3A" stroke-width="1.2"/><circle cx="303.0" cy="237.7" r="4.5" fill="#7A3E3A" stroke="#7A3E3A" stroke-width="1.2"/><circle cx="263.9" cy="186.7" r="4.5" fill="#7A3E3A" stroke="#7A3E3A" stroke-width="1.2"/><circle cx="272.3" cy="123.0" r="4.5" fill="#7A3E3A" stroke="#7A3E3A" stroke-width="1.2"/><circle cx="323.3" cy="83.9" r="4.5" fill="#7A3E3A" stroke="#7A3E3A" stroke-width="1.2"/><g transform="translate(334 154) scale(.55)"><circle cx="20" cy="20" r="19" fill="#15130F"/><path d="M13 8.8L28.6 20L13 31.2" fill="none" stroke="#FBF7F0" stroke-width="5.2" stroke-miterlimit="12"/></g><text x="345" y="262" class="fk ox" text-anchor="middle">NEW PEOPLE · NEW PLACES</text></svg></figure>
-      <div>
-        <div class="head reveal" style="margin-bottom:28px"><p class="eyebrow">Who it's for</p><h2>Ambitious, and your social life <em>hasn't kept up.</em></h2></div>
-        <ul class="fit reveal">
-          <li>You want a partner, but keep meeting the same people.</li>
-          <li>Most of your friends are coworkers.</li>
-          <li>You don't know the people who could open your next door.</li>
-          <li>You overthink in rooms full of strangers.</li>
-          <li>You've outgrown the circle around you.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- APPROACH -->
-  <section class="dark dots" id="approach">
-    <div class="wrap">
-      <div class="head reveal"><p class="eyebrow">Our approach</p><h2>We look at your whole life, then tune your social life <em>to your goal.</em></h2></div>
-      <div class="pillars">
-        <div class="pillar reveal"><span class="ic"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="16.5" cy="9" r="3"/><path d="M2.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5M11 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5"/></svg></span><h3>Relationships</h3><p>The people your goal needs, and how to keep them.</p></div>
-        <div class="pillar reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M5.6 18.4l2.1-2.1M16.3 7.7l2.1-2.1"/><circle cx="12" cy="12" r="3.5"/></svg></span><h3>Personal performance</h3><p>Confidence, anxiety, overthinking. Out of your head, into the room.</p></div>
-        <div class="pillar reveal"><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span><h3>Environment</h3><p>Where you live, the places you go, and the systems that keep you showing up.</p></div>
-      </div>
-      <div class="why reveal">
-        <div><h3>Social connection is a <em>pillar of health.</em></h3><p>It's one of the 6 pillars of lifestyle medicine, the framework behind the American College and American Board of Lifestyle Medicine. It's also the most overlooked. It's our focus.</p></div>
-        <div class="chips" aria-label="The 6 pillars of lifestyle medicine"><span>Nutrition</span><span>Movement</span><span>Sleep</span><span>Stress</span><span class="on">Social connection</span><span>Risky substances</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HOW -->
-  <section class="paper" id="how">
-    <div class="wrap howwrap">
-      <figure class="sym-how reveal"><svg class="wheel" viewBox="-50 0 560 480" role="img" aria-labelledby="wheelT"><title id="wheelT">The 7 areas of your life, today and at day 30</title><rect x="-49.5" y=".5" width="559" height="479" fill="none" stroke="#25292E"/><text x="-32" y="30" class="fl">FIG. 02 · THE 7-AREA ASSESSMENT</text><polygon points="230.0,200.0 261.3,215.1 269.0,248.9 247.4,276.0 212.6,276.0 191.0,248.9 198.7,215.1" fill="none" stroke="#25292E"/><polygon points="230.0,160.0 292.5,190.1 308.0,257.8 264.7,312.1 195.3,312.1 152.0,257.8 167.5,190.1" fill="none" stroke="#25292E"/><polygon points="230.0,120.0 323.8,165.2 347.0,266.7 282.1,348.1 177.9,348.1 113.0,266.7 136.2,165.2" fill="none" stroke="#25292E"/><polygon points="230.0,80.0 355.1,140.2 386.0,275.6 299.4,384.2 160.6,384.2 74.0,275.6 104.9,140.2" fill="none" stroke="#25292E"/><line x1="230" y1="240" x2="230.0" y2="80.0" stroke="#25292E"/><text x="230.0" y="58.0" class="fl dim" text-anchor="middle">BODY</text><line x1="230" y1="240" x2="355.1" y2="140.2" stroke="#25292E"/><text x="375.4" y="128.0" class="fl dim" text-anchor="start">MIND</text><line x1="230" y1="240" x2="386.0" y2="275.6" stroke="#25292E"/><text x="411.3" y="285.4" class="fl gold" text-anchor="start">RELATIONSHIPS</text><line x1="230" y1="240" x2="299.4" y2="384.2" stroke="#25292E"/><text x="310.7" y="411.6" class="fl dim" text-anchor="start">WORK</text><line x1="230" y1="240" x2="160.6" y2="384.2" stroke="#25292E"/><text x="149.3" y="411.6" class="fl dim" text-anchor="end">MONEY</text><line x1="230" y1="240" x2="74.0" y2="275.6" stroke="#25292E"/><text x="48.7" y="285.4" class="fl dim" text-anchor="end">GROWTH</text><line x1="230" y1="240" x2="104.9" y2="140.2" stroke="#25292E"/><text x="84.6" y="128.0" class="fl dim" text-anchor="end">PURPOSE</text><polygon points="230.0,128.0 320.1,168.2 364.2,270.6 285.5,355.3 182.8,338.0 120.8,264.9 137.4,166.2" fill="#C8A55A" fill-opacity=".12" stroke="#C8A55A" stroke-width="1.5" class="grow"/><polygon points="230.0,140.8 290.0,192.1 276.8,250.7 284.1,352.4 184.2,335.1 164.5,255.0 167.5,190.1" fill="none" stroke="#8B9097" stroke-dasharray="3 4"/><circle cx="230.0" cy="128.0" r="3.5" fill="#C8A55A"/><circle cx="320.1" cy="168.2" r="3.5" fill="#C8A55A"/><circle cx="364.2" cy="270.6" r="3.5" fill="#C8A55A"/><circle cx="285.5" cy="355.3" r="3.5" fill="#C8A55A"/><circle cx="182.8" cy="338.0" r="3.5" fill="#C8A55A"/><circle cx="120.8" cy="264.9" r="3.5" fill="#C8A55A"/><circle cx="137.4" cy="166.2" r="3.5" fill="#C8A55A"/><g transform="translate(-32 448)"><line x1="0" y1="0" x2="18" y2="0" stroke="#8B9097" stroke-dasharray="3 4"/><text x="24" y="4" class="fl dim">TODAY</text><line x1="90" y1="0" x2="108" y2="0" stroke="#C8A55A" stroke-width="1.5"/><text x="114" y="4" class="fl gold">DAY 30</text></g></svg></figure>
-      <div>
-        <div class="head reveal" style="margin-bottom:24px"><p class="eyebrow">How it works</p><h2>Three steps. <em>One plan.</em></h2></div>
-        <ol class="how reveal">
-          <li><span class="n">1</span><h3>Assess</h3><p>90 minutes with Karim: your goals, your vision, your life today.</p></li>
-          <li><span class="n">2</span><h3>Plan</h3><p>Your written report: the people, places and changes your goal needs.</p></li>
-          <li><span class="n">3</span><h3>Change</h3><p>Check-ups, coaching and systems that put you in the right rooms.</p></li>
-        </ol>
-      </div>
-    </div>
-  </section>
-
-  <!-- RESULTS -->
-  <section class="light" id="results">
-    <div class="wrap">
-      <div class="head c reveal"><p class="eyebrow">Results</p><h2>100+ people helped.</h2></div>
-      <div class="quotes">
+<section class="lt" id="results">
+  <div class="wrap">
+    <div class="hd c rv"><p class="k">Results</p><h2>100+ people helped.</h2></div>
+    <div class="quotes">
         <figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>I went in thinking my problem was dating. Turns out I was just around the same people all the time. Karim had me change where I spend my evenings and honestly my whole social life changed.</blockquote><figcaption class="who"><img src="../assets/clients/juliet.jpg" alt="" loading="lazy"><div><b>J.H.</b><span>VP, Business Development</span></div></figcaption></figure>
         <figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>Moved to Toronto for work and realized all my “friends” were coworkers. The plan was super practical, like which places to go and when. I have a real group now.</blockquote><figcaption class="who"><img src="../assets/clients/lara.jpg" alt="" loading="lazy"><div><b>L.R.</b><span>Consultant</span></div></figcaption></figure>
         <figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>He picked up on how I communicate when I'm stressed within about 20 minutes. Kind of annoying how right he was. It's helped with my partner, my family, everyone.</blockquote><figcaption class="who"><img src="../assets/clients/andrea.jpg" alt="" loading="lazy"><div><b>A.J.</b><span>Fashion Influencer</span></div></figcaption></figure>
@@ -419,15 +327,14 @@ footer a{color:var(--silver)}
         <figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>I was pretty burnt out in sales and kept going back and forth on leaving. Karim helped me figure out what I actually wanted and a plan I could afford.</blockquote><figcaption class="who"><img src="../assets/clients/nour.jpg" alt="" loading="lazy"><div><b>N.S.</b><span>VP, Sales &amp; Operations</span></div></figcaption></figure>
         <figure class="q"><span class="mark" aria-hidden="true">“</span><blockquote>Karim helped me take a big idea and actually make it real. He knows how to get the right people in a room. We ended up closing a major institutional partner.</blockquote><figcaption class="who"><img src="../assets/clients/ajamu.jpg" alt="" loading="lazy"><div><b>A.A.</b><span>EdTech Entrepreneur</span></div></figcaption></figure>
       </div>
-      <p class="swipe" aria-hidden="true">Swipe for more →</p>
-    </div>
-  </section>
+    <p class="swipe" aria-hidden="true">Swipe for more →</p>
+  </div>
+</section>
 
-  <!-- PLANS -->
-  <section class="dark" id="plans">
-    <div class="wrap">
-      <div class="head c reveal"><p class="eyebrow">Plans</p><h2>Pick your plan.</h2><p>Every plan starts with a free 15-minute call.</p></div>
-      <div class="plans">
+<section class="dk" id="plans">
+  <div class="wrap">
+    <div class="hd c rv"><p class="k">Plans</p><h2>Pick your plan.</h2><p class="s">Every plan starts with a free 15-minute call.</p></div>
+    <div class="plans">
         <article class="plan reveal">
           <p class="name">Assessment</p>
           <p class="for">See what's holding your social life back.</p>
@@ -458,19 +365,13 @@ footer a{color:var(--silver)}
         <div><b>Your score improves, or we keep going.</b><p>Core and Platinum: retake your assessment at day 30. If your score hasn't improved and you did everything, we keep coaching you free until it does, or you can choose a full refund.</p></div>
       </div>
       <p class="plan-note">Prices plus HST · 5 clients a month · <a href="#faq-terms">Guarantee terms</a></p>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <!-- KARIM -->
-  <section class="light karim" id="karim">
-    <div class="wrap">
-      <div class="top">
-        <div class="photo reveal"><img src="../assets/karim-portrait.jpg?v=2" alt="Portrait of Karim Atassi, MD" loading="lazy"></div>
-        <div class="reveal">
-          <p class="eyebrow">Who you'll work with</p>
-          <h2>Karim Atassi, MD</h2>
-          <p class="bio">Karim earned his MD at McGill and completed his family medicine residency at McMaster. In clinic, patients kept wanting to talk about their lives, and a short appointment never had time. So he built a practice around the part of health medicine overlooks: your people and your environment.</p>
-          <ul class="creds">
+<section class="lt" id="karim">
+  <div class="wrap about">
+    <figure class="ph rv" style="margin:0"><img src="../assets/karim-portrait.jpg?v=2" alt="Portrait of Karim Atassi, MD" loading="lazy"><figcaption>Karim Atassi, MD</figcaption></figure>
+    <div class="rv"><p class="k">Who you'll work with</p><h2>Karim Atassi, MD</h2><p class="bio">Karim earned his MD at McGill and completed his family medicine residency at McMaster. In clinic, patients kept wanting to talk about their lives, and a short appointment never had time. So he built a practice around the part of health medicine overlooks: your people and your environment.</p><ul class="creds">
             <li><b>MDCM</b><span>McGill University</span></li>
             <li><b>Family Medicine</b><span>McMaster University</span></li>
             <li><b>Co-founder, Zatiq</b><span>Raised $1.6M</span></li>
@@ -478,16 +379,12 @@ footer a{color:var(--silver)}
             <li><b>Delegate</b><span>G20 Young Entrepreneurs' Alliance</span></li>
             <li><b>Speaker</b><span>TEDxMcGill</span></li>
           </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="strip"><img src="../assets/bio-whitecoat.jpg" alt="Karim in his McGill white coat" loading="lazy"><img src="../assets/story-podcast.jpg" alt="Karim as a podcast guest" loading="lazy"><img src="../assets/bio-g20-summit.jpg" alt="Karim at the G20 Young Entrepreneurs' Alliance summit" loading="lazy"></div></div>
+  </div>
+</section>
 
-  <!-- FAQ -->
-  <section class="dark" id="faq">
-    <div class="wrap">
-      <div class="head c reveal"><p class="eyebrow">FAQ</p><h2>Questions, answered.</h2></div>
-      <div class="faq">
+<section class="dk" id="faq">
+  <div class="wrap"><div class="hd c rv"><p class="k">FAQ</p><h2>Questions, answered.</h2></div><div class="faq">
         <details><summary>Who is this for?</summary><p>Ambitious professionals who want a partner, real friends, mentors, a circle that matches where they're going, or the confidence to meet them.</p></details>
         <details><summary>Why an MD?</summary><p>Your relationships and surroundings are part of your health. Karim earned his MD at McGill and completed family medicine at McMaster. He's trained to find the one cause behind many symptoms.</p></details>
         <details><summary>How much time does it take?</summary><p>Assessment: a 90-minute video session and 3 check-ups of 20 minutes. Core and Platinum add a 30-minute session every week for 30 days. Sessions run weekdays 12–3 pm and 6–9 pm, and Saturdays 10 am–12 pm.</p></details>
@@ -497,44 +394,38 @@ footer a{color:var(--silver)}
         <details><summary>Can I try something free first?</summary><p>Yes. <a href="../quiz/">Take the free Social Health Assessment</a> and see your map in a few minutes.</p></details>
         <details><summary>Is what I share private?</summary><p>Yes. Only Karim sees it. It's used only for your plan, never shared, and deleted when you ask.</p></details>
         <details><summary>Is this healthcare or therapy?</summary><p>No. It's coaching. Karim doesn't diagnose, treat or prescribe here. When you need clinical care, you'll be referred to a licensed professional.</p></details>
-      </div>
-    </div>
-  </section>
+      </div></div>
+</section>
 
-  <!-- FINAL -->
-  <section class="final dots">
-    <div class="wrap">
-      <h2>Your next room is <em>15 minutes away.</em></h2>
-      <p>Tell Karim what you want. He'll tell you honestly which plan fits, or if none does.</p>
-      <div class="ctas"><a class="btn btn-gold" href="../book.html" data-cta="final_call">Book a free call <span class="ar" aria-hidden="true">→</span></a><a class="btn btn-line" href="#plans" data-cta="final_plans">See plans</a></div>
-    </div>
-  </section>
+<section class="final">
+  <video muted loop playsinline preload="none" poster="../assets/media/ws-pods.jpg" data-src="../assets/media/ws-pods.mp4" aria-hidden="true"></video>
+  <div class="wrap"><h2>Your next room is <em>15 minutes away.</em></h2><p>Tell Karim what you want. He'll tell you honestly which plan fits, or if none does.</p>
+  <div class="ctas"><a class="btn b-ox" href="../book.html" data-cta="final_call">Book a free call <span class="ar" aria-hidden="true">→</span></a><a class="btn b-ln" href="#plans" data-cta="final_plans">See plans</a></div></div>
+</section>
 </main>
 
-<footer>
-  <div class="wrap">
-    <span class="wm" aria-label="SE7EN">SE<svg viewBox="0 0 40 40" aria-hidden="true"><circle class="body" cx="20" cy="20" r="19"/><path class="prompt" d="M13 8.8L28.6 20L13 31.2"/></svg>EN</span>
-    <p><b>SE7EN is coaching, not healthcare.</b> Karim holds a medical degree (MDCM, McGill), but he is not your doctor here: we don't diagnose, treat or prescribe, and no doctor–patient relationship is created. Keep your own healthcare providers. Not covered by OHIP. In crisis, call or text 9-8-8, or call 911.</p>
-    <p>Toronto, Ontario · © 2026 Karim Atassi, MD · <a href="https://www.instagram.com/karimatassimd/" target="_blank" rel="noopener">Instagram</a> · <a href="../">Main site</a></p>
-  </div>
-</footer>
-
-<div class="sticky" id="sticky"><span><b>Free 15-min call</b></span><a class="btn btn-gold" href="../book.html" data-cta="sticky">Book a call</a></div>
+<footer><div class="wrap">
+  <span class="wm" aria-label="SE7EN">SE<svg viewBox="0 0 40 40" aria-hidden="true"><circle class="b" cx="20" cy="20" r="19"/><path class="p" d="M13 8.8L28.6 20L13 31.2"/></svg>EN</span>
+  <p><b>SE7EN is coaching, not healthcare.</b> Karim holds a medical degree (MDCM, McGill), but he is not your doctor here: we don't diagnose, treat or prescribe, and no doctor–patient relationship is created. Keep your own healthcare providers. Not covered by OHIP. In crisis, call or text 9-8-8, or call 911.</p>
+  <p>Toronto, Ontario · © 2026 Karim Atassi, MD · <a href="https://www.instagram.com/karimatassimd/" target="_blank" rel="noopener">Instagram</a> · <a href="../">Main site</a></p>
+</div></footer>
+<div class="sticky" id="sticky"><span>Free 15-min call</span><a class="btn b-ox" href="../book.html" data-cta="sticky">Book a call</a></div>
 
 <script>
 (function(){
-  var io='IntersectionObserver' in window;
-  // reveal on scroll
-  var rv=document.querySelectorAll('.reveal');
-  if(io){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});rv.forEach(function(el){o.observe(el)})}
-  else{rv.forEach(function(el){el.classList.add('in')})}
-  // lazy talk clips
+  var io='IntersectionObserver' in window, rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var rv=document.querySelectorAll('.rv');
+  if(io){var o=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});rv.forEach(function(el){o.observe(el)})}else{rv.forEach(function(el){el.classList.add('in')})}
   var vids=document.querySelectorAll('video[data-src]');
-  if(io){var vo=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){if(!v.src){v.src=v.dataset.src}v.play().catch(function(){})}else{v.pause()}})},{threshold:.4});vids.forEach(function(v){vo.observe(v)})}
-  // sticky CTA after hero + nav border
-  var s=document.getElementById('sticky'),h=document.getElementById('top'),n=document.getElementById('nav');
-  if(io&&h){new IntersectionObserver(function(es){var past=!es[0].isIntersecting;s.classList.toggle('show',past);n.classList.toggle('scrolled',past)}).observe(h)}
-  if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){var hv=document.querySelector('.sym-hero video');if(hv){hv.removeAttribute('autoplay');hv.pause()}}
+  if(io&&!rm){var vo=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){if(!v.getAttribute('src'))v.src=v.dataset.src;v.play().catch(function(){})}else{v.pause()}})},{threshold:.35});vids.forEach(function(v){vo.observe(v)})}
+  var hv=document.querySelector('.hero video');if(rm&&hv){hv.removeAttribute('autoplay');hv.pause()}
+  var nav=document.getElementById('nav'),st=document.getElementById('sticky'),hero=document.getElementById('top');
+  function onS(){var y=scrollY;nav.classList.toggle('on',y>40);st.classList.toggle('show',y>hero.offsetHeight*.8)}addEventListener('scroll',onS,{passive:true});onS();
+  var pv=document.getElementById('pv'),pb=document.getElementById('pb'),pl=document.getElementById('pl'),player=document.getElementById('player');
+  pb.addEventListener('click',function(){pv.controls=true;pv.muted=false;player.classList.add('playing');pv.play().catch(function(){})});
+  document.querySelectorAll('.thumbs button').forEach(function(b){b.addEventListener('click',function(){
+    document.querySelectorAll('.thumbs button').forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');
+    pv.pause();pv.poster=b.dataset.p;pv.src=b.dataset.v;pl.textContent='Watch · '+b.dataset.l;player.classList.add('playing');pv.controls=true;pv.muted=false;pv.play().catch(function(){})})});
 })();
 </script>
 </body>
