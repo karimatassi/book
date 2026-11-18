@@ -236,6 +236,7 @@ section{padding:104px 0;position:relative}
 .about .bio{margin-top:18px;font-size:17px;color:var(--ink2);max-width:56ch}
 .creds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 26px;margin:28px 0 0;padding:0;list-style:none}
 .creds li{border-top:1px solid var(--lc);padding-top:10px}.creds b{display:block;color:var(--ink);font-weight:600;font-size:15px}.creds span{font:400 11.5px var(--mono);color:var(--lab)}
+.press2{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:center;justify-items:center;gap:22px 14px;margin-top:26px;padding-top:22px;border-top:1px solid rgba(10,11,13,.12)}.press2 p{grid-column:1/-1;justify-self:start;font-size:13px;color:#6b6760}.press2 img{height:calc(var(--h)*.85);max-width:100%;width:auto;filter:grayscale(1) brightness(0);opacity:.62}@media(max-width:640px){.press2{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 12px}.press2 img{height:calc(var(--h)*.85)}}
 .strip{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:28px}
 .strip img{aspect-ratio:1/1;object-fit:cover;border-radius:3px}
 @media(max-width:900px){.about{grid-template-columns:minmax(0,1fr);gap:32px}.about .ph{aspect-ratio:4/4.2}}
@@ -447,7 +448,8 @@ document.addEventListener('click',function(e){var a=e.target.closest&&e.target.c
             <li><b>Delegate</b><span>G20 Young Entrepreneurs' Alliance</span></li>
             <li><b>Speaker</b><span>TEDxMcGill</span></li>
           </ul>
-      <div class="strip"><img src="../assets/media/startup-gala.jpg" alt="Karim on stage at the Startup Community Gala" loading="lazy" style="object-position:50% 70%"><img src="../assets/media/studio-bts.jpg" alt="Karim on set at a studio shoot" loading="lazy" style="object-position:72% 55%"><img src="../assets/media/leading-room.jpg" alt="Karim leading a workshop" loading="lazy" style="object-position:30% 50%"></div></div>
+      <div class="strip"><img src="../assets/media/startup-gala.jpg" alt="Karim on stage at the Startup Community Gala" loading="lazy" style="object-position:50% 70%"><img src="../assets/media/studio-bts.jpg" alt="Karim on set at a studio shoot" loading="lazy" style="object-position:72% 55%"><img src="../assets/media/leading-room.jpg" alt="Karim leading a workshop" loading="lazy" style="object-position:30% 50%"></div>
+      <div class="press2" role="region" aria-label="As seen on"><p>As seen on</p><img src="../assets/press/cbc.svg" alt="CBC" style="--h:30px"> <img src="../assets/press/tedx-mcgill.svg" alt="TEDxMcGill" style="--h:20px"> <img src="../assets/press/valuetainment.png" alt="Valuetainment" style="--h:40px"> <img src="../assets/press/radio-canada.svg" alt="Radio-Canada" style="--h:26px"> <img src="../assets/press/calgary-sun.svg" alt="Calgary Sun" class="inv" style="--h:14px"> <img src="../assets/press/mcgill-reporter.png" alt="McGill Reporter" style="--h:13px"></div></div>
   </div>
 </section>
 
