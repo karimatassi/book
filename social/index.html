@@ -87,6 +87,14 @@ section{padding:104px 0;position:relative}
 .press img{height:var(--h);width:auto;filter:grayscale(1) brightness(0) invert(1);opacity:.55}
 @media(max-width:640px){.press .wrap{gap:14px 26px}.press p{width:100%;text-align:center}.press img{transform:scale(.85)}}
 
+/* people reel */
+.mont{background:var(--ob);padding:28px 0 4px;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent)}
+.mtrack{display:flex;gap:12px;width:max-content;animation:mrun 80s linear infinite}
+.mont:hover .mtrack{animation-play-state:paused}
+.mtrack img{height:280px;width:224px;max-width:none;object-fit:cover;border-radius:3px;filter:saturate(.92)}
+@keyframes mrun{to{transform:translateX(calc(-50% - 6px))}}
+@media(max-width:640px){.mtrack img{height:190px;width:152px}.mtrack{animation-duration:60s}}
+@media(prefers-reduced-motion:reduce){.mtrack{animation:none}.mont{overflow-x:auto}}
 /* statement */
 .state{text-align:center}
 .state h2{font-size:clamp(30px,4.4vw,56px);max-width:18ch;margin:0 auto}
@@ -238,7 +246,7 @@ body::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;op
 /* frontend-design pass: quiet everything but the hero */
 h1 em,h2 em,.lt h2 em{color:inherit}
 .hero h1{font-size:clamp(44px,5.4vw,86px);letter-spacing:-.058em;line-height:.98}
-.lede{font-size:15px;color:var(--si);margin:0 0 22px;max-width:34ch}
+.lede{font-size:15px;color:var(--si);margin:0 0 22px;max-width:46ch}
 .hero .mi{font:400 14px/1.5 var(--sans);opacity:1;color:var(--ti)}
 .hero .film .tagline{font:400 13px var(--sans);letter-spacing:0;text-transform:none;color:var(--iv)}
 .press p{font:400 13px var(--sans);letter-spacing:0;text-transform:none}
@@ -274,7 +282,7 @@ footer p{max-width:80ch}
 <section class="hero" id="top">
   <div class="grid">
     <div class="copy">
-    <p class="lede">MD-led lifestyle and social health coaching with Karim Atassi, MD</p>
+    <p class="lede">Lifestyle, health, and social coaching. <span style="white-space:nowrap">Karim Atassi, MD</span></p>
     <h1>When's the last time a doctor asked about your <em>social life?</em></h1>
     <p class="sub">Transform it in 30 days: new people, new places, and the confidence to go with them.</p>
     <div class="ctas"><a class="btn b-ox" href="#plans" data-cta="hero_plans">See plans</a><a class="btn b-ln" href="../book.html" data-cta="hero_call">Free 15-min call</a></div>
@@ -290,6 +298,7 @@ footer p{max-width:80ch}
   <li><b>TEDx and WEF</b><span>Speaker, Global Shaper</span></li>
   <li><b>30 days</b><span>to a new social life</span></li>
 </ul></div></div>
+<div class="mont" role="img" aria-label="Karim Atassi, MD with leaders, founders and public figures"><div class="mtrack"><img src="../assets/strip/k01.jpg" alt="" decoding="async"><img src="../assets/strip/k03.jpg" alt="" decoding="async"><img src="../assets/strip/k10.jpg" alt="" decoding="async"><img src="../assets/strip/k04.jpg" alt="" decoding="async"><img src="../assets/strip/k02.jpg" alt="" decoding="async"><img src="../assets/strip/k07.jpg" alt="" decoding="async"><img src="../assets/strip/k08.jpg" alt="" decoding="async"><img src="../assets/strip/k06.jpg" alt="" decoding="async"><img src="../assets/strip/k11.jpg" alt="" decoding="async"><img src="../assets/strip/k09.jpg" alt="" decoding="async"><img src="../assets/strip/k01.jpg" alt="" decoding="async" aria-hidden="true"><img src="../assets/strip/k03.jpg" alt="" decoding="async" aria-hidden="true"><img src="../assets/strip/k10.jpg" alt="" decoding="async" aria-hidden="true"><img src="../assets/strip/k04.jpg" alt="" decoding="async" aria-hidden="true"><img src="../assets/strip/k02.jpg" alt="" decoding="async" aria-hidden="true"><img src="../assets/strip/k07.jpg" alt="" decoding="async" aria-hidden="true"><img src="../assets/strip/k08.jpg" alt="" decoding="async" aria-hidden="true"><img src="../assets/strip/k06.jpg" alt="" decoding="async" aria-hidden="true"><img src="../assets/strip/k11.jpg" alt="" decoding="async" aria-hidden="true"><img src="../assets/strip/k09.jpg" alt="" decoding="async" aria-hidden="true"></div></div>
 <div class="press" role="region" aria-label="As seen on">
     <div class="wrap">
       <p>As seen on</p>
