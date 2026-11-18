@@ -51,22 +51,26 @@ section{padding:104px 0;position:relative}
 .nav .btn{min-height:40px;padding:0 18px;font-size:14px}
 @media(max-width:940px){.nav nav{display:none}.nav .wrap{height:58px}}
 
-/* hero: full-bleed film */
-.hero{position:relative;min-height:min(100svh,900px);display:flex;align-items:flex-end;padding:0 0 64px;overflow:hidden;background:#000}
-.hero video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:28% 30%}
-.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,0) 20%,rgba(0,0,0,.55) 52%,rgba(0,0,0,.85) 100%),linear-gradient(0deg,rgba(0,0,0,.75),rgba(0,0,0,0) 40%)}
-.hero .wrap{position:relative;z-index:1;width:100%;display:flex;justify-content:flex-end}
-.hero .copy{max-width:560px}
-.hero h1{font-size:clamp(38px,5vw,64px)}
+/* hero: split, copy left, film right */
+.hero{position:relative;background:var(--ob);padding:66px 0 0;overflow:hidden}
+.hero .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);min-height:min(calc(100svh - 66px),760px)}
+.hero .copy{align-self:center;padding:56px 56px 64px max(20px,calc((100vw - var(--max))/2 + 20px))}
+.hero .film{position:relative;overflow:hidden;background:#05060a}
+.hero .film video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:44% 50%}
+.hero .film::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--ob) 0%,rgba(10,11,13,0) 18%),linear-gradient(0deg,rgba(10,11,13,.6),rgba(10,11,13,0) 30%)}
+.hero .film .tagline{position:absolute;right:20px;bottom:18px;z-index:1;font:500 10.5px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--si)}
+.hero h1{font-size:clamp(38px,4.4vw,62px)}
 .hero .sub{margin-top:20px;font-size:18.5px;line-height:1.5;color:#DADBD6;max-width:40ch}
 .hero .ctas{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
 .hero .mi{margin-top:16px;font:400 12px var(--mono);color:var(--si);opacity:.85}
 .hero .mi a{color:#fff}
-@media(max-width:860px){
- .hero{min-height:0;display:block;padding:0;background:var(--ob)}
- .hero video{position:relative;height:auto;aspect-ratio:4/3.4;object-position:30% 30%}
- .hero::after{inset:0 0 auto 0;height:calc((100vw)*.85);background:linear-gradient(0deg,var(--ob) 2%,rgba(10,11,13,0) 45%),linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,0) 25%)}
- .hero .wrap{margin-top:-64px;padding-bottom:48px;justify-content:flex-start}
+@media(max-width:900px){
+ .hero{padding-top:58px}
+ .hero .grid{grid-template-columns:minmax(0,1fr);min-height:0}
+ .hero .film{order:-1;aspect-ratio:16/10}
+ .hero .film video{object-position:46% 45%}
+ .hero .film::after{background:linear-gradient(0deg,var(--ob) 0%,rgba(10,11,13,0) 35%)}
+ .hero .copy{padding:22px 20px 52px}
  .hero .ctas .btn{flex:1 1 100%}
 }
 
@@ -102,13 +106,13 @@ section{padding:104px 0;position:relative}
 .mock .scr{background:#fff;border:1px solid var(--lc);border-bottom:0;border-radius:6px 6px 0 0;padding:16px;box-shadow:0 -8px 30px -18px rgba(21,19,15,.25);min-height:190px}
 .mk{font:500 7.5px var(--mono);letter-spacing:.08em;fill:#8A7F70}.mk.ox{fill:#7A3E3A}
 .rp-t{display:flex;justify-content:space-between;font:500 9.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--lab);border-bottom:1px solid #EEE6D8;padding-bottom:8px;margin-bottom:10px}
-.rp-k{font:500 9.5px var(--mono);letter-spacing:.1em;color:var(--ox);text-transform:uppercase;margin:10px 0 6px}
+.step .rp-k{font:500 9.5px var(--mono);letter-spacing:.1em;color:var(--ox);text-transform:uppercase;margin:10px 0 6px}
 .rp-l{display:flex;gap:8px;align-items:flex-start;font-size:12.5px;line-height:1.35;color:var(--ink);padding:6px 0;border-bottom:1px solid #F3EDE3}
 .rp-l i{flex:none;font:500 9.5px var(--mono);color:var(--lab);font-style:normal;margin-top:2px}
 .cal{display:grid;gap:7px}
 .ev{display:grid;grid-template-columns:44px 1fr auto;gap:10px;align-items:center;border:1px solid #EEE6D8;border-radius:4px;padding:8px 10px}
-.ev .d{font:500 9.5px/1.2 var(--mono);color:var(--lab);text-transform:uppercase;text-align:center}.ev .d b{display:block;font:500 16px var(--sans);color:var(--ink);letter-spacing:-.03em}
-.ev .t{font-size:12.5px;line-height:1.3;color:var(--ink)}.ev .t span{display:block;font:400 9.5px var(--mono);color:var(--lab)}
+.step .ev .d{font:500 9.5px/1.2 var(--mono);color:var(--lab);text-transform:uppercase;text-align:center}.ev .d b{display:block;font:500 16px var(--sans);color:var(--ink);letter-spacing:-.03em}
+.step .ev .t{font-size:12.5px;line-height:1.3;color:var(--ink)}.ev .t span{display:block;font:400 9.5px var(--mono);color:var(--lab)}
 .ev .tag{font:500 9px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--ox);padding:3px 6px;border-radius:2px}
 .ev .tag.g{background:transparent;color:var(--lab);border:1px solid #E3D9C9}
 @media(max-width:940px){.steps{grid-template-columns:minmax(0,1fr)}}
@@ -119,7 +123,7 @@ section{padding:104px 0;position:relative}
 .pc .m{aspect-ratio:4/3;overflow:hidden;background:#000}.pc .m video,.pc .m img{width:100%;height:100%;object-fit:cover;filter:saturate(.85)}
 .pc .b{padding:22px 22px 26px}.pc .n{font:500 11px var(--mono);color:var(--gold);letter-spacing:.12em}
 .pc h3{font-size:23px;margin:10px 0 8px}.pc p{color:var(--ti);font-size:15px}
-@media(max-width:940px){.pills{grid-template-columns:minmax(0,1fr)}.pc{display:grid;grid-template-columns:40% 1fr}.pc .m{aspect-ratio:auto;height:100%}.pc .b{padding:18px}.pc h3{font-size:19px}.pc p{font-size:14px}}
+@media(max-width:940px){.pills{grid-template-columns:minmax(0,1fr)}.pc .m{aspect-ratio:16/11}.pc .b{padding:18px 18px 22px}}
 
 /* who */
 .who{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
@@ -182,8 +186,8 @@ section{padding:104px 0;position:relative}
 
 /* about */
 .about{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:center}
-.about .ph{position:relative;aspect-ratio:4/5;border-radius:4px;overflow:hidden;background:#000}
-.about .ph img{width:100%;height:100%;object-fit:cover;object-position:center 25%}
+.about .ph{position:relative;aspect-ratio:1/1;border-radius:4px;overflow:hidden;background:#000}
+.about .ph img{width:100%;height:100%;object-fit:cover;object-position:center 20%}
 .about .ph figcaption{position:absolute;left:12px;bottom:12px;font:500 10.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--iv);background:rgba(10,11,13,.7);padding:6px 9px;border-radius:2px}
 .about h2{font-size:clamp(30px,3.6vw,46px);color:var(--ink)}
 .about .bio{margin-top:18px;font-size:17px;color:var(--ink2);max-width:56ch}
@@ -200,9 +204,10 @@ section{padding:104px 0;position:relative}
 .faq details[open] summary::after{transform:rotate(45deg)}.faq details p{padding:0 0 18px;color:var(--ti);font-size:15.5px;max-width:64ch}.faq details a{color:var(--si)}
 
 /* final */
-.final{position:relative;overflow:hidden;text-align:center;padding:140px 0;background:#000}
+.final{position:relative;overflow:hidden;text-align:center;padding:130px 0;background:var(--ob);border-top:1px solid var(--ld)}
+.final::before{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(197,206,216,.14) 1px,transparent 1.2px);background-size:22px 22px;-webkit-mask-image:radial-gradient(circle at 50% 50%,#000,transparent 70%);mask-image:radial-gradient(circle at 50% 50%,#000,transparent 70%)}
 .final video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
-.final::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,.2),rgba(0,0,0,.8))}
+.final::after{content:"";position:absolute;left:50%;top:50%;width:620px;height:620px;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle,rgba(200,165,90,.12),transparent 65%)}
 .final .wrap{position:relative;z-index:1}.final h2{font-size:clamp(32px,4.6vw,58px)}
 .final p{margin:16px auto 0;color:#DADBD6;font-size:18px;max-width:44ch}.final .ctas{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:30px}
 footer{background:var(--ob);color:var(--ti);font-size:13px;padding:44px 0 calc(40px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--ld)}
@@ -225,14 +230,16 @@ footer .wrap{display:grid;gap:14px}footer b{color:var(--iv)}footer a{color:var(-
 
 <main id="main">
 <section class="hero" id="top">
-  <video autoplay muted loop playsinline preload="auto" poster="../assets/stage-reel-poster.jpg" aria-label="Karim Atassi, MD speaking on stage"><source src="../assets/stage-reel.mp4" type="video/mp4"></video>
-  <div class="wrap"><div class="copy">
+  <div class="grid">
+    <div class="copy">
     <p class="k">MD-led lifestyle &amp; social health coaching</p>
     <h1>When's the last time a doctor asked about your <em>social life?</em></h1>
     <p class="sub">Transform it in 30 days: new people, new places, and the confidence to go with them.</p>
     <div class="ctas"><a class="btn b-ox" href="#plans" data-cta="hero_plans">See plans <span class="ar" aria-hidden="true">→</span></a><a class="btn b-ln" href="../book.html" data-cta="hero_call">Free 15-min call</a></div>
     <p class="mi">Your score improves, or we keep coaching you free · <a href="../quiz/">Free assessment</a></p>
-  </div></div>
+  </div>
+    <div class="film"><video autoplay muted loop playsinline preload="auto" poster="../assets/tedx-stage.jpg" aria-label="Karim Atassi, MD speaking at TEDxMcGill"><source src="../assets/tedx-stage.mp4" type="video/mp4"></video><span class="tagline">TEDxMcGill</span></div>
+  </div>
 </section>
 
 <div class="stats" role="region" aria-label="At a glance"><div class="wrap" style="padding:0"><ul>
@@ -267,7 +274,7 @@ footer .wrap{display:grid;gap:14px}footer b{color:var(--iv)}footer a{color:var(-
     <div class="hd c rv"><p class="k">How it works</p><h2>Clear in a day. <em>Different in 30.</em></h2></div>
     <div class="steps">
       <article class="step rv"><p class="n">01 · DAY 1</p><h3>Assess</h3><p>90 minutes with Karim across all 7 areas of your life.</p>
-        <div class="mock"><div class="scr"><svg viewBox="0 0 220 184" aria-hidden="true"><polygon points="110.0,68.2 128.6,77.2 133.2,97.3 120.3,113.4 99.7,113.4 86.8,97.3 91.4,77.2" fill="none" stroke="#E3D9C9"/><polygon points="110.0,44.5 147.2,62.4 156.3,102.6 130.6,134.8 89.4,134.8 63.7,102.6 72.8,62.4" fill="none" stroke="#E3D9C9"/><polygon points="110.0,20.0 166.3,47.1 180.2,108.0 141.2,156.9 78.8,156.9 39.8,108.0 53.7,47.1" fill="none" stroke="#E3D9C9"/><polygon points="110.0,41.6 150.5,59.7 170.4,105.8 135.0,143.9 88.8,136.1 60.9,103.2 68.3,58.8" fill="#7A3E3A" fill-opacity=".1" stroke="#7A3E3A" stroke-width="1.4"/><polygon points="110.0,47.4 137.0,70.5 131.1,96.8 134.4,142.6 89.4,134.8 80.5,98.7 81.9,69.6" fill="none" stroke="#8A7F70" stroke-dasharray="2 3"/><text x="110" y="9" text-anchor="middle" class="mk">BODY</text><text x="177" y="41" text-anchor="start" class="mk">MIND</text><text x="194" y="114" text-anchor="start" class="mk ox">PEOPLE</text><text x="147" y="172" text-anchor="start" class="mk">WORK</text><text x="73" y="172" text-anchor="end" class="mk">MONEY</text><text x="26" y="114" text-anchor="end" class="mk">GROWTH</text><text x="43" y="41" text-anchor="end" class="mk">PURPOSE</text></svg></div></div></article>
+        <div class="mock"><div class="scr"><svg viewBox="-14 0 248 184" aria-hidden="true"><polygon points="110.0,68.2 128.6,77.2 133.2,97.3 120.3,113.4 99.7,113.4 86.8,97.3 91.4,77.2" fill="none" stroke="#E3D9C9"/><polygon points="110.0,44.5 147.2,62.4 156.3,102.6 130.6,134.8 89.4,134.8 63.7,102.6 72.8,62.4" fill="none" stroke="#E3D9C9"/><polygon points="110.0,20.0 166.3,47.1 180.2,108.0 141.2,156.9 78.8,156.9 39.8,108.0 53.7,47.1" fill="none" stroke="#E3D9C9"/><polygon points="110.0,41.6 150.5,59.7 170.4,105.8 135.0,143.9 88.8,136.1 60.9,103.2 68.3,58.8" fill="#7A3E3A" fill-opacity=".1" stroke="#7A3E3A" stroke-width="1.4"/><polygon points="110.0,47.4 137.0,70.5 131.1,96.8 134.4,142.6 89.4,134.8 80.5,98.7 81.9,69.6" fill="none" stroke="#8A7F70" stroke-dasharray="2 3"/><text x="110" y="9" text-anchor="middle" class="mk">BODY</text><text x="177" y="41" text-anchor="start" class="mk">MIND</text><text x="194" y="114" text-anchor="start" class="mk ox">PEOPLE</text><text x="147" y="172" text-anchor="start" class="mk">WORK</text><text x="73" y="172" text-anchor="end" class="mk">MONEY</text><text x="26" y="114" text-anchor="end" class="mk">GROWTH</text><text x="43" y="41" text-anchor="end" class="mk">PURPOSE</text></svg></div></div></article>
       <article class="step rv"><p class="n">02 · YOUR PLAN</p><h3>Your report</h3><p>Exactly what to change: who to meet, where to go, what to work on.</p>
         <div class="mock"><div class="scr"><div class="rp-t"><span>Sample report</span><span>SE7EN</span></div><p class="rp-k">Key findings</p>
           <div class="rp-l"><i>01</i>Most of your evenings are spent with the same 4 people.</div>
@@ -287,9 +294,9 @@ footer .wrap{display:grid;gap:14px}footer b{color:var(--iv)}footer a{color:var(-
   <div class="wrap">
     <div class="hd rv"><p class="k">What we work on</p><h2>Three parts of your life, <em>tuned to your goal.</em></h2></div>
     <div class="pills">
-      <article class="pc rv"><div class="m"><video muted loop playsinline preload="none" poster="../assets/media/ws-table.jpg" data-src="../assets/media/ws-table.mp4" aria-hidden="true"></video></div><div class="b"><p class="n">01</p><h3>Relationships</h3><p>The people your goal needs, and how to keep them.</p></div></article>
-      <article class="pc rv"><div class="m"><video muted loop playsinline preload="none" poster="../assets/media/ws-board.jpg" data-src="../assets/media/ws-board.mp4" aria-hidden="true"></video></div><div class="b"><p class="n">02</p><h3>Personal performance</h3><p>Confidence, anxiety, overthinking. Out of your head, into the room.</p></div></article>
-      <article class="pc rv"><div class="m"><video muted loop playsinline preload="none" poster="../assets/media/ws-pods.jpg" data-src="../assets/media/ws-pods.mp4" aria-hidden="true"></video></div><div class="b"><p class="n">03</p><h3>Environment</h3><p>Where you live, the places you go, and systems that keep you showing up.</p></div></article>
+      <article class="pc rv"><div class="m"><video muted loop playsinline preload="none" poster="../assets/media/ws-table.jpg" data-src="../assets/media/ws-table.mp4" style="object-position:72% 22%" aria-hidden="true"></video></div><div class="b"><p class="n">01</p><h3>Relationships</h3><p>The people your goal needs, and how to keep them.</p></div></article>
+      <article class="pc rv"><div class="m"><video muted loop playsinline preload="none" poster="../assets/media/ws-board.jpg" data-src="../assets/media/ws-board.mp4" style="object-position:45% 38%" aria-hidden="true"></video></div><div class="b"><p class="n">02</p><h3>Personal performance</h3><p>Confidence, anxiety, overthinking. Out of your head, into the room.</p></div></article>
+      <article class="pc rv"><div class="m"><video muted loop playsinline preload="none" poster="../assets/media/ws-pods.jpg" data-src="../assets/media/ws-pods.mp4" style="object-position:70% 45%" aria-hidden="true"></video></div><div class="b"><p class="n">03</p><h3>Environment</h3><p>Where you live, the places you go, and systems that keep you showing up.</p></div></article>
     </div>
   </div>
 </section>
@@ -370,7 +377,7 @@ footer .wrap{display:grid;gap:14px}footer b{color:var(--iv)}footer a{color:var(-
 
 <section class="lt" id="karim">
   <div class="wrap about">
-    <figure class="ph rv" style="margin:0"><img src="../assets/karim-portrait.jpg?v=2" alt="Portrait of Karim Atassi, MD" loading="lazy"><figcaption>Karim Atassi, MD</figcaption></figure>
+    <figure class="ph rv" style="margin:0"><img src="../assets/bio-whitecoat.jpg" alt="Karim Atassi, MD in his McGill white coat" loading="lazy"><figcaption>Karim Atassi, MD · McGill</figcaption></figure>
     <div class="rv"><p class="k">Who you'll work with</p><h2>Karim Atassi, MD</h2><p class="bio">Karim earned his MD at McGill and completed his family medicine residency at McMaster. In clinic, patients kept wanting to talk about their lives, and a short appointment never had time. So he built a practice around the part of health medicine overlooks: your people and your environment.</p><ul class="creds">
             <li><b>MDCM</b><span>McGill University</span></li>
             <li><b>Family Medicine</b><span>McMaster University</span></li>
@@ -379,7 +386,7 @@ footer .wrap{display:grid;gap:14px}footer b{color:var(--iv)}footer a{color:var(-
             <li><b>Delegate</b><span>G20 Young Entrepreneurs' Alliance</span></li>
             <li><b>Speaker</b><span>TEDxMcGill</span></li>
           </ul>
-      <div class="strip"><img src="../assets/bio-whitecoat.jpg" alt="Karim in his McGill white coat" loading="lazy"><img src="../assets/story-podcast.jpg" alt="Karim as a podcast guest" loading="lazy"><img src="../assets/bio-g20-summit.jpg" alt="Karim at the G20 Young Entrepreneurs' Alliance summit" loading="lazy"></div></div>
+      <div class="strip"><img src="../assets/karim-portrait.jpg?v=2" alt="Studio portrait of Karim" loading="lazy" style="background:#fff;object-position:center 30%"><img src="../assets/media/valuetainment.jpg?v=172" alt="Karim on the Valuetainment podcast" loading="lazy" style="object-position:100% 30%"><img src="../assets/media/gala.jpg" alt="Karim on stage at the Startup Community Gala" loading="lazy" style="object-position:center 62%"></div></div>
   </div>
 </section>
 
@@ -398,7 +405,6 @@ footer .wrap{display:grid;gap:14px}footer b{color:var(--iv)}footer a{color:var(-
 </section>
 
 <section class="final">
-  <video muted loop playsinline preload="none" poster="../assets/media/ws-pods.jpg" data-src="../assets/media/ws-pods.mp4" aria-hidden="true"></video>
   <div class="wrap"><h2>Your next room is <em>15 minutes away.</em></h2><p>Tell Karim what you want. He'll tell you honestly which plan fits, or if none does.</p>
   <div class="ctas"><a class="btn b-ox" href="../book.html" data-cta="final_call">Book a free call <span class="ar" aria-hidden="true">→</span></a><a class="btn b-ln" href="#plans" data-cta="final_plans">See plans</a></div></div>
 </section>
